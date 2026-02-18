@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<workspaceFilter version="1.0">
+    <filter root="/conf/itv" mode="merge"/>
+    <filter root="/content/itv" mode="merge"/>
+    <filter root="/content/dam/itv" mode="merge">
+        <exclude pattern="/content/dam/itv(/.*)?"/>
+        <include pattern="/content/dam/itv/jcr:content(/.*)?"/>
+    </filter>
+    <filter root="/content/dam/itv/asset.jpg" mode="merge"/>
+    <filter root="/content/experience-fragments/itv" mode="merge"/>
+</workspaceFilter>
