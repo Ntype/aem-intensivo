@@ -1,0 +1,24 @@
+
+.cmp-supertexto{
+    font-size: 16px;
+    line-height: 1.6;
+    color: #333;
+}
+
+.cmp-supertexto--body{
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+.cmp-supertexto--quote{
+    font-style: italic;
+    border-left: 4px solid #333;
+    padding-left: 16px;
+}
+
+.cmp-supertexto--disclaimer{
+    font-size: 12px;
+    color: #888;
+    border-top: 1px solid #ccc;
+    padding-top: 8px;
+}
