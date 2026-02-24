@@ -74,6 +74,14 @@
                             value="cmp-super-title--times" />
                         </items>
                       </style>
+                      <scrollreveal
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                        text="Scroll Reveal Effect"
+                        fieldLabel="Scroll Reveal"
+                        name="./scrollreveal"
+                        valueSelected="true"
+                        valueUnselected="false" />
                       <types
                         granite:class="core-title-sizes"
                         jcr:primaryType="nt:unstructured"
