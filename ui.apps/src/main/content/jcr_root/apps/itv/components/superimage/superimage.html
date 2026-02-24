@@ -1,6 +1,6 @@
-<div class="${properties.zoom ? 'cmp-superimage--zoom' : ''}" data-sly-use.image="com.adobe.cq.wcm.core.components.models.Image"
+<div class="cmp-superimage ${properties.zoom ? 'cmp-superimage--zoom' : ''}" data-sly-use.image="com.adobe.cq.wcm.core.components.models.Image"
      data-sly-use.templates="core/wcm/components/commons/v1/templates.html">
-    <img src="${image.src}"
+    <img id="imagen" src="${image.src}"
          alt="${image.alt}"
          style="border-radius: ${properties.border @ context='styleString'}"/>
     <sly data-sly-call="${templates.placeholder @ isEmpty = !image.src, classAppend = 'cq-dd-image'}"></sly>

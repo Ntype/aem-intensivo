@@ -5,3 +5,7 @@
 .cmp-superimage--zoom img:hover{
     transform: scale(1.15);
 }
+
+.cmp-superimage.ocultar-img{
+    visibility: hidden;
+}
