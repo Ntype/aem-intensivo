@@ -1,0 +1,15 @@
+.cmp-superimage{
+     overflow: hidden;
+}
+
+.cmp-superimage .cmp-image__image  {
+    transition: transform 0.3s ease-in-out !important;
+}
+
+.cmp-superimage--zoom:hover .cmp-image__image {
+    transform: scale(1.15) !important;
+}
+
+.cmp-superimage--greyscale .cmp-image__image{
+    filter:grayscale(100%);
+}
