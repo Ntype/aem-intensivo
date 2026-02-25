@@ -160,7 +160,7 @@
                                                     </cui>
                                                 </uiSettings>
                                             </text>
-                                            
+
                                             <style
                                                 jcr:primaryType="nt:unstructured"
                                                 sling:resourceType="granite/ui/components/coral/foundation/form/select"
