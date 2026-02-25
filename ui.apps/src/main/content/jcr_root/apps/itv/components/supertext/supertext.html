@@ -1,5 +1,5 @@
 
-<div class="cmp-supertexto ${properties.style}">
+<div class="cmp-supertexto  ${properties.style}">
     <sly data-sly-use.textModel="com.adobe.cq.wcm.core.components.models.Text"
     data-sly-use.templates="core/wcm/components/commons/v1/templates.html"/>
     <p data-sly-test.text="${textModel.text}" data-sly-unwrap="${textModel.isRichText}">${text @ context = textModel.isRichText ? 'html' : 'text'}</p>
