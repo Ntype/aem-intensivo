@@ -3,12 +3,10 @@
     font-size: 16px;
     line-height: 1.6;
     color: #333;
-    
 }
 
 
 .cmp-supertexto--body{
-    font-size: 16px;
     line-height: 1.6;
 }
 
@@ -19,7 +17,6 @@
 }
 
 .cmp-supertexto--disclaimer{
-    font-size: 12px;
     color: #888;
     border-top: 1px solid #ccc;
     padding-top: 8px;
@@ -29,3 +26,12 @@
     color: red;
 }
 
+.cmp-supertexto--small{
+    font-size: 14px;
+}
+.cmp-supertexto--medium{
+    font-size: 18px;
+}
+.cmp-supertexto--large{
+    font-size: 24px;
+}
