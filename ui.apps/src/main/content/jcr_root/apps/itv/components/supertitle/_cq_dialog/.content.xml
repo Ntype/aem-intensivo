@@ -72,6 +72,16 @@
                                                         value="cmp-supertitle--times"/>
                                                 </items>
                                             </style>
+                                            <animation
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                                                fieldLabel="Animación al scroll"
+                                                fieldDescription="Activa la animación cuando el texto aparece en pantalla"
+                                                text="Activar animación"
+                                                name="./enableAnimation"
+                                                checked="{Boolean}false"
+                                                value="{Boolean}true"
+                                                deleteHint="{Boolean}false"/>
                                             <types
                                                 granite:class="core-title-sizes"
                                                 jcr:primaryType="nt:unstructured"

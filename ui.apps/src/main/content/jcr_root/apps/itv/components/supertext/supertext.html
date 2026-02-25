@@ -1,0 +1,18 @@
+<div class="cmp-supertexto ${properties.style} ${properties.fontsize} ${properties.aligntext}">
+    <sly data-sly-use.textModel="com.adobe.cq.wcm.core.components.models.Text"
+         data-sly-use.templates="core/wcm/components/commons/v1/templates.html"/>
+    <sly data-sly-use.model="com.itv.core.models.SuperTextModel"/>
+    
+    <p data-sly-test.text="${textModel.text}">
+        ${text @ context = textModel.isRichText ? 'html' : 'text'}
+    </p>
+    
+    <div data-sly-test="${properties.showWordCount}" 
+         class="cmp-supertexto__word-count ${model.overLimit ? 'cmp-supertexto__word-count--warning' : ''}">
+        ${model.wordCount} palabras
+    </div>
+    
+    <sly data-sly-call="${templates.placeholder @ isEmpty = !text}"></sly>
+    <sly data-sly-use.clientlib="/libs/granite/sightly/templates/clientlib.html" 
+         data-sly-call="${clientlib.all @ categories='itv.components.supertext'}"></sly>
+</div>

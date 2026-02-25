@@ -1,0 +1,16 @@
+
+.cmp-superimage--zoom{
+    overflow: hidden;
+}
+
+.cmp-superimage--zoom img{
+    transition: transform 0.3s ease;
+}
+
+.cmp-superimage--zoom img:hover{
+    transform: scale(1.15);
+}
+
+.cmp-superimage.ocultar-img{
+    visibility: hidden;
+}

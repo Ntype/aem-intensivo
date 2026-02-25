@@ -1,0 +1,68 @@
+
+.cmp-supertexto{
+    font-size: 16px;
+    line-height: 1.6;
+    color: #333;
+}
+
+
+.cmp-supertexto--body{
+    line-height: 1.6;
+}
+
+.cmp-supertexto--quote{
+    font-style: italic;
+    border-left: 4px solid #333;
+    padding-left: 16px;
+}
+
+.cmp-supertexto--disclaimer{
+    color: #888;
+    border-top: 1px solid #ccc;
+    padding-top: 8px;
+}
+
+.cmp-supertexto--colorRojo{
+    color: red;
+}
+
+.cmp-supertexto--small{
+    font-size: 14px;
+}
+.cmp-supertexto--medium{
+    font-size: 18px;
+}
+.cmp-supertexto--large{
+    font-size: 24px;
+}
+
+.cmp-supertexto--left{    
+    text-align: left;
+}
+.cmp-supertexto--center{    
+    text-align: center;
+}
+.cmp-supertexto--right{    
+    text-align: right;
+}
+.cmp-supertexto--justify{    
+    text-align: justify;
+}
+
+/* Contador de palabras */
+.cmp-supertexto__word-count {
+    margin-top: 10px;
+    padding: 8px 12px;
+    background-color: #e8f5e9;
+    border-left: 4px solid #4caf50;
+    font-size: 14px;
+    color: #2e7d32;
+}
+
+/* Warning cuando supera el límite */
+.cmp-supertexto__word-count--warning {
+    background-color: #ffebee;
+    border-left-color: #f44336;
+    color: #c62828;
+    font-weight: bold;
+}

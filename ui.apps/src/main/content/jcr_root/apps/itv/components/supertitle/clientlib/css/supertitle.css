@@ -9,3 +9,15 @@
 .cmp-supertitle--times{
     font-family: 'Times New Roman', Times, serif;    
 }
+
+.cmp-supertitle--animated {
+    opacity: 0;                    /* Invisible al cargar */
+    transform: translateY(30px);   /* Desplazado 30px hacia ABAJO */
+    transition: opacity 0.8s ease-out,  /* Fade suave en 0.8 segundos */
+                transform 0.8s ease-out; /* Movimiento suave en 0.8 segundos */
+}
+
+.cmp-supertitle--animated.is-visible {
+    opacity: 1;                    /* Totalmente visible */
+    transform: translateY(0);      /* En su posición natural (sin desplazamiento) */
+}
