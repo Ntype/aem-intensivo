@@ -51,11 +51,13 @@
                                                 fieldDescription="Leave empty to use the page title."
                                                 fieldLabel="Title"
                                                 name="./jcr:title"/>
+
                                             <color
                                                 jcr:primaryType="nt:unstructured"
                                                 sling:resourceType="granite/ui/components/coral/foundation/form/colorfield"
                                                 fieldLabel="Color"
                                                 name="./color"/>
+
                                             <style
                                                 jcr:primaryType="nt:unstructured"
                                                 sling:resourceType="granite/ui/components/coral/foundation/form/select"
@@ -72,6 +74,15 @@
                                                         value="cmp-supertitle--times"/>
                                                 </items>
                                             </style>
+
+                                            <animateOnView
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                                                name="./animateOnView"
+                                                text="Animar al aparecer en pantalla"
+                                                value="true"/>
+
+                                             
                                             <types
                                                 granite:class="core-title-sizes"
                                                 jcr:primaryType="nt:unstructured"

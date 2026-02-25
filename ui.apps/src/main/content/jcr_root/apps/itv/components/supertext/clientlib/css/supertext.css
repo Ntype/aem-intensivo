@@ -1,0 +1,123 @@
+/* --- BASE DEL COMPONENTE --- */
+.supertext {
+  padding: 16px 18px;
+  border-radius: 12px;
+  margin: 18px 0;
+  position: relative;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Badge (Etiqueta superior) */
+.supertext__badge {
+  display: inline-block;
+  font-size: 12px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  padding: 6px 12px;
+  border-radius: 999px;
+  margin-bottom: 12px;
+}
+
+/* --- 1. ESTILO BODY --- */
+.supertext--body {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+.supertext--body .supertext__badge {
+  background: rgba(0, 150, 255, 0.18);
+  color: #0096ff;
+}
+.supertext--body .cmp-text__paragraph {
+  font-size: 16px; 
+  line-height: 1.6;
+  color: #ffffff;
+}
+
+/* --- 2. ESTILO QUOTE --- */
+.supertext--quote {
+  background: rgba(255, 255, 255, 0.04);
+  border-left: 6px solid rgba(0, 180, 255, 0.9);
+}
+.supertext--quote .supertext__badge {
+  background: rgba(0, 180, 255, 0.18);
+  color: #00b4ff;
+}
+.supertext--quote .cmp-text__paragraph {
+  font-size: 20px; 
+  font-style: italic;
+  color: #ffffff;
+  padding-left: 10px;
+}
+/* La comilla la dejamos pequeñita para que no moleste */
+.supertext--quote .cmp-text__paragraph::before {
+  font-size: 30px;
+  color: rgba(0, 180, 255, 0.6);
+  margin-right: 5px;
+}
+
+/* --- 3. ESTILO DISCLAIMER --- */
+.supertext--disclaimer {
+  background: rgba(255, 230, 0, 0.14);
+  border: 1px solid rgba(255, 230, 0, 0.35);
+}
+.supertext--disclaimer .supertext__badge {
+  background: rgba(255, 180, 0, 0.22);
+  color: #ffb400;
+}
+.supertext--disclaimer .supertext__badge::before {
+  content: "⚠️ ";
+}
+.supertext--disclaimer .cmp-text__paragraph {
+  font-size: 13px;   
+  color: #cccccc;
+  opacity: 0.8;
+  border-top: 1px solid rgba(255, 255, 255, 0.1); 
+  padding-top: 10px;
+  margin-top: 10px;
+}
+
+/* 1. Selector Universal de Letra Capital */
+.supertext--dropcap .cmp-text__paragraph::first-letter {
+    font-family: "Georgia", "Times New Roman", serif;
+    font-size: 3em; 
+    font-weight: bold;
+    float: left;
+    margin-right: 10px;
+    line-height: 0.9;
+    text-transform: uppercase;
+    
+    /* Por defecto usamos el color de la tarjeta*/
+    color: currentColor;
+}
+
+/* 2. Evitar que la Letra Capital se aplique a la comilla del Quote */
+/* Usamos el selector :before para que la comilla no cuente como 'first-letter' */
+.supertext--quote.supertext--dropcap .cmp-text__paragraph::before {
+    display: inline-block;
+    float: left;
+}
+
+/* 3. Colores específicos para mantener tu diseño de tarjetas */
+
+/* Para Body*/
+.supertext--body.supertext--dropcap .cmp-text__paragraph::first-letter {
+    color: #105bfd;
+}
+
+/* Para Quote*/
+.supertext--quote.supertext--dropcap .cmp-text__paragraph::first-letter {
+    color: rgba(144, 207, 235, 0.9);
+    font-style: normal; /* Para que la letra capital no sea cursiva */
+}
+
+/* Para Disclaimer*/
+.supertext--disclaimer.supertext--dropcap .cmp-text__paragraph::first-letter {
+    color: #ffb400;
+}
+
+/* 4. Ajuste de seguridad para el texto */
+.supertext--dropcap .cmp-text__paragraph {
+    overflow: hidden;
+    display: block;
+}
