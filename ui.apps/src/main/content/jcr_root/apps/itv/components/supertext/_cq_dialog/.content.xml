@@ -190,6 +190,49 @@
                                                         value="cmp-supertexto--large"/>
                                                 </items>
                                             </fontsize>
+                                            <aligntext
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                                                fieldLabel="Alineación del texto"
+                                                name="./aligntext">
+                                                <items jcr:primaryType="nt:unstructured">
+                                                    <left
+                                                        jcr:primaryType="nt:unstructured"
+                                                        text="Left"
+                                                        value="cmp-supertexto--left"/>
+                                                    <center
+                                                        jcr:primaryType="nt:unstructured"
+                                                        text="Center"
+                                                        value="cmp-supertexto--center"/>
+                                                    <right
+                                                        jcr:primaryType="nt:unstructured"
+                                                        text="Right"
+                                                        value="cmp-supertexto--right"/>
+                                                    <justify
+                                                        jcr:primaryType="nt:unstructured"
+                                                        text="Justify"
+                                                        value="cmp-supertexto--justify"/>
+                                                </items>
+                                            </aligntext>
+                                            <wordcount
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                                                fieldDescription="Contador de palabras"
+                                                name="./showWordCount"
+                                                text="Mostrar contador de palabras"
+                                                checked="{Boolean}false"
+                                                value="{Boolean}true"
+                                                deleteHint="{Boolean}false"/>
+                                            <wordlimit
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/numberfield"
+                                                fieldLabel="Límite de palabras"
+                                                fieldDescription="Número máximo de palabras permitidas"
+                                                name="./wordLimit"
+                                                min="0"
+                                                max="10000"
+                                                step="10"
+                                                value="300"/>
                                             <id
                                                 jcr:primaryType="nt:unstructured"
                                                 sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
