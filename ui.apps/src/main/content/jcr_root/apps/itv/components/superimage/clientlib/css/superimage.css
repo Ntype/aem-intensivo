@@ -9,3 +9,7 @@
 .cmp-superimage--zoom:hover .cmp-image__image {
     transform: scale(1.15) !important;
 }
+
+.cmp-superimage--greyscale .cmp-image__image{
+    filter:grayscale(100%);
+}

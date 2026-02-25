@@ -13,7 +13,7 @@
      id="${image.id}"
      data-cmp-data-layer="${image.data.json}"
      data-cmp-hook-image="imageV3"
-     class="cmp-image${!wcmmode.disabled ? ' cq-dd-image' : ''} cmp-superimage ${(properties.enableZoom == 'true' || properties.enableZoom) ? 'cmp-superimage--zoom' : ''}"
+     class="cmp-image${!wcmmode.disabled ? ' cq-dd-image' : ''} cmp-superimage ${(properties.enableZoom == 'true' || properties.enableZoom) ? 'cmp-superimage--zoom' : ''} cmp-superimage ${(properties.greyscale == 'true' || properties.greyscale) ? 'cmp-superimage--greyscale' : ''}"
      style="border-radius: ${properties.borderRadius @ context='styleString'};"
      itemscope itemtype="http://schema.org/ImageObject">
     <a data-sly-unwrap="${!image.imageLink.valid}"

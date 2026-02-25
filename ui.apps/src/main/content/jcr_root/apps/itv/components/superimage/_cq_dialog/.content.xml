@@ -102,6 +102,13 @@
                                                 name="./enableZoom"
                                                 value="true"
                                                 uncheckedValue="false"/>
+                                            <greyscale
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                                                text="Cambiar la imagen a escala de grises"
+                                                name="./greyscale"
+                                                value="true"
+                                                uncheckedValue="false"/>
                                             <decorative
                                                 jcr:primaryType="nt:unstructured"
                                                 sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
