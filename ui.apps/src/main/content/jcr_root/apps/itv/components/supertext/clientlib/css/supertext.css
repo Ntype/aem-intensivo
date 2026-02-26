@@ -121,3 +121,35 @@
     overflow: hidden;
     display: block;
 }
+
+/* --- BOTÓN MODO LECTURA --- */
+.supertext__mode-toggle {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: #fff;
+    padding: 4px 10px;
+    font-size: 11px;
+    border-radius: 4px;
+    cursor: pointer;
+    z-index: 10;
+}
+
+/* --- MODO LECTURA ACTIVO --- */
+/* Cuando JS añade esta clase, invertimos colores */
+.supertext--dark-mode {
+    background: #121212 !important; 
+    border-color: #333 !important;
+    transition: all 0.4s ease;
+}
+
+.supertext--dark-mode .cmp-text__paragraph {
+    color: #bbbbbb !important;
+}
+
+/* Resaltamos la letra capital en modo oscuro */
+.supertext--dark-mode.supertext--dropcap .cmp-text__paragraph::first-letter {
+    filter: brightness(1.5) saturate(1.2);
+}

@@ -205,6 +205,18 @@
                                                 text="Mostrar etiqueta (BODY/QUOTE/DISCLAIMER)"
                                                 value="true"/>
 
+                                            <style
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                                                fieldLabel="Estilo de tarjeta"
+                                                name="./style">
+                                                <items jcr:primaryType="nt:unstructured">
+                                                    <body jcr:primaryType="nt:unstructured" text="Body" value="body"/>
+                                                    <quote jcr:primaryType="nt:unstructured" text="Quote" value="quote"/>
+                                                    <disclaimer jcr:primaryType="nt:unstructured" text="Disclaimer" value="disclaimer"/>
+                                                </items>
+                                            </style>    
+
                                             <dropCap
                                                 jcr:primaryType="nt:unstructured"
                                                 sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
