@@ -1,0 +1,43 @@
+/* --- EFECTO ZOOM --- */
+.cmp-image--zoom {
+    overflow: hidden !important;
+}
+
+.cmp-image--zoom .cmp-image__image {
+    transition: transform 0.3s ease-in-out !important;
+}
+
+.cmp-image--zoom:hover .cmp-image__image {
+    transform: scale(1.1);
+}
+
+/* --- FILTROS EXTRAS --- */
+
+/* Base para transiciones suaves */
+.cmp-image img {
+    transition: filter 0.4s ease, transform 0.4s ease;
+}
+
+/* 1. Blanco y Negro */
+.cmp-superimage--filter-grayscale .cmp-image__image {
+    filter: grayscale(100%);
+}
+.cmp-superimage--filter-grayscale:hover .cmp-image__image {
+    filter: grayscale(0%);
+}
+
+/* 2. Sepia */
+.cmp-superimage--filter-sepia .cmp-image__image {
+    filter: sepia(100%);
+}
+.cmp-superimage--filter-sepia:hover .cmp-image__image {
+    filter: sepia(0%);
+}
+
+/* 3. Blur (Desenfocado) */
+.cmp-superimage--filter-blur .cmp-image__image {
+    filter: blur(5px);
+}
+.cmp-superimage--filter-blur:hover .cmp-image__image {
+    filter: blur(0px);
+}

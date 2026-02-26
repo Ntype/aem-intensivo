@@ -1,0 +1,26 @@
+<sly data-sly-use.clientlib="/libs/granite/sightly/templates/clientlib.html"
+     data-sly-call="${clientlib.css @ categories='itv.components.superimage'}"/>
+
+<div data-sly-use.image="com.adobe.cq.wcm.core.components.models.Image"
+     data-sly-use.templates="core/wcm/components/commons/v1/templates.html"
+     data-sly-test="${image.src}"
+     id="${image.id}"
+     class="cmp-image${!wcmmode.disabled ? ' cq-dd-image' : ''} ${properties.hoverZoom ? 'cmp-image--zoom' : ''} cmp-superimage--filter-${properties.imageFilter}">
+     
+    <sly data-sly-set.radiusStyle="${properties.borderRadius ? 'border-radius:' : ''}${properties.borderRadius}"></sly>
+
+    <a data-sly-unwrap="${!image.imageLink.valid}"
+       class="cmp-image__link"
+       data-sly-attribute="${image.imageLink.htmlAttributes}">
+
+        <img src="${image.src}"
+             class="cmp-image__image"
+             style="${radiusStyle @ context='styleString'}"
+             alt="${image.alt}"
+             title="${image.displayPopupTitle && image.title}"/>
+    </a>
+
+    <span class="cmp-image__title" data-sly-test="${!image.displayPopupTitle && image.title}">${image.title}</span>
+</div>
+
+<sly data-sly-call="${templates.placeholder @ isEmpty = !image.src}"></sly>

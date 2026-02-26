@@ -1,0 +1,23 @@
+<div data-sly-use.textModel="com.adobe.cq.wcm.core.components.models.Text"
+     data-sly-use.component="com.adobe.cq.wcm.core.components.models.Component"
+     data-sly-use.templates="core/wcm/components/commons/v1/templates.html"
+     id="${component.id}"
+     class="cmp-text supertext supertext--${properties.style} ${properties.dropCap == 'true' ? 'supertext--dropcap' : ''}">
+
+    <button class="supertext__mode-toggle">🌓 Modo Lectura</button> 
+
+    <span data-sly-test="${properties.mostrarEtiqueta}" class="supertext__badge">
+        ${properties.style}
+    </span>
+
+    <div class="supertext__content">
+        <div class="cmp-text__paragraph">
+            ${textModel.text @ context = textModel.isRichText ? 'html' : 'text'}
+        </div>
+    </div>
+</div>
+
+<sly data-sly-call="${templates.placeholder @ isEmpty = !textModel.text}"></sly>
+
+<sly data-sly-use.clientlib="/libs/granite/sightly/templates/clientlib.html"
+     data-sly-call="${clientlib.all @ categories='itv.components.supertext'}"></sly>
