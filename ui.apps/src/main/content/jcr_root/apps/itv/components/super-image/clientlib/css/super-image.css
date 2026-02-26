@@ -20,3 +20,15 @@
 .cmp-super-image--shadow-strong {
   box-shadow: 25px 25px 50px rgba(0, 0, 0, 0.3) !important;
 }
+.cmp-super-image--filter-none .cmp-image__image {
+  filter: none !important;
+}
+.cmp-super-image--filter-grayscale .cmp-image__image {
+  filter: grayscale(100%) !important;
+}
+.cmp-super-image--filter-sepia .cmp-image__image {
+  filter: sepia(100%) !important;
+}
+.cmp-super-image--filter-blur .cmp-image__image {
+  filter: blur(5px) !important;
+}

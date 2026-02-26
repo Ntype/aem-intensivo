@@ -201,7 +201,7 @@
                         jcr:primaryType="nt:unstructured"
                         sling:resourceType="granite/ui/components/coral/foundation/form/select"
                         fieldDescription="Box shadow values in CSS format. For example, a value of '0px 4px 8px rgba(0, 0, 0, 0.2)' will apply a subtle shadow below the image."
-                        fieldLabel="Box shadow (CSS format)"
+                        fieldLabel="Box shadow"
                         name="./boxShadow">
                         <items jcr:primaryType="nt:unstructured">
                           <none
@@ -220,6 +220,32 @@
                         </items>
                       </boxShadow>
                     </items>
+                    <filter
+                      jcr:primaryType="nt:unstructured"
+                      sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                      fieldDescription="CSS filter to apply to the image. For example, a value of 'grayscale(100%)' will make the image appear in black and white."
+                      fieldLabel="Filter (CSS format)"
+                      name="./filter">
+                      <items jcr:primaryType="nt:unstructured">
+                        <none
+                          jcr:primaryType="nt:unstructured"
+                          checked="{Boolean}true"
+                          text="Sin filtro"
+                          value="" />
+                        <grayscale
+                          jcr:primaryType="nt:unstructured"
+                          text="Escala de grises"
+                          value="cmp-super-image--filter-grayscale" />
+                        <sepia
+                          jcr:primaryType="nt:unstructured"
+                          text="Sepia"
+                          value="cmp-super-image--filter-sepia" />
+                        <blur
+                          jcr:primaryType="nt:unstructured"
+                          text="Desenfoque"
+                          value="cmp-super-image--filter-blur" />
+                      </items>
+                    </filter>
                   </column>
                 </items>
               </columns>
