@@ -224,7 +224,7 @@
                       jcr:primaryType="nt:unstructured"
                       sling:resourceType="granite/ui/components/coral/foundation/form/select"
                       fieldDescription="CSS filter to apply to the image. For example, a value of 'grayscale(100%)' will make the image appear in black and white."
-                      fieldLabel="Filter (CSS format)"
+                      fieldLabel="Filter"
                       name="./filter">
                       <items jcr:primaryType="nt:unstructured">
                         <none
