@@ -3,14 +3,23 @@
     jcr:primaryType="cq:Page">
     <jcr:content
         cq:deviceGroups="[mobile/groups/responsive]"
-        cq:template="/conf/itv/settings/wcm/templates/xf-web-variation"
+        cq:template="/conf/itv/settings/wcm/templates/basic-two-cols"
         jcr:primaryType="cq:PageContent"
-        sling:resourceType="itv/components/xfpage">
+        sling:resourceType="itv/components/page">
         <root
             jcr:primaryType="nt:unstructured"
             sling:resourceType="itv/components/container"
-            editable="{Boolean}true"
-            layout="responsiveGrid"/>
+            layout="responsiveGrid">
+            <experiencefragment-header
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="itv/components/experiencefragment"
+                fragmentVariationPath="/content/experience-fragments/itv/us/en/site/header/master"/>
+            <container
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="itv/components/container"
+                editable="{Boolean}true"
+                layout="responsiveGrid"/>
+        </root>
         <cq:responsive jcr:primaryType="nt:unstructured">
             <breakpoints jcr:primaryType="nt:unstructured">
                 <phone
