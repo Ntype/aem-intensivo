@@ -3,7 +3,9 @@
     jcr:primaryType="cq:Page">
     <jcr:content
         cq:deviceGroups="[mobile/groups/responsive]"
-        cq:template="/conf/itv/settings/wcm/templates/page-content"
+        cq:lastModified="{Date}2026-02-27T12:47:20.691+01:00"
+        cq:lastModifiedBy="admin"
+        cq:template="/conf/itv/settings/wcm/templates/basic-two-cols"
         jcr:primaryType="cq:PageContent"
         sling:resourceType="itv/components/page">
         <root
@@ -11,24 +13,22 @@
             sling:resourceType="itv/components/container"
             layout="responsiveGrid">
             <experiencefragment-header
+                jcr:lastModified="{Date}2026-02-27T10:20:54.438+01:00"
+                jcr:lastModifiedBy="admin"
                 jcr:primaryType="nt:unstructured"
                 sling:resourceType="itv/components/experiencefragment"
                 fragmentVariationPath="/content/experience-fragments/itv/us/en/site/header/master"/>
             <container
+                jcr:lastModified="{Date}2026-02-27T12:46:20.740+01:00"
+                jcr:lastModifiedBy="admin"
                 jcr:primaryType="nt:unstructured"
                 sling:resourceType="itv/components/container"
-                layout="responsiveGrid">
-                <title
-                    jcr:primaryType="nt:unstructured"
-                    sling:resourceType="itv/components/title"
-                    editable="{Boolean}true"/>
-                <container
-                    jcr:primaryType="nt:unstructured"
-                    sling:resourceType="itv/components/container"
-                    editable="{Boolean}true"
-                    layout="responsiveGrid"/>
-            </container>
+                editable="{Boolean}true"/>
             <experiencefragment-footer
+                jcr:created="{Date}2026-02-27T10:44:47.760+01:00"
+                jcr:createdBy="admin"
+                jcr:lastModified="{Date}2026-02-27T10:45:05.144+01:00"
+                jcr:lastModifiedBy="admin"
                 jcr:primaryType="nt:unstructured"
                 sling:resourceType="itv/components/experiencefragment"
                 fragmentVariationPath="/content/experience-fragments/itv/us/en/site/footer/master"/>

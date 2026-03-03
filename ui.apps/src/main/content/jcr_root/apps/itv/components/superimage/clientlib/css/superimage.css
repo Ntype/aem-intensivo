@@ -1,4 +1,11 @@
 
+.cmp-superimage img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    display: block;
+}
+
 .cmp-superimage--zoom{
     overflow: hidden;
 }
