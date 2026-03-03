@@ -1,57 +1,45 @@
-/* 1. RESET Y ESTRUCTURAS FIJAS (Colores que nunca cambian) */
-body, html { 
-    margin: 0; 
-    padding: 0; 
-}
+/* 1. RESET Y ESTRUCTURAS FIJAS */
+body, html { margin: 0; padding: 0; }
 
-header, .header, .experiencefragment.header { 
-    background-color: #0000FF !important;
-    min-height: 80px; 
-    width: 100%; 
-    display: block;
-}
-
-footer, .footer, .experiencefragment.footer { 
-    background-color: #800080 !important;
-    min-height: 100px; 
-    width: 100%; 
-    display: block;
-}
-
-.root.container.aem-Grid, .page > .aem-Grid {
-    background-color: #77d477 !important;
+/* EL CONTENEDOR ROOT (MÁRGENES ARRIBA Y ABAJO) */
+.root.container.aem-Grid, 
+.page > .aem-Grid {
+    background-color: transparent !important; /* Quitamos el verde */
     width: 100% !important; 
-    margin: 0 !important;
-    padding: 40px 0 !important; 
-    display: block;
+    margin-top: 60px !important;    /* Espacio con el Header */
+    margin-bottom: 60px !important; /* Espacio con el Footer */
+    display: block !important;
 }
 
-/* COLORES DE LOS HIJOS (Definidos fuera para que no desaparezcan) */
+/* --- COLORES SIEMPRE VISIBLES --- */
 .aem-GridColumn--default--6:nth-of-type(1) {
-    background-color: #FFFF00 !important;
+    background-color: #f1f170 !important;
     min-height: 300px;
 }
 
+/* EL CONTENEDOR ROSA (Creando el margen interno) */
 .aem-GridColumn--default--6:nth-of-type(2) {
-    background-color: #FFC0CB !important;
+    background-color: #FFC0CB !important; /* Rosa */
     min-height: 300px;
+    padding: 20px !important;            /* 20px de margen en todos los lados */
+    box-sizing: border-box !important;    /* Vital para que el padding no ensanche el contenedor */
 }
 
-/* 2. DESKTOP (Márgenes grandes) */
+/* --- 2. DESKTOP (Hijos al 100% del Root ajustado) --- */
 @media (min-width: 1025px) {
     .aem-GridColumn--default--6:nth-of-type(1) {
-        margin-left: 160px !important;
-        width: calc(50% - 160px) !important; 
+        width: 50% !important; /* Ocupa exactamente la mitad */
+        margin: 0 !important;  /* Sin márgenes para que se pegue al borde */
         float: left;
     }
     .aem-GridColumn--default--6:nth-of-type(2) {
-        margin-right: 160px !important;
-        width: calc(50% - 160px) !important;
+        width: 50% !important; /* Ocupa la otra mitad */
+        margin: 0 !important;
         float: left;
     }
 }
 
-/* 3. TABLET (Márgenes de 16px) */
+/* --- 3. TABLET (Márgenes de 16px) --- */
 @media (max-width: 1024px) and (min-width: 769px) {
     .aem-GridColumn--default--6:nth-of-type(1) {
         margin-left: 16px !important;
@@ -65,7 +53,7 @@ footer, .footer, .experiencefragment.footer {
     }
 }
 
-/* 4. MÓVIL (Apilados y 16px de margen) */
+/* --- 4. MÓVIL (Apilados y 16px) --- */
 @media (max-width: 768px) {
     .aem-GridColumn--default--6 {
         width: calc(100% - 32px) !important;
@@ -73,11 +61,4 @@ footer, .footer, .experiencefragment.footer {
         float: none !important;
         display: block;
     }
-}
-
-/* 5. LIMPIEZA */
-.experiencefragment .aem-Grid {
-    background-color: transparent !important;
-    width: 100% !important;
-    margin: 0 !important;
 }
