@@ -2,7 +2,7 @@
 <jcr:root xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:sling="http://sling.apache.org/jcr/sling/1.0"
     jcr:primaryType="cq:Page">
     <jcr:content
-        cq:lastModified="{Date}2026-02-27T12:48:55.416+01:00"
+        cq:lastModified="{Date}2026-03-03T10:35:07.235+01:00"
         cq:lastModifiedBy="admin"
         cq:template="/conf/itv/settings/wcm/templates/basic-two-cols"
         jcr:primaryType="cq:PageContent"
@@ -63,6 +63,13 @@
                         jcr:lastModifiedBy="admin"
                         jcr:primaryType="nt:unstructured"
                         sling:resourceType="itv/components/supertitle"/>
+                    <supertext
+                        jcr:created="{Date}2026-03-03T10:34:03.329+01:00"
+                        jcr:createdBy="admin"
+                        jcr:lastModified="{Date}2026-03-03T10:34:03.329+01:00"
+                        jcr:lastModifiedBy="admin"
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="itv/components/supertext"/>
                 </container>
                 <container_1132284699
                     jcr:created="{Date}2026-02-27T12:39:53.072+01:00"
@@ -78,13 +85,24 @@
                             offset="0"
                             width="6"/>
                     </cq:responsive>
-                    <supertitle
-                        jcr:created="{Date}2026-02-27T12:48:09.702+01:00"
+                    <superimage
+                        jcr:created="{Date}2026-03-03T10:34:16.882+01:00"
                         jcr:createdBy="admin"
-                        jcr:lastModified="{Date}2026-02-27T12:48:09.702+01:00"
+                        jcr:lastModified="{Date}2026-03-03T10:35:07.228+01:00"
                         jcr:lastModifiedBy="admin"
                         jcr:primaryType="nt:unstructured"
-                        sling:resourceType="itv/components/supertitle"/>
+                        jcr:title="[,]"
+                        sling:resourceType="itv/components/superimage"
+                        alt="[dd,dd]"
+                        altValueFromDAM="true"
+                        altValueFromPageImage="true"
+                        displayPopupTitle="[true,true]"
+                        id="[,]"
+                        imageFromPageImage="true"
+                        linkTarget="_self"
+                        linkURL="[,]"
+                        titleValueFromDAM="true"
+                        zoom="false"/>
                 </container_1132284699>
             </container>
         </root>
