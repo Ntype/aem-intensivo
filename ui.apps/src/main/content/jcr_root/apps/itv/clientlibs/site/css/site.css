@@ -33,9 +33,10 @@ body, .root.container {
 /* --- CONFIGURACIÓN DEL CONTENEDOR PADRE (12 COL) --- */
 /* ✅ El padding va al contenedor real del contenido */
 .container.responsivegrid.aem-GridColumn--default--12 > .cmp-container {
-  padding: 60px 20px !important;
-  box-sizing: border-box;
-  background-color: #90ee90 !important; /* tu verde, si lo quieres aquí */
+    padding: 60px 20px !important; /* Mantiene el aire arriba, abajo y a los lados */
+    box-sizing: border-box !important; /* Obligatorio para que el padding no rompa el ancho en móvil */
+    background-color: #90ee90 !important; 
+    display: block !important;
 }
 
 /* ✅ Para que el grid NO se “coma” el padding con gutters */
@@ -59,42 +60,31 @@ body, .root.container {
 
 /* --- 3. TABLET (Márgenes de 16px en el contenedor padre) --- */
 @media (max-width: 1024px) and (min-width: 769px) {
-    /* El padre crea el hueco de 16px a los lados */
     .responsivegrid.aem-GridColumn--default--12 {
-        margin-top: 40px !important;
+        /* Mantenemos tus márgenes de 16px */
         margin-left: 16px !important;
         margin-right: 16px !important;
         width: calc(100% - 32px) !important;
-        float: none !important;
-        display: block !important;
-    }
-    
-    /* Los hijos se quedan limpios al 50% cada uno */
-    .aem-GridColumn--default--6:nth-of-type(1),
-    .aem-GridColumn--default--6:nth-of-type(2) {
-        margin: 0 !important;
-        width: 50% !important;
-        float: left;
+        
+        /* Quitamos el margin-top para que el padding del contenedor verde haga su trabajo */
+        margin-top: 0 !important; 
     }
 }
 
 /* --- 4. MÓVIL (Apilados y 16px en el contenedor padre) --- */
 @media (max-width: 768px) {
-    /* El padre crea el hueco de 16px a los lados */
     .responsivegrid.aem-GridColumn--default--12 {
-        margin-top: 30px !important;
         margin-left: 16px !important;
         margin-right: 16px !important;
         width: calc(100% - 32px) !important;
-        float: none !important;
-        display: block !important;
+        
+        /* Quitamos el margin-top para que el padding del contenedor verde haga su trabajo */
+        margin-top: 0 !important; 
     }
 
-    /* Los hijos se estiran al 100% del padre y se apilan */
     .aem-GridColumn--default--6 {
+        /* Aseguramos que el bloque hijo no ignore el padding del padre */
         width: 100% !important;
-        margin: 10px 0 !important; /* Margen solo entre bloques, no a los lados */
-        float: none !important;
-        display: block;
+        margin: 10px 0 !important; 
     }
 }
