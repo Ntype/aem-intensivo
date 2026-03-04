@@ -1,19 +1,20 @@
 /* 1. RESET Y ESTRUCTURAS FIJAS */
-body, html { 
-    margin: 0; 
-    padding: 0; 
+body, .root.container {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
     background-color: white !important;
 }
 
-.cmp-experiencefragment--header{
+.cmp-experiencefragment--header {
     background-color: rgb(79, 153, 244) !important;
+    position: relative;
+    z-index: 10; /* Asegura que el header esté por encima si hay solape */
+    margin: 0 !important;
 }
 
 .cmp-experiencefragment--footer{
     background-color: rgb(181, 79, 244) !important;
 }
-
-
 
 /* --- COLORES SIEMPRE VISIBLES --- */
 .aem-GridColumn--default--6:nth-of-type(1) {
@@ -29,44 +30,70 @@ body, html {
     box-sizing: border-box !important;    
 }
 
-/* --- 1. CONFIGURACIÓN UNIVERSAL (Se aplica a TODO) --- */
-.responsivegrid.aem-GridColumn--default--12 {
-    background-color: rgb(146, 243, 150) !important; /* El color de fondo que prefieras */
-    padding: 30px !important;
-    box-sizing: border-box !important;   /* Para que el padding no rompa el ancho */
-    display: block !important;
+/* --- CONFIGURACIÓN DEL CONTENEDOR PADRE (12 COL) --- */
+/* ✅ El padding va al contenedor real del contenido */
+.container.responsivegrid.aem-GridColumn--default--12 > .cmp-container {
+  padding: 60px 20px !important;
+  box-sizing: border-box;
+  background-color: #90ee90 !important; /* tu verde, si lo quieres aquí */
+}
+
+/* ✅ Para que el grid NO se “coma” el padding con gutters */
+.container.responsivegrid.aem-GridColumn--default--12 > .cmp-container > .aem-Grid {
+  margin-left: 0 !important;
+  margin-right: 0 !important;
 }
 
 @media (min-width: 1025px) {
     .responsivegrid.aem-GridColumn--default--12 {
         display: block !important;
+        margin-top: 40px !important;
         margin-left: 160px !important;
         margin-right: 160px !important;
         width: calc(100% - 320px) !important; 
         float: none !important;
         clear: both;
+        display: flow-root !important; /* esto hace que el padre contenga los floats */
     }
 }
 
-/* --- 3. TABLET (Márgenes de 16px) --- */
+/* --- 3. TABLET (Márgenes de 16px en el contenedor padre) --- */
 @media (max-width: 1024px) and (min-width: 769px) {
-    .aem-GridColumn--default--6:nth-of-type(1) {
+    /* El padre crea el hueco de 16px a los lados */
+    .responsivegrid.aem-GridColumn--default--12 {
+        margin-top: 40px !important;
         margin-left: 16px !important;
-        width: calc(50% - 16px) !important;
-        float: left;
-    }
-    .aem-GridColumn--default--6:nth-of-type(2) {
         margin-right: 16px !important;
-        width: calc(50% - 16px) !important;
+        width: calc(100% - 32px) !important;
+        float: none !important;
+        display: block !important;
+    }
+    
+    /* Los hijos se quedan limpios al 50% cada uno */
+    .aem-GridColumn--default--6:nth-of-type(1),
+    .aem-GridColumn--default--6:nth-of-type(2) {
+        margin: 0 !important;
+        width: 50% !important;
         float: left;
     }
 }
 
-/* --- 4. MÓVIL (Apilados y 16px) --- */
+/* --- 4. MÓVIL (Apilados y 16px en el contenedor padre) --- */
 @media (max-width: 768px) {
-    .aem-GridColumn--default--6 {
+    /* El padre crea el hueco de 16px a los lados */
+    .responsivegrid.aem-GridColumn--default--12 {
+        margin-top: 30px !important;
+        margin-left: 16px !important;
+        margin-right: 16px !important;
         width: calc(100% - 32px) !important;
-        margin: 10px 16px !important;
+        float: none !important;
+        display: block !important;
+    }
+
+    /* Los hijos se estiran al 100% del padre y se apilan */
+    .aem-GridColumn--default--6 {
+        width: 100% !important;
+        margin: 10px 0 !important; /* Margen solo entre bloques, no a los lados */
         float: none !important;
         display: block;
     }
