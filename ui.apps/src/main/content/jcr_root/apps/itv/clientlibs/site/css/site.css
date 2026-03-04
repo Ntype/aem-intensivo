@@ -2,6 +2,7 @@
 body, html { 
     margin: 0; 
     padding: 0; 
+    background-color: white !important;
 }
 
 .cmp-experiencefragment--header{
@@ -11,6 +12,8 @@ body, html {
 .cmp-experiencefragment--footer{
     background-color: rgb(181, 79, 244) !important;
 }
+
+
 
 /* --- COLORES SIEMPRE VISIBLES --- */
 .aem-GridColumn--default--6:nth-of-type(1) {
@@ -26,17 +29,22 @@ body, html {
     box-sizing: border-box !important;    
 }
 
-/* --- 2. DESKTOP (Hijos al 100% del Root ajustado) --- */
+/* --- 1. CONFIGURACIÓN UNIVERSAL (Se aplica a TODO) --- */
+.responsivegrid.aem-GridColumn--default--12 {
+    background-color: rgb(146, 243, 150) !important; /* El color de fondo que prefieras */
+    padding: 30px !important;
+    box-sizing: border-box !important;   /* Para que el padding no rompa el ancho */
+    display: block !important;
+}
+
 @media (min-width: 1025px) {
-    .aem-GridColumn--default--6:nth-of-type(1) {
-        width: 50% !important; /* Ocupa exactamente la mitad */
-        margin: 0 !important;  /* Sin márgenes para que se pegue al borde */
-        float: left;
-    }
-    .aem-GridColumn--default--6:nth-of-type(2) {
-        width: 50% !important; /* Ocupa la otra mitad */
-        margin: 0 !important;
-        float: left;
+    .responsivegrid.aem-GridColumn--default--12 {
+        display: block !important;
+        margin-left: 160px !important;
+        margin-right: 160px !important;
+        width: calc(100% - 320px) !important; 
+        float: none !important;
+        clear: both;
     }
 }
 
