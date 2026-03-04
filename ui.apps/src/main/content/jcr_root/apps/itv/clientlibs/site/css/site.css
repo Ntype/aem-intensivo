@@ -1,14 +1,15 @@
 /* 1. RESET Y ESTRUCTURAS FIJAS */
-body, html { margin: 0; padding: 0; }
+body, html { 
+    margin: 0; 
+    padding: 0; 
+}
 
-/* EL CONTENEDOR ROOT (MÁRGENES ARRIBA Y ABAJO) */
-.root.container.aem-Grid, 
-.page > .aem-Grid {
-    background-color: transparent !important; /* Quitamos el verde */
-    width: 100% !important; 
-    margin-top: 60px !important;    /* Espacio con el Header */
-    margin-bottom: 60px !important; /* Espacio con el Footer */
-    display: block !important;
+.cmp-experiencefragment--header{
+    background-color: rgb(79, 153, 244) !important;
+}
+
+.cmp-experiencefragment--footer{
+    background-color: rgb(181, 79, 244) !important;
 }
 
 /* --- COLORES SIEMPRE VISIBLES --- */
@@ -19,10 +20,10 @@ body, html { margin: 0; padding: 0; }
 
 /* EL CONTENEDOR ROSA (Creando el margen interno) */
 .aem-GridColumn--default--6:nth-of-type(2) {
-    background-color: #FFC0CB !important; /* Rosa */
+    background-color: #FFC0CB !important; 
     min-height: 300px;
-    padding: 20px !important;            /* 20px de margen en todos los lados */
-    box-sizing: border-box !important;    /* Vital para que el padding no ensanche el contenedor */
+    padding: 20px !important;      
+    box-sizing: border-box !important;    
 }
 
 /* --- 2. DESKTOP (Hijos al 100% del Root ajustado) --- */
