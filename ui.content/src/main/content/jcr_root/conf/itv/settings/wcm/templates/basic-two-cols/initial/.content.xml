@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:sling="http://sling.apache.org/jcr/sling/1.0"
+    jcr:primaryType="cq:Page">
+    <jcr:content
+        cq:lastModified="{Date}2026-03-04T10:46:02.901+01:00"
+        cq:lastModifiedBy="admin"
+        cq:template="/conf/itv/settings/wcm/templates/basic-two-cols"
+        jcr:primaryType="cq:PageContent"
+        sling:resourceType="itv/components/page">
+        <root
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="itv/components/container"
+            layout="responsiveGrid">
+            <container
+                jcr:lastModified="{Date}2026-03-04T10:44:07.585+01:00"
+                jcr:lastModifiedBy="admin"
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="itv/components/container"
+                layout="responsiveGrid">
+                <container_1732805030
+                    jcr:created="{Date}2026-03-04T10:43:53.375+01:00"
+                    jcr:createdBy="admin"
+                    jcr:lastModified="{Date}2026-03-04T10:45:45.698+01:00"
+                    jcr:lastModifiedBy="admin"
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="itv/components/container"
+                    id="cmp-container-main"
+                    layout="responsiveGrid">
+                    <container
+                        jcr:created="{Date}2026-03-04T10:15:18.232+01:00"
+                        jcr:createdBy="admin"
+                        jcr:lastModified="{Date}2026-03-04T10:24:31.378+01:00"
+                        jcr:lastModifiedBy="admin"
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="itv/components/container"
+                        id="cmp-container-left"
+                        layout="responsiveGrid">
+                        <cq:responsive jcr:primaryType="nt:unstructured">
+                            <default
+                                jcr:primaryType="nt:unstructured"
+                                offset="0"
+                                width="6"/>
+                        </cq:responsive>
+                    </container>
+                    <container_2053469046
+                        jcr:created="{Date}2026-03-04T10:15:39.520+01:00"
+                        jcr:createdBy="admin"
+                        jcr:lastModified="{Date}2026-03-04T10:25:02.651+01:00"
+                        jcr:lastModifiedBy="admin"
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="itv/components/container"
+                        id="cmp-container-right"
+                        layout="responsiveGrid">
+                        <cq:responsive jcr:primaryType="nt:unstructured">
+                            <default
+                                jcr:primaryType="nt:unstructured"
+                                offset="0"
+                                width="6"/>
+                        </cq:responsive>
+                    </container_2053469046>
+                </container_1732805030>
+            </container>
+        </root>
+    </jcr:content>
+</jcr:root>

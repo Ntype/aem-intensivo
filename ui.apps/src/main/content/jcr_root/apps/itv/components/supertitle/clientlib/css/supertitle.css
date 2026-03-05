@@ -1,4 +1,5 @@
 .cmp-supertitle{
+    margin-left: 5%;
     font-family: Arial, Helvetica, sans-serif;
 } 
 
@@ -8,6 +9,15 @@
 
 .cmp-supertitle--times{
     font-family: 'Times New Roman', Times, serif;    
+}
+.cmp-supertitle--size__default{
+    font-size: 40px;
+}
+.cmp-supertitle--size__large{
+    font-size: 65px;
+}
+.cmp-supertitle--size__small{
+    font-size: 25px;
 }
 
 .cmp-supertitle--reveal{
@@ -19,4 +29,21 @@
 .cmp-supertitle--reveal.is-visible{
     opacity: 1;
     transform: translateY(0);
+}
+
+.cmp-supertitle--neon .cmp-title__text {
+    text-align: center;
+    color: rgb(152, 241, 19) !important;
+    background-color: black !important; 
+    text-transform: uppercase;
+    transition: text-shadow 0.3s ease-in-out;
+}
+
+.cmp-supertitle--neon:hover .cmp-title__text{
+    text-shadow: 
+    0 0 5px #fff,
+    0 0 10px #fff,
+    0 0 20px #fff,
+    0 0 30px #2bf403,
+    0 0 40px #2bf403;
 }

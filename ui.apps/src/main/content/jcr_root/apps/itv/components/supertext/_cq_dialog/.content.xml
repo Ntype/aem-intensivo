@@ -1,14 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
-<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0"
-          xmlns:nt="http://www.jcp.org/jcr/nt/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0"
-          xmlns:granite="http://www.adobe.com/jcr/granite/1.0"
-        jcr:primaryType="nt:unstructured"
-        jcr:title="Text"
-        sling:resourceType="cq/gui/components/authoring/dialog"
-        extraClientlibs="[cq.authoring.dialog]"
-        helpPath="https://www.adobe.com/go/aem_cmp_text_v2"
-        trackingFeature="core-components:text:v2">
+<jcr:root xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0" xmlns:granite="http://www.adobe.com/jcr/granite/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:sling="http://sling.apache.org/jcr/sling/1.0"
+    jcr:primaryType="nt:unstructured"
+    jcr:title="Text"
+    sling:resourceType="cq/gui/components/authoring/dialog"
+    extraClientlibs="[cq.authoring.dialog]"
+    helpPath="https://www.adobe.com/go/aem_cmp_text_v2"
+    trackingFeature="core-components:text:v2">
     <content
         jcr:primaryType="nt:unstructured"
         sling:resourceType="granite/ui/components/coral/foundation/container">
@@ -30,8 +27,8 @@
                                 margin="{Boolean}true">
                                 <items jcr:primaryType="nt:unstructured">
                                     <column
-                                        jcr:primaryType="nt:unstructured"
                                         granite:class="cq-RichText-FixedColumn-column"
+                                        jcr:primaryType="nt:unstructured"
                                         sling:resourceType="granite/ui/components/coral/foundation/container">
                                         <items jcr:primaryType="nt:unstructured">
                                             <textTitle
@@ -155,18 +152,16 @@
                                                         </inline>
                                                         <tableEditOptions
                                                             jcr:primaryType="nt:unstructured"
-                                                            toolbar="[table#insertcolumn-before,table#insertcolumn-after,table#removecolumn,-,table#insertrow-before,table#insertrow-after,table#removerow,-,table#mergecells-right,table#mergecells-down,table#mergecells,table#splitcell-horizontal,table#splitcell-vertical,-,table#selectrow,table#selectcolumn,-,table#ensureparagraph,-,table#modifytableandcell,table#removetable,-,undo#undo,undo#redo,-,table#exitTableEditing,-]">
-                                                        </tableEditOptions>
+                                                            toolbar="[table#insertcolumn-before,table#insertcolumn-after,table#removecolumn,-,table#insertrow-before,table#insertrow-after,table#removerow,-,table#mergecells-right,table#mergecells-down,table#mergecells,table#splitcell-horizontal,table#splitcell-vertical,-,table#selectrow,table#selectcolumn,-,table#ensureparagraph,-,table#modifytableandcell,table#removetable,-,undo#undo,undo#redo,-,table#exitTableEditing,-]"/>
                                                     </cui>
                                                 </uiSettings>
                                             </text>
-
                                             <style
+                                                granite:class="cq-dialog-dropdown-showhide"
                                                 jcr:primaryType="nt:unstructured"
                                                 sling:resourceType="granite/ui/components/coral/foundation/form/select"
                                                 fieldLabel="Estilo de Texto"
-                                                name="./style"
-                                                granite:class="cq-dialog-dropdown-showhide">
+                                                name="./style">
                                                 <granite:data
                                                     jcr:primaryType="nt:unstructured"
                                                     cq-dialog-dropdown-showhide-target=".autor-quote-target"/>
@@ -185,11 +180,10 @@
                                                         value="cmp-supertext--disclaimer"/>
                                                 </items>
                                             </style>
-
                                             <authorWrapper
+                                                granite:class="hide autor-quote-target"
                                                 jcr:primaryType="nt:unstructured"
-                                                sling:resourceType="granite/ui/components/coral/foundation/container"
-                                                granite:class="hide autor-quote-target">
+                                                sling:resourceType="granite/ui/components/coral/foundation/container">
                                                 <granite:data
                                                     jcr:primaryType="nt:unstructured"
                                                     showhidetargetvalue="cmp-supertext--quote"/>
@@ -200,14 +194,14 @@
                                                         fieldLabel="Autor de la cita"
                                                         name="./author"/>
                                                 </items>
-                                            </authorWrapper>   
+                                            </authorWrapper>
                                             <id
                                                 jcr:primaryType="nt:unstructured"
                                                 sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
                                                 fieldDescription="HTML ID attribute to apply to the component."
                                                 fieldLabel="ID"
                                                 name="./id"
-												validation="html-unique-id-validator"/>
+                                                validation="html-unique-id-validator"/>
                                         </items>
                                     </column>
                                 </items>
@@ -215,9 +209,9 @@
                         </items>
                     </properties>
                     <styletab
-                            jcr:primaryType="nt:unstructured"
-                            sling:resourceType="granite/ui/components/coral/foundation/include"
-                            path="/mnt/overlay/cq/gui/components/authoring/dialog/style/tab_edit/styletab"/>
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/include"
+                        path="/mnt/overlay/cq/gui/components/authoring/dialog/style/tab_edit/styletab"/>
                 </items>
             </tabs>
         </items>
