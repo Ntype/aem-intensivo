@@ -1,0 +1,101 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --itv-header-bg: #1ecaed;
+    --itv-main-bg: #86ec86;
+    --itv-left-col-bg: #ede160;
+    --itv-right-col-bg: #e82626;
+    --itv-footer-bg: #b646ca;
+}
+
+html, body {
+    background: #f9f5f5;
+    color: #202020;
+}
+
+/* ── HEADER ── */
+.cmp-experiencefragment--header {
+    background-color: var(--itv-header-bg);
+}
+
+/* ── MAIN CONTAINER ── */
+.container-main {
+    max-width: 1600px;
+    margin: 0 160px;
+    padding: 60px 0;
+    background-color: var(--itv-main-bg);
+}
+
+/* ── FLEX EN EL GRID INTERNO ── */
+.container-main .cmp-container > .aem-Grid {
+    display: flex;
+    gap: 16px; 
+}
+
+/* ── COLUMNAS ── */
+.container-left {
+    background-color: var(--itv-left-col-bg);
+}
+
+.container-right {
+    background-color: var(--itv-right-col-bg);
+}
+
+.container-left,
+.container-right {
+    flex: 1 1 0;
+    min-height: 400px;
+    min-width: 0;
+    padding: 24px; 
+}
+
+/* ── FOOTER ── */
+.cmp-experiencefragment--footer {
+    background-color: var(--itv-footer-bg);
+}
+
+/* ── RESPONSIVE: TABLET (hasta 1280px) ── */
+@media (max-width: 1280px) {
+    .container-main {
+        max-width: 100%;
+        margin: 0;
+        padding: 20px 0;
+    }
+
+    .container-main .cmp-container > .aem-Grid {
+        gap: 8px;
+    }
+
+    .container-left,
+    .container-right {
+        min-height: 300px;
+        padding: 16px;
+    }
+}
+
+/* ── RESPONSIVE: MOBILE (hasta 768px) ── */
+@media (max-width: 768px) {
+    .container-main {
+        max-width: 100%;
+        margin: 0;
+        padding: 20px 0;
+    }
+
+    .container-main .cmp-container > .aem-Grid {
+        flex-direction: column;
+        gap: 8px;
+        padding: 0 8px;
+    }
+
+    .container-left,
+    .container-right {
+        flex: 0 0 100% !important;
+        width: 100% !important;
+        min-height: 250px;
+        padding: 12px;
+    }
+}
