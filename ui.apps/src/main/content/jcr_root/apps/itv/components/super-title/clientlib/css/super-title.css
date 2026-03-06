@@ -1,0 +1,30 @@
+.cmp-super-title {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.cmp-super-title--arial {
+  font-family: Arial, Helvetica, sans-serif;
+}
+.cmp-super-title--times {
+  font-family: 'Times New Roman', Times, serif;
+}
+.js-title--scroll-reveal {
+  opacity: 0;
+  transform: translateY(20px);
+  transition:
+    opacity 0.5s ease-out,
+    transform 0.5s ease-out;
+}
+.js-title--scroll-reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+.js-title {
+  display: inline-block;
+  transform-origin: left center;
+  transition: transform 0.3s ease;
+}
+.js-title:hover {
+  display: inline-block;
+  transform: scale(1.2);
+}

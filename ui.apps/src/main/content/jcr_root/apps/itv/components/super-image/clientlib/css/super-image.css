@@ -1,0 +1,34 @@
+.cmp-super-image {
+  overflow: hidden;
+  display: block;
+}
+.cmp-super-image .cmp-image__image {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: transform 0.4s ease-in-out !important;
+}
+.cmp-super-image--zoom:hover .cmp-image__image {
+  transform: scale(1.15) !important;
+}
+.cmp-super-image--shadow-none {
+  box-shadow: none !important;
+}
+.cmp-super-image--shadow-soft {
+  box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.2) !important;
+}
+.cmp-super-image--shadow-strong {
+  box-shadow: 25px 25px 50px rgba(0, 0, 0, 0.3) !important;
+}
+.cmp-super-image--filter-none .cmp-image__image {
+  filter: none !important;
+}
+.cmp-super-image--filter-grayscale .cmp-image__image {
+  filter: grayscale(100%) !important;
+}
+.cmp-super-image--filter-sepia .cmp-image__image {
+  filter: sepia(100%) !important;
+}
+.cmp-super-image--filter-blur .cmp-image__image {
+  filter: blur(5px) !important;
+}
