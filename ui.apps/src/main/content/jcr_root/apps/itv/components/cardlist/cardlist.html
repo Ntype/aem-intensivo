@@ -1,16 +1,32 @@
+<sly data-sly-use.clientlib="/libs/granite/sightly/templates/clientlib.html" 
+     data-sly-call="${clientlib.css @ categories='itv.components.cardlist'}"/>
+
 <sly data-sly-use.model="com.itv.core.models.CardsModel"/>
-<div data-sly-test="${!model.cards}" class="cq-placeholder" data-emptytext="Card List: Añade tarjetas en el diálogo"></div>
-<sly data-sly-list.card="${model.cards}">
-    <div class="cardlist__card ${properties.layout}">
-        <img class="cardlist__image" src="${card.image}" alt="${card.title}"/>
-        <div class="cardlist__content">
-            <h2 class="cardlist__title">${card.title}</h2>
-            <span class="cardlist__author">${card.author}</span>
-            <div class="cardlist__button" data-sly-test="${card.link}">
-                <a href="${card.link}" class="cmp-button">
-                    <span class="cmp-button__text">${card.buttonText}</span>
-                </a>
-            </div>
-        </div>
+
+<div data-sly-test="${!model.cards}" class="cq-placeholder" data-emptytext="Card List: Añade tarjetas"></div>
+
+<div class="cardlist-wrapper" data-sly-test="${model.cards}">
+    <div class="cardlist__container ${properties.layout == 'vertical' ? 'vertical-gap' : 'horizontal-gap'}">
+        
+        <sly data-sly-list.card="${model.cards}">
+            <article class="cardlist__card ${properties.layout}">
+                
+                <div class="cardlist__image-container">
+                    <img class="cardlist__image" src="${card.image}" alt="${card.title}"/>
+                </div>
+                
+                <div class="cardlist__content">
+                    <h2 class="cardlist__title">${card.title}</h2>
+                    <span class="cardlist__author">${card.author}</span>
+                    
+                    <div class="cardlist__button-wrapper" data-sly-test="${card.buttonText}">
+    <a href="${card.link || '#'}" class="cardlist__button">
+        ${card.buttonText}
+    </a>
+</div>
+                </div>
+                
+            </article>
+        </sly>
     </div>
-</sly>
+</div>
