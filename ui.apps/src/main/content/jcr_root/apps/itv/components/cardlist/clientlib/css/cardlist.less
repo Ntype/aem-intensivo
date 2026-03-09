@@ -15,7 +15,7 @@
         max-width: 1544px;
         
         &.vertical-gap { gap: 56px; }
-        &.horizontal-gap { gap: 25px; }
+        &.horizontal-gap { gap: 25px; } // Los 25px que pediste
 
         @media (max-width: 1024px) {
             gap: 20px; 
@@ -24,62 +24,81 @@
         }
     }
 
+    // --- ESTILO VERTICAL (Se mantiene igual) ---
     .cardlist__card.vertical {
-        flex: 0 0 264px; 
+        flex: 0 0 264px;
         width: 264px;
         background: #fff;
         padding: 16px;
         box-sizing: border-box;
         display: flex;
         flex-direction: column;
-        /* MARGEN SUPERIOR: Solo separa del componente de arriba */
-        margin-top: 58px; 
-        
+        margin-top: 58px;
+        border-radius: 15px; // Para que la card también tenga bordes curvos
+
         .cardlist__image-container {
             border-radius: 15px;
             width: 100%;
             height: 170px;
             overflow: hidden;
-            
-            .cardlist__image {
-                width: 100%;
-                height: 100%;
-                object-fit: cover;
-            }
+            .cardlist__image { width: 100%; height: 100%; object-fit: cover; }
         }
-
         .cardlist__content {
-            display: flex;
-            flex-direction: column;
-            flex-grow: 1;
-
-            .cardlist__title {
-                font-size: 18px;
-                font-weight: bold;
-                color: #000000 !important;
-                
-            }
-
-            .cardlist__author {
-                font-size: 14px;
-                color: #000000 !important;
-                margin-bottom: 20px;
-            }
-
-            .cardlist__button-wrapper {
-                margin-top: auto;
-
-                .cardlist__button {
-                    background-color: #000000;
-                    color: #ffffff;
-                    padding: 10px 20px;
-                    text-decoration: none;
-                    display: inline-block;
-                    border-radius: 4px;
-                    text-align: center;
-                    font-weight: bold;
-                }
-            }
+            display: flex; flex-direction: column; flex-grow: 1;
+            .cardlist__title { font-size: 18px; font-weight: bold; color: #000 !important; margin: 15px 0 8px 0; }
+            .cardlist__author { font-size: 14px; color: #000 !important; margin-bottom: 20px; }
+            .cardlist__button-wrapper { margin-top: auto; .cardlist__button { background-color: #000; color: #fff; padding: 10px 20px; text-decoration: none; display: inline-block; border-radius: 4px; text-align: center; font-weight: bold; } }
         }
     }
+
+// --- ESTILO HORIZONTAL (4 tarjetas de 365px, SIN BOTÓN) ---
+.cardlist__card.horizontal {
+    flex: 0 0 365px; 
+    width: 365px;
+    background: #fff;
+    padding: 16px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column; // Mantenemos columna para que el texto vaya DEBAJO
+    margin-top: 58px;
+    border-radius: 15px;
+
+    .cardlist__image-container {
+        width: 100%;
+        height: 120px;   // Reducimos la altura para que sea "alargada"
+        border-radius: 10px;
+        overflow: hidden;
+        margin-bottom: 12px; // Espacio entre imagen y texto
+
+        .cardlist__image { 
+            width: 100%; 
+            height: 100%; 
+            object-fit: cover; // Esto asegura que no se deforme al estirarse
+        }
+    }
+
+    .cardlist__content {
+        display: flex;
+        flex-direction: column;
+        
+        .cardlist__title {
+            font-size: 16px;
+            font-weight: bold;
+            color: #000 !important;
+            margin: 0 0 4px 0;
+            line-height: 1.2;
+        }
+
+        .cardlist__author {
+            font-size: 14px;
+            color: #666 !important; // Un gris oscuro como en la referencia
+            margin: 0;
+        }
+
+        // Ocultamos el botón por completo en este modo
+        .cardlist__button-wrapper {
+            display: none !important;
+        }
+    }
+}
 }
