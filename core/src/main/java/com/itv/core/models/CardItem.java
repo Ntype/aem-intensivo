@@ -20,6 +20,12 @@ public class CardItem {
     @ValueMapValue
     private String author;
 
+    @ValueMapValue
+    private String link;
+
+    @ValueMapValue
+    private String buttonText;
+
     public String getImage() {
         return image;
     }
@@ -30,5 +36,13 @@ public class CardItem {
 
     public String getAuthor() {
         return author;
+    }
+
+    public String getLink() {
+        return link;
+    }
+
+    public String getButtonText() {
+        return buttonText;
     }
 }
