@@ -62,6 +62,23 @@
                                             sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
                                             fieldLabel="Author"
                                             name="./author"/>
+                                        <button
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="granite/ui/components/coral/foundation/form/fieldset"
+                                            jcr:title="Button Settings">
+                                            <items jcr:primaryType="nt:unstructured">
+                                                <link
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+                                                    fieldLabel="Button Link"
+                                                    name="./link"/>
+                                                <text
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                    fieldLabel="Button Text"
+                                                    name="./buttonText"/>
+                                            </items>
+                                        </button>
                                     </items>
                                 </field>
                             </cards>
