@@ -206,7 +206,8 @@
                 </policy_footer>
                 <policy_633036661089400
                     cq:styleDefaultClasses="cmp-header"
-                    jcr:lastModified="{Date}2026-03-03T19:23:49.382+01:00"
+                    cq:styleDefaultElement="header"
+                    jcr:lastModified="{Date}2026-03-10T00:30:19.620+01:00"
                     jcr:lastModifiedBy="admin"
                     jcr:primaryType="nt:unstructured"
                     jcr:title="header-style"
@@ -215,7 +216,8 @@
                 </policy_633036661089400>
                 <policy_633302477952600
                     cq:styleDefaultClasses="cmp-footer"
-                    jcr:lastModified="{Date}2026-03-03T19:24:40.013+01:00"
+                    cq:styleDefaultElement="footer"
+                    jcr:lastModified="{Date}2026-03-10T00:30:38.731+01:00"
                     jcr:lastModifiedBy="admin"
                     jcr:primaryType="nt:unstructured"
                     jcr:title="footer-style"
@@ -297,15 +299,26 @@
                     </cq:authoring>
                 </policy_1575040440977>
                 <policy_1989923683200
-                    jcr:lastModified="{Date}2026-03-04T10:13:43.843+01:00"
+                    cq:styleDefaultClasses="cmp-content"
+                    jcr:lastModified="{Date}2026-03-10T22:26:34.183+01:00"
                     jcr:lastModifiedBy="admin"
                     jcr:primaryType="nt:unstructured"
-                    jcr:title="basic-two-cols container"
+                    jcr:title="content-container"
                     sling:resourceType="wcm/core/components/policy/policy"
-                    components="[/apps/itv/components/container,/apps/itv/components/superimage,/apps/itv/components/supertext,/apps/itv/components/supertitle]"
+                    components="[/apps/itv/components/cardlist,/apps/itv/components/superimage,/apps/itv/components/supertext,/apps/itv/components/supertitle]"
                     layoutDisabled="false">
                     <jcr:content jcr:primaryType="nt:unstructured"/>
                 </policy_1989923683200>
+                <policy_15085087366400
+                    jcr:lastModified="{Date}2026-03-10T14:23:22.819+01:00"
+                    jcr:lastModifiedBy="admin"
+                    jcr:primaryType="nt:unstructured"
+                    jcr:title="itv-container-cardlist"
+                    sling:resourceType="wcm/core/components/policy/policy"
+                    components="group:AEM Intensivo - Content"
+                    layoutDisabled="false">
+                    <jcr:content jcr:primaryType="nt:unstructured"/>
+                </policy_15085087366400>
             </container>
             <teaser jcr:primaryType="nt:unstructured">
                 <policy_1575031387650
@@ -334,12 +347,12 @@
             <page jcr:primaryType="nt:unstructured">
                 <policy
                     jcr:description="Includes the required client libraries."
-                    jcr:lastModified="{Date}2026-03-03T14:17:13.598+01:00"
+                    jcr:lastModified="{Date}2026-03-10T14:16:09.461+01:00"
                     jcr:lastModifiedBy="admin"
                     jcr:primaryType="nt:unstructured"
                     jcr:title="basic-two-cols policy"
                     sling:resourceType="wcm/core/components/policy/policy"
-                    clientlibs="[itv.dependencies,itv.site]"
+                    clientlibs="[itv.dependencies,itv.two-cols]"
                     clientlibsAsync="false"
                     clientlibsJsHead="itv.dependencies">
                     <jcr:content jcr:primaryType="nt:unstructured"/>

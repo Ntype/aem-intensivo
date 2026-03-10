@@ -58,7 +58,7 @@
                                                 <items jcr:primaryType="nt:unstructured">
                                                     <default
                                                         jcr:primaryType="nt:unstructured"
-                                                        text="Default"
+                                                        text="Default (Medium)"
                                                         value="cmp-supertitle--size__default"/>
                                                     <large
                                                         jcr:primaryType="nt:unstructured"

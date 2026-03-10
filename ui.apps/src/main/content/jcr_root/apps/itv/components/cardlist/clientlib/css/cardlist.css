@@ -1,0 +1,98 @@
+.itv-cardlist {
+    width: 100%;
+    margin: 40px 0;
+    font-family: Arial, sans-serif;
+}
+.itv-cardlist__grid {
+    display: grid; /*cambiar por flex*/
+    gap: 24px;
+    width: 100%;
+}
+.itv-cardlist__card {
+    background-color: #f8f9fa;
+    border-radius: 12px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+.itv-cardlist__image {
+    overflow: hidden;
+    width: 100%;
+    display: block;
+    object-fit: cover;
+}
+/*Control de aspect-ratio según distribución del layout*/
+.itv-cardlist--horizontal .itv-cardlist__image {
+    aspect-ratio: 16 / 9;
+}
+.itv-cardlist--vertical .itv-cardlist__image {
+    aspect-ratio: 4 / 3;
+}
+
+.itv-cardlist__content {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+.itv-cardlist__title{
+    font-size: 16px;
+    font-weight: bold;
+    margin: 0 0 8px 0;
+    color: #1e293b;
+}
+.itv-cardlist__author {
+    font-size: 12px;
+    color: #64748b;
+    margin-bottom: 16px;
+}
+.itv-cardlist__action {
+    margin-top: auto; /*Para anclar el botón al final*/
+}
+.itv-cardlist__action .cmp-button {
+    background-color: rgb(69, 69, 193) !important;
+    color: #ffffff !important;
+    border: none !important;
+    border-radius: 24px !important;
+    padding: 6px 20px !important;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+.itv-cardlist__action .cmp-button:hover {
+    background-color: rgb(46, 46, 126) !important;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(37, 99, 235, 0.3);
+}
+
+
+/*Desktop*/
+@media (min-width: 1201px) {
+    .itv-cardlist--vertical .itv-cardlist__grid {
+        grid-template-columns: repeat(5, 1fr);
+    }
+    .itv-cardlist--horizontal .itv-cardlist__grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+/*Tablet*/
+@media (min-width: 600px) and (max-width: 1200px) {
+    .itv-cardlist--vertical .itv-cardlist__grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    .itv-cardlist--horizontal .itv-cardlist__grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+/*Mobile*/
+@media (max-width: 599px) {
+    .itv-cardlist__grid {
+        grid-template-columns: 1fr !important;
+    }
+}

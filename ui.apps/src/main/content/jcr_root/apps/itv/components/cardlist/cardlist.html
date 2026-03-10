@@ -1,0 +1,31 @@
+<sly data-sly-use.model="com.itv.core.models.CardsModel"></sly>
+<sly data-sly-use.templates="core/wcm/components/commons/v1/templates.html"/>
+<sly data-sly-use.clientlib="/libs/granite/sightly/templates/clientlib.html" data-sly-call="${clientlib.all @ categories='itv.components.cardlist'}"></sly>
+
+<sly data-sly-test="${model.cards}">
+      <div class="itv-cardlist itv-cardlist--${properties.layout || 'vertical'}">
+         <div class="itv-cardlist__grid" data-sly-list.card="${model.cards}">
+            <div class="itv-cardlist__card">
+                  <img class="itv-cardlist__image" src="${card.image}" alt="${card.title}"/>
+                  <!--/* Para poder añadir márgenes al texto sin afectar a la imagen - también un wrapper(content) */-->
+                  <div class="itv-cardlist__content">
+                     <h2 class="itv-cardlist__title">${card.title}</h2>
+                     <span class="itv-cardlist__author">By ${card.author}</span>
+                     <!--/* Comprueba si el layout es vertical para incluir el botón. 
+                     Si el layout es horizontal (o no se ha elegido) ignora el bloque */-->
+                     <sly data-sly-test="${properties.layout == 'vertical' || !properties.layout}">
+                        <!--/* Para que todos los botones estén alienados a la misma altura, idependientemente del tamaño del content: action */-->
+                        <div class="itv-cardlist__action">
+                           <!--/*Para renderizar un componente dentro de otro: data-sly-resource.
+                                 itemList.index recoge el num de la interacción para guardar cada botón
+                                 por separado (button-0, button-1, etc.) */-->
+                           <sly data-sly-resource="${'button-' @ appendPath=itemList.index, resourceType='core/wcm/components/button/v2/button'}"></sly>
+                        </div>
+                     </sly>
+                  </div>
+            </div>
+         </div>
+      </div>
+</sly>
+<sly data-sly-call="${templates.placeholder @ isEmpty = !model.cards}"></sly>
+
