@@ -47,14 +47,19 @@ body, .root.container {
 
 @media (min-width: 1025px) {
     .responsivegrid.aem-GridColumn--default--12 {
-        display: block !important;
+        display: flow-root !important;
         margin-top: 40px !important;
-        margin-left: 160px !important;
-        margin-right: 160px !important;
-        width: calc(100% - 320px) !important; 
         float: none !important;
         clear: both;
-        display: flow-root !important; /* esto hace que el padre contenga los floats */
+
+        /*
+          - En 1024px → 16px
+          - Entre 1024px y 1920px → crece linealmente
+          - En 1920px y más → se fija en 160px
+        */
+        margin-left: clamp(16px, 16.071vw - 148.57px, 160px) !important;
+        margin-right: clamp(16px, 16.071vw - 148.57px, 160px) !important;
+        width: calc(100% - clamp(32px, 32.143vw - 297.14px, 320px)) !important;
     }
 }
 

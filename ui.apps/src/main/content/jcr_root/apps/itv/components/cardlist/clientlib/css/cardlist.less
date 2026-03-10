@@ -8,7 +8,6 @@
     .cardlist__container {
         display: flex !important;
         flex-direction: row !important;
-        // ACTIVADO SIEMPRE: Permite que las fotos bajen una a una según toca el borde
         flex-wrap: wrap !important; 
         justify-content: flex-start; 
         align-items: stretch;
@@ -18,20 +17,25 @@
         // Así en 1920px caben todas en una fila, pero si bajas de 1544px, empiezan a saltar.
         max-width: 1544px; 
         
-        &.vertical-gap { gap: 56px; }
-        &.horizontal-gap { gap: 25px; }
+        &.vertical-gap { 
+            gap: 56px; 
+        }
 
-        // --- AJUSTES PARA TABLET/MÓVIL ---
+        &.horizontal-gap { 
+            gap: 25px; 
+        }
+
+        // --- AJUSTES PARA TABLET ---
         @media (max-width: 1024px) {
             // En 1024px, por matemáticas (264*3 + 56*2 = 904px), 
             // cabrán 3 arriba y las otras 2 bajarán solas.
             
             &.vertical-gap {
-                justify-content: flex-start; // Se mantienen a la izquierda
+                justify-content: flex-start;
             }
 
             &.horizontal-gap {
-                justify-content: center; // Las horizontales sí se centran
+                justify-content: center;
             }
         }
 
@@ -52,7 +56,7 @@
         box-sizing: border-box;
         display: flex;
         flex-direction: column;
-        margin-top: 58px; // El margen superior que pediste
+        margin-top: 58px;
         border-radius: 15px;
 
         .cardlist__image-container {
@@ -60,16 +64,46 @@
             width: 100%;
             height: 170px;
             overflow: hidden;
-            .cardlist__image { width: 100%; height: 100%; object-fit: cover; }
+
+            .cardlist__image { 
+                width: 100%; 
+                height: 100%; 
+                object-fit: cover; 
+            }
         }
         
         .cardlist__content {
-            display: flex; flex-direction: column; flex-grow: 1;
-            .cardlist__title { font-size: 18px; font-weight: bold; color: #000; margin: 15px 0 8px 0; }
-            .cardlist__author { font-size: 14px; color: #000; margin-bottom: 20px; }
+            display: flex; 
+            flex-direction: column; 
+            flex-grow: 1;
+
+            .cardlist__title { 
+                font-size: 18px; 
+                font-weight: bold; 
+                color: #000; 
+                margin: 15px 0 8px 0; 
+            }
+
+            .cardlist__author { 
+                font-size: 14px; 
+                color: #000; 
+                margin-bottom: 20px; 
+            }
+
             .cardlist__button-wrapper { 
                 margin-top: auto; 
-                .cardlist__button { background-color: #000; color: #fff; padding: 10px 20px; text-decoration: none; display: inline-block; border-radius: 4px; text-align: center; font-weight: bold; width: 100%; box-sizing: border-box; } 
+                .cardlist__button { 
+                    background-color: #000; 
+                    color: #fff; 
+                    padding: 10px 20px; 
+                    text-decoration: none; 
+                    display: inline-block; 
+                    border-radius: 4px; 
+                    text-align: center; 
+                    font-weight: bold; 
+                    width: 100%; 
+                    box-sizing: border-box; 
+                } 
             }
         }
     }
@@ -92,15 +126,35 @@
             border-radius: 10px;
             overflow: hidden;
             margin-bottom: 12px;
-            .cardlist__image { width: 100%; height: 100%; object-fit: cover; }
+
+            .cardlist__image { 
+                width: 100%; 
+                height: 100%; 
+                object-fit: cover; 
+            }
         }
 
         .cardlist__content {
             display: flex;
             flex-direction: column;
-            .cardlist__title { font-size: 16px; font-weight: bold; color: #000; margin: 0 0 4px 0; line-height: 1.2; }
-            .cardlist__author { font-size: 14px; color: #666; margin: 0; }
-            .cardlist__button-wrapper { display: none !important; }
+
+            .cardlist__title { 
+                font-size: 16px; 
+                font-weight: bold; 
+                color: #000; 
+                margin: 0 0 4px 0; 
+                line-height: 1.2; 
+            }
+
+            .cardlist__author { 
+                font-size: 14px; 
+                color: #666; 
+                margin: 0; 
+            }
+
+            .cardlist__button-wrapper { 
+                display: none !important; 
+            }
         }
     }
 }
