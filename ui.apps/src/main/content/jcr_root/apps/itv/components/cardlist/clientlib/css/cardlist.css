@@ -1,0 +1,132 @@
+/* ========== CONTENEDOR GENERAL ========== */
+.cardlist {
+    width: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+/* ========== LAYOUT VERTICAL ========== */
+.cardlist--vertical {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 24px;
+}
+
+.cardlist--vertical .cardlist__card {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    background: #fff;
+}
+
+.cardlist--vertical .cardlist__image {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 4/3;
+    object-fit: cover;
+    border-radius: 8px;
+    display: block;
+}
+
+.cardlist--vertical .cardlist__title {
+    font-size: 16px;
+    font-weight: 600;
+    margin: 0;
+    line-height: 1.4;
+    color: #000;
+}
+
+.cardlist--vertical .cardlist__author {
+    font-size: 14px;
+    font-weight: 400;
+    color: #666;
+    margin: 0;
+    line-height: 1.4;
+}
+
+.cardlist--vertical .cardlist__button {
+    margin-top: 8px;
+}
+
+/* ========== LAYOUT HORIZONTAL ========== */
+.cardlist--horizontal {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.cardlist--horizontal .cardlist__card {
+    display: flex;
+    flex-direction: row;
+    gap: 16px;
+    align-items: flex-start;
+    background: #fff;
+}
+
+.cardlist--horizontal .cardlist__image {
+    width: 240px;
+    height: 240px;
+    object-fit: cover;
+    border-radius: 8px;
+    flex-shrink: 0;
+    display: block;
+}
+
+.cardlist--horizontal .cardlist__title {
+    font-size: 18px;
+    font-weight: 600;
+    margin: 0 0 8px 0;
+    line-height: 1.4;
+    color: #000;
+}
+
+.cardlist--horizontal .cardlist__author {
+    font-size: 14px;
+    font-weight: 400;
+    color: #666;
+    margin: 0;
+    line-height: 1.4;
+}
+
+/* ========== RESPONSIVE - TABLET (3 columnas) ========== */
+@media (max-width: 1024px) {
+    .cardlist--vertical {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+    }
+}
+
+/* ========== RESPONSIVE - MOBILE (1 columna) ========== */
+@media (max-width: 768px) {
+    /* Vertical se convierte en 1 columna */
+    .cardlist--vertical {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+    
+    /* Horizontal se convierte en vertical también */
+    .cardlist--horizontal .cardlist__card {
+        flex-direction: column;
+    }
+    
+    .cardlist--horizontal .cardlist__image {
+        width: 100%;
+        height: auto;
+        aspect-ratio: 4/3;
+    }
+    
+    .cardlist--horizontal .cardlist__title {
+        font-size: 16px;
+    }
+}
+
+/* ========== AJUSTES PARA CORE COMPONENT BUTTON ========== */
+.cardlist__button .cmp-button {
+    width: auto;
+    display: inline-block;
+}
+
+.cardlist__button .cmp-button__text {
+    font-size: 14px;
+    padding: 8px 16px;
+}
