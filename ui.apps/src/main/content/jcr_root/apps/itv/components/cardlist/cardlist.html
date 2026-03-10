@@ -21,9 +21,10 @@
           <span class="cardlist__author">${card.author}</span>
 
           <div class="cardlist__button-wrapper"
-            data-sly-test="${properties.layout == 'vertical' && card.buttonText}">
+               data-sly-test="${properties.layout == 'vertical'}">
             
-            <a href="${card.link}" class="cardlist__button">${card.buttonText}</a>
+            <sly data-sly-resource="${'button-{0}' @ format=[cardList.index], resourceType='core/wcm/components/button/v2/button'}"></sly>
+            
           </div>
         </div>
       </article>
