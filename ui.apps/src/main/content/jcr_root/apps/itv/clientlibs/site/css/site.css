@@ -1,8 +1,20 @@
 /* 1. RESET Y ESTRUCTURAS FIJAS */
-body, .root.container {
+body{
+    min-width: 393px !important; /* Fuerza el suelo de la pantalla */
+    margin: 0 !important;
+    padding: 0 !important;
+    background-color: white !important;
+    overflow-x: auto !important; /* Permite el scroll horizontal cuando bajas de 393px */
+    position: relative;
+    width: 100%;
+}
+
+
+.root.container {
     margin-top: 0 !important;
     padding-top: 0 !important;
     background-color: white !important;
+    min-width: 100%;
 }
 
 .cmp-experiencefragment--header {

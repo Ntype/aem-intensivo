@@ -4,6 +4,7 @@
     justify-content: center;
     padding: 0 20px;
     box-sizing: border-box;
+    min-width: 393px;
 
     .cardlist__container {
         display: flex !important;
@@ -12,23 +13,22 @@
         justify-content: flex-start; 
         align-items: stretch;
         width: 100%;
-        
-        // El max-width es la clave: 5 cards (264px) + 4 gaps (56px) = 1544px
-        // Así en 1920px caben todas en una fila, pero si bajas de 1544px, empiezan a saltar.
-        max-width: 1544px; 
+        max-width: 1544px; // 5 cards (264px) + 4 gaps (56px) = 1544px Así en 1920px caben todas en una fila, pero si bajas de 1544px, empiezan a saltar.
         
         &.vertical-gap { 
-            gap: 56px; 
+            gap: 56px;
+            row-gap: 56px; 
+            justify-content: flex-start;
         }
 
         &.horizontal-gap { 
             gap: 25px; 
+            row-gap: 25px;
+            justify-content: center;
         }
 
-        // --- AJUSTES PARA TABLET ---
+        // --- AJUSTES PARA TABLET (En 1024px (264*3 + 56*2 = 904px) entran 3 arriba y las 2 abajo) ---
         @media (max-width: 1024px) {
-            // En 1024px, por matemáticas (264*3 + 56*2 = 904px), 
-            // cabrán 3 arriba y las otras 2 bajarán solas.
             
             &.vertical-gap {
                 justify-content: flex-start;
@@ -39,11 +39,11 @@
             }
         }
 
+        // --- AJUSTES PARA MOVIL (bajaN y hacen scroll) ---
         @media (max-width: 392px) {
-            // Si en móvil quieres que dejen de bajar y hagan scroll:
             flex-wrap: nowrap !important;
             overflow-x: auto;
-            padding-bottom: 20px;
+            padding-bottom: 9px;
         }
     }
 
@@ -92,16 +92,17 @@
 
             .cardlist__button-wrapper { 
                 margin-top: auto; 
+
                 .cardlist__button { 
-                    background-color: #000; 
+                    background-color: #46b0ee; 
                     color: #fff; 
                     padding: 10px 20px; 
                     text-decoration: none; 
                     display: inline-block; 
-                    border-radius: 4px; 
+                    border-radius: 20px; 
                     text-align: center; 
                     font-weight: bold; 
-                    width: 100%; 
+                    width: 50%; 
                     box-sizing: border-box; 
                 } 
             }
