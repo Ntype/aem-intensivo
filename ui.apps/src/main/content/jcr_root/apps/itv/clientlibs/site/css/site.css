@@ -32,6 +32,7 @@ body{
 .aem-GridColumn--default--6:nth-of-type(1) {
     background-color: #f1f170 !important;
     min-height: 300px;
+    margin-bottom: 58px !important;
 }
 
 /* EL CONTENEDOR ROSA (Creando el margen interno) */
@@ -40,6 +41,7 @@ body{
     min-height: 300px;
     padding: 20px !important;      
     box-sizing: border-box !important;    
+    margin-bottom: 58px !important;
 }
 
 /* --- CONFIGURACIÓN DEL CONTENEDOR PADRE (12 COL) --- */
@@ -49,6 +51,7 @@ body{
     box-sizing: border-box !important; /* Obligatorio para que el padding no rompa el ancho en móvil */
     background-color: #90ee90 !important; 
     display: block !important;
+    margin-bottom: 58px !important; /* Para que el footer no se pegue al contenedor verde */
 }
 
 /* ✅ Para que el grid NO se “coma” el padding con gutters */

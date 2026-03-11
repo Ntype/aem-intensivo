@@ -2,9 +2,10 @@
     width: 100%;
     display: flex;
     justify-content: center;
-    padding: 0 20px;
+    padding: 0;
     box-sizing: border-box;
     min-width: 393px;
+   margin-bottom: 68px !important; 
 
     .cardlist__container {
         display: flex !important;
@@ -39,6 +40,15 @@
             }
         }
 
+        @media (max-width: 655px) {
+        justify-content: center !important; // Fuerza el centrado de la columna única
+        
+        .cardlist__card.vertical {
+            margin-left: auto;
+            margin-right: auto;
+        }
+    }
+
         // --- AJUSTES PARA MOVIL (bajaN y hacen scroll) ---
         @media (max-width: 392px) {
             flex-wrap: nowrap !important;
@@ -56,7 +66,6 @@
         box-sizing: border-box;
         display: flex;
         flex-direction: column;
-        margin-top: 58px;
         border-radius: 15px;
 
         .cardlist__image-container {
@@ -95,8 +104,9 @@
                 display: flex;
                 justify-content: flex-start; 
                 width: 100%;
+                
 
-                // Apuntamos al componente de Core
+                // Componente del Core
                 .cmp-button { 
                     background-color: #46b0ee; 
                     color: #fff; 
@@ -115,7 +125,6 @@
                         background-color: darken(#46b0ee, 20%);
                     }
 
-                    // Importante: El Core Component suele meter un span interno para el texto
                     .cmp-button__text {
                         color: #fff;
                         font-size: 14px;
@@ -127,22 +136,22 @@
 
     // --- CARD HORIZONTAL (Tamaño Fijo) ---
     .cardlist__card.horizontal {
-        flex: 0 0 365px;
-        width: 365px;
-        background: #fff;
-        padding: 16px;
-        box-sizing: border-box;
-        display: flex;
-        flex-direction: column;
-        margin-top: 58px;
-        border-radius: 15px;
+    flex: 0 0 365px;
+    width: 365px;
+    background: #fff;
+    padding: 16px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    //margin-top: 58px;
+    border-radius: 15px;
 
         .cardlist__image-container {
-            width: 100%;
-            height: 120px;
+            width: 100%; // Ancho fijo para la imagen en modo horizontal
+            height: 120px; // Ocupa todo el alto de la card
             border-radius: 10px;
             overflow: hidden;
-            margin-bottom: 12px;
+            margin-bottom: 12px; // Eliminado el margen inferior del modo vertical
 
             .cardlist__image { 
                 width: 100%; 
@@ -154,9 +163,10 @@
         .cardlist__content {
             display: flex;
             flex-direction: column;
+            //justify-content: center;
 
             .cardlist__title { 
-                font-size: 24px; 
+                font-size: 24px; // Ajustado un poco el tamaño para el formato horizontal
                 font-weight: bold; 
                 color: #000; 
                 margin: 0 0 4px 0; 
