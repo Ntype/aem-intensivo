@@ -1,0 +1,90 @@
+/* 1. RESET Y ESTRUCTURAS FIJAS */
+body, .root.container {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+    background-color: white !important;
+}
+
+.cmp-experiencefragment--header {
+    background-color: rgb(79, 153, 244) !important;
+    position: relative;
+    z-index: 10; /* Asegura que el header esté por encima si hay solape */
+    margin: 0 !important;
+}
+
+.cmp-experiencefragment--footer{
+    background-color: rgb(181, 79, 244) !important;
+}
+
+/* --- COLORES SIEMPRE VISIBLES --- */
+.aem-GridColumn--default--6:nth-of-type(1) {
+    background-color: #f1f170 !important;
+    min-height: 300px;
+}
+
+/* EL CONTENEDOR ROSA (Creando el margen interno) */
+.aem-GridColumn--default--6:nth-of-type(2) {
+    background-color: #FFC0CB !important; 
+    min-height: 300px;
+    padding: 20px !important;      
+    box-sizing: border-box !important;    
+}
+
+/* --- CONFIGURACIÓN DEL CONTENEDOR PADRE (12 COL) --- */
+/* ✅ El padding va al contenedor real del contenido */
+.container.responsivegrid.aem-GridColumn--default--12 > .cmp-container {
+    padding: 60px 20px !important; /* Mantiene el aire arriba, abajo y a los lados */
+    box-sizing: border-box !important; /* Obligatorio para que el padding no rompa el ancho en móvil */
+    background-color: #90ee90 !important; 
+    display: block !important;
+}
+
+/* ✅ Para que el grid NO se “coma” el padding con gutters */
+.container.responsivegrid.aem-GridColumn--default--12 > .cmp-container > .aem-Grid {
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+}
+
+@media (min-width: 1025px) {
+    .responsivegrid.aem-GridColumn--default--12 {
+        display: block !important;
+        margin-top: 40px !important;
+        margin-left: 160px !important;
+        margin-right: 160px !important;
+        width: calc(100% - 320px) !important; 
+        float: none !important;
+        clear: both;
+        display: flow-root !important; /* esto hace que el padre contenga los floats */
+    }
+}
+
+/* --- 3. TABLET (Márgenes de 16px en el contenedor padre) --- */
+@media (max-width: 1024px) and (min-width: 769px) {
+    .responsivegrid.aem-GridColumn--default--12 {
+        /* Mantenemos tus márgenes de 16px */
+        margin-left: 16px !important;
+        margin-right: 16px !important;
+        width: calc(100% - 32px) !important;
+        
+        /* Quitamos el margin-top para que el padding del contenedor verde haga su trabajo */
+        margin-top: 0 !important; 
+    }
+}
+
+/* --- 4. MÓVIL (Apilados y 16px en el contenedor padre) --- */
+@media (max-width: 768px) {
+    .responsivegrid.aem-GridColumn--default--12 {
+        margin-left: 16px !important;
+        margin-right: 16px !important;
+        width: calc(100% - 32px) !important;
+        
+        /* Quitamos el margin-top para que el padding del contenedor verde haga su trabajo */
+        margin-top: 0 !important; 
+    }
+
+    .aem-GridColumn--default--6 {
+        /* Aseguramos que el bloque hijo no ignore el padding del padre */
+        width: 100% !important;
+        margin: 10px 0 !important; 
+    }
+}
