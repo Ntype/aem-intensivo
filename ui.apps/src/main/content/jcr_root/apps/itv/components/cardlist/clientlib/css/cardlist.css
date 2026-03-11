@@ -4,48 +4,51 @@
     font-family: Arial, sans-serif;
 }
 .itv-cardlist__grid {
-    display: grid; /*cambiar por flex*/
-    gap: 24px;
+    display: grid;
     width: 100%;
+    justify-content: center;
 }
 .itv-cardlist__card {
-    background-color: #f8f9fa;
-    border-radius: 12px;
-    overflow: hidden;
+    box-sizing: border-box;
     display: flex;
-    flex-direction: column;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    flex-direction: column;    
+    border-radius: 16px;    
+    box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+    max-width: 100% !important;
 }
-.itv-cardlist__image {
-    overflow: hidden;
+.itv-cardlist__image-wrapper {
     width: 100%;
-    display: block;
-    object-fit: cover;
+    overflow: hidden;
+    border-radius: 16px !important;
+    flex-shrink: 0 !important;
 }
-/*Control de aspect-ratio según distribución del layout*/
-.itv-cardlist--horizontal .itv-cardlist__image {
-    aspect-ratio: 16 / 9;
-}
-.itv-cardlist--vertical .itv-cardlist__image {
-    aspect-ratio: 4 / 3;
-}
+.itv-cardlist__image {   
+    display: block !important;
+    width: 100% !important;
+    height: 100% !important;
+    min-width: 100% !important;
+    min-height: 100% !important;
 
+    object-fit: cover !important;
+    object-position: center !important;
+}
 .itv-cardlist__content {
-    padding: 20px;
+    box-sizing: border-box;
     display: flex;
     flex-direction: column;
-    flex-grow: 1;
+    width: 100% !important;
 }
 .itv-cardlist__title{
     font-size: 16px;
-    font-weight: bold;
-    margin: 0 0 8px 0;
-    color: #1e293b;
+    font-weight: 700;
+    line-height: 1.3;
+    margin: 0 0 4px 0;
+    color: #000000;
 }
 .itv-cardlist__author {
-    font-size: 12px;
-    color: #64748b;
-    margin-bottom: 16px;
+    font-size: 13px;
+    color: #6b7280;
+    margin-bottom: auto;
 }
 .itv-cardlist__action {
     margin-top: auto; /*Para anclar el botón al final*/
@@ -54,45 +57,76 @@
     background-color: rgb(69, 69, 193) !important;
     color: #ffffff !important;
     border: none !important;
-    border-radius: 24px !important;
-    padding: 6px 20px !important;
-    font-size: 14px;
-    font-weight: bold;
+    border-radius: 12.5px !important;
+    width: 94px !important;
+    height: 25px !important;
+    padding: 0 !important;
+    font-size: 11px;
+    font-weight: 600;
     cursor: pointer;
     text-decoration: none;
     display: inline-flex;
     justify-content: center;
     align-items: center;
-    transition: background-color 0.3s ease, transform 0.2s ease;
+    transition: opacity 0.2s;
 }
 .itv-cardlist__action .cmp-button:hover {
-    background-color: rgb(46, 46, 126) !important;
-    transform: translateY(-2px);
-    box-shadow: 0 4px 8px rgba(37, 99, 235, 0.3);
+    opacity: 0.8;
 }
 
+.itv-cardlist--vertical .itv-cardlist__grid {
+    grid-template-columns: repeat(auto-fit, 264px);
+    gap: 56px;
+}
+.itv-cardlist--vertical .itv-cardlist__card {
+    background-color: #f8f9fa;
+    padding: 16px;
+    width: 264px !important;
+    height: 354px !important;
+}
+.itv-cardlist--vertical .itv-cardlist__image-wrapper {
+    height: 176px !important;
+}
+.itv-cardlist--vertical .itv-cardlist__content {
+    height: 130px;
+    padding: 16px 0 0 0;
+}
 
-/*Desktop*/
-@media (min-width: 1201px) {
-    .itv-cardlist--vertical .itv-cardlist__grid {
-        grid-template-columns: repeat(5, 1fr);
-    }
-    .itv-cardlist--horizontal .itv-cardlist__grid {
-        grid-template-columns: repeat(4, 1fr);
-    }
+.itv-cardlist--horizontal .itv-cardlist__grid {
+    grid-template-columns: repeat(auto-fit, 365px);
+    gap: 25px;
 }
-/*Tablet*/
-@media (min-width: 600px) and (max-width: 1200px) {
-    .itv-cardlist--vertical .itv-cardlist__grid {
-        grid-template-columns: repeat(3, 1fr);
-    }
-    .itv-cardlist--horizontal .itv-cardlist__grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
+.itv-cardlist--horizontal .itv-cardlist__card {
+    background-color: #f8f9fa;
+    padding: 16px;
+    width: 365px !important;
+    height: 277px !important;
 }
+.itv-cardlist--horizontal .itv-cardlist__image-wrapper {
+    height: 181px !important;
+}
+.itv-cardlist--horizontal .itv-cardlist__content {
+    height: 64px;
+    padding: 8px 0 0 0;
+}
+/*Desktop y tablet comparten configuración - ya en general*/
 /*Mobile*/
 @media (max-width: 599px) {
-    .itv-cardlist__grid {
-        grid-template-columns: 1fr !important;
+    .itv-cardlist--vertical .itv-cardlist__grid {
+        grid-template-columns: repeat(auto-fit, minmax(240px, 264px));
+    }
+    .itv-cardlist--horizontal .itv-cardlist__grid {
+        grid-template-columns: repeat(auto-fit, minmax(280px, 361px));        
+    }
+
+    .itv-cardlist--horizontal .itv-cardlist__card {
+        padding: 14px !important;
+        width: 361px !important;
+        height: auto !important;
+        min-height: 274px;
+    }
+    .itv-cardlist--horizontal .itv-cardlist__image-wrapper {
+        height: auto !important;
+        aspect-ratio: 333 / 181;
     }
 }

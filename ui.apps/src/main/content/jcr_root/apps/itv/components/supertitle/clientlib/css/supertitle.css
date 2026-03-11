@@ -26,24 +26,61 @@
     transition: opacity 0.8s ease-out, transform 0.8s ease-out;
 }
 
-.cmp-supertitle--reveal.is-visible{
+.cmp-supertitle--reveal.is-visible {
     opacity: 1;
     transform: translateY(0);
 }
-
-.cmp-supertitle--neon .cmp-title__text {
+.cmp-supertitle--neon {
     text-align: center;
-    color: rgb(152, 241, 19) !important;
-    background-color: black !important; 
-    text-transform: uppercase;
-    transition: text-shadow 0.3s ease-in-out;
+    padding: 50px 0;
 }
 
-.cmp-supertitle--neon:hover .cmp-title__text{
-    text-shadow: 
-    0 0 5px #fff,
-    0 0 10px #fff,
-    0 0 20px #fff,
-    0 0 30px #2bf403,
-    0 0 40px #2bf403;
+.cmp-supertitle--neon .cmp-title__text {
+    display: block;
+    padding: 0;
+    background: none; 
+    border-radius: 0;
+
+    font-family: Arial, Helvetica, sans-serif; 
+    text-transform: uppercase;
+    font-weight: bold;
+    transition: text-shadow 0.3s ease-in-out, transform 0.3s ease;
+
+    text-shadow:
+    2px 2px 0 #000, -2px -2px 0 #000, 2px -2px 0 #000, -2px 2px 0 #000,
+    0 0 15px #000, 0 0 20px #000;
+}
+
+.cmp-supertitle--neon:hover .cmp-title__text {
+    transform: scale(1.03);
+
+    -webkit-text-fill-color: transparent;
+
+    text-shadow:
+    0 0 1px #fff,
+    0 0 6px #fff,
+    0 0 8px #fff,
+    0 0 12px currentColor, 
+    0 0 12px currentColor,
+    0 0 15px currentColor, 
+    0 0 15px currentColor,
+    0 0 20px currentColor, 
+    0 0 20px currentColor,
+    0 0 30px currentColor, 
+    0 0 30px currentColor,
+    0 0 35px currentColor,
+        
+    2px 2px 0 #000, -2px -2px 0 #000, 2px -2px 0 #000, -2px 2px 0 #000,
+    0 2px 0 #000, 0 -2px 0 #000, 2px 0 0 #000, -2px 0 0 #000,
+    0 0 15px #000, 
+    0 0 15px #000,  
+    0 0 20px #000, 
+    0 0 20px #000,
+    0 0 30px #000, 
+    0 0 30px #000,
+    0 0 50px #000,
+    0 0 50px #000,
+    0 0 60px #000;
+
+
 }
