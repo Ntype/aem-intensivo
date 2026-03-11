@@ -1,0 +1,25 @@
+<sly data-sly-use.model="com.itv.core.models.CardsModel"/>
+<sly data-sly-use.clientlib="/libs/granite/sightly/templates/clientlib.html"/>
+<sly data-sly-call="${clientlib.css @ categories='itv.components.cardlist'}"/>
+
+<div class="cardlist cardlist--${properties.layout}">
+    <sly data-sly-list.card="${model.cards}">
+        
+        <div class="cardlist__card">
+            <img class="cardlist__image" src="${card.image}" alt="${card.title}"/>
+            
+            <div class="cardlist__content">
+                <h2 class="cardlist__title">${card.title}</h2>
+                <span class="cardlist__author">${card.author}</span>
+                
+                <!-- Botón SOLO en vertical -->
+                <sly data-sly-test="${properties.layout == 'vertical' && properties.showButtons}">
+                    <div class="cardlist__button">
+                        <sly data-sly-resource="${cardList.index @ resourceType='core/wcm/components/button/v2/button'}"></sly>
+                    </div>
+                </sly>
+            </div>
+        </div>
+        
+    </sly>
+</div>

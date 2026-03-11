@@ -15,87 +15,102 @@
 html, body {
     background: #f9f5f5;
     color: #202020;
+    min-width: 393px;
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+    width: 100%;
 }
 
-/* ── HEADER ── */
 .cmp-experiencefragment--header {
     background-color: var(--itv-header-bg);
 }
 
-/* ── MAIN CONTAINER ── */
 .container-main {
-    max-width: 1600px;
-    margin: 0 160px;
-    padding: 60px 0;
+    padding: 60px 20px;
     background-color: var(--itv-main-bg);
+    box-sizing: border-box;
+    margin-bottom: 0;
+    width: 100%;
+    max-width: 100%;
 }
 
-/* ── FLEX EN EL GRID INTERNO ── */
 .container-main .cmp-container > .aem-Grid {
-    display: flex;
-    gap: 16px; 
+    display: block;
+    margin-left: 0;
+    margin-right: 0;
+    width: 100%;
+    max-width: 100%;
 }
 
-/* ── COLUMNAS ── */
 .container-left {
     background-color: var(--itv-left-col-bg);
+    min-height: 400px;
+    padding: 24px;
+    margin-bottom: 16px;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 .container-right {
     background-color: var(--itv-right-col-bg);
+    min-height: 400px; /* Desktop: altura mínima */
+    padding: 24px;
+    margin-bottom: 16px;
+    width: 100%;
+    box-sizing: border-box;
 }
 
-.container-left,
-.container-right {
-    flex: 1 1 0;
-    min-height: 400px;
-    min-width: 0;
-    padding: 24px; 
-}
-
-/* ── FOOTER ── */
 .cmp-experiencefragment--footer {
     background-color: var(--itv-footer-bg);
 }
 
-/* ── RESPONSIVE: TABLET (hasta 1280px) ── */
-@media (max-width: 1280px) {
+@media (min-width: 1025px) {
     .container-main {
-        max-width: 100%;
-        margin: 0;
-        padding: 20px 0;
-    }
-
-    .container-main .cmp-container > .aem-Grid {
-        gap: 8px;
-    }
-
-    .container-left,
-    .container-right {
-        min-height: 300px;
-        padding: 16px;
+        margin-left: clamp(16px, 16.071vw - 148.57px, 160px) !important;
+        margin-right: clamp(16px, 16.071vw - 148.57px, 160px) !important;
+        width: calc(100% - clamp(32px, 32.143vw - 297.14px, 320px)) !important;
+        margin-top: 40px;
     }
 }
 
-/* ── RESPONSIVE: MOBILE (hasta 768px) ── */
-@media (max-width: 768px) {
+@media (max-width: 1024px) and (min-width: 769px) {
     .container-main {
-        max-width: 100%;
-        margin: 0;
-        padding: 20px 0;
-    }
-
-    .container-main .cmp-container > .aem-Grid {
-        flex-direction: column;
-        gap: 8px;
-        padding: 0 8px;
+        margin-left: 16px !important;
+        margin-right: 16px !important;
+        width: calc(100% - 32px) !important;
+        margin-top: 0;
+        padding: 20px;
     }
 
     .container-left,
     .container-right {
-        flex: 0 0 100% !important;
-        width: 100% !important;
-        min-height: 250px;
+        min-height: 200px; /* REDUCIDO en tablet */
+        padding: 16px;
+        margin-bottom: 8px;
+    }
+}
+
+@media (max-width: 768px) {
+    .container-main {
+        margin-left: 16px !important;
+        margin-right: 16px !important;
+        width: calc(100% - 32px) !important;
+        margin-top: 0;
+        padding: 20px;
+    }
+
+    .container-main .cmp-container > .aem-Grid {
+        display: block !important;
+        flex-direction: column !important;
+    }
+
+    .container-left,
+    .container-right {
+        min-height: 100px; /* REDUCIDO en móvil */
         padding: 12px;
+        margin-bottom: 8px;
+        width: 100% !important;
+        flex: none !important;
     }
 }
