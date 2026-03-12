@@ -88,6 +88,31 @@ module.exports = {
           ignore: ['**/*.js', '**/*.css']
         }
       }
-    }
+    },
+    {
+      ...libsBaseConfig,
+      name: 'clientlib-nueva',
+      categories: ['itv.nueva'],
+      dependencies: ['itv.dependencies'],
+      assets: {
+        js: {
+          cwd: 'clientlib-nueva',
+          files: ['**/*.js'],
+          flatten: false
+        },
+        css: {
+          cwd: 'clientlib-nueva',
+          files: ['**/*.css'],
+          flatten: false
+        },
+
+        resources: {
+          cwd: 'clientlib-nueva',
+          files: ['**/*.*'],
+          flatten: false,
+          ignore: ['**/*.js', '**/*.css']
+        }
+      }
+    },
   ]
 };

@@ -1,9 +1,13 @@
 <sly data-sly-use.model="com.itv.core.models.CardsModel"/>
 
-<sly data-sly-list.card="${model.cards}">
-    <div class="cardlist__card ${properties.layout}">
-        <img class="cardlist__image" src="${card.image}" alt="${card.title}"/>
-        <h2 class="cardlist__title">${card.title}</h2>
-        <span class="cardlist__author">${card.author}</span>
+<div class="swiper">
+    <div class="swiper-wrapper">
+        <sly data-sly-list.card="${model.cards}">
+            <div class="cardlist__card swiper-slide ${properties.layout}">
+                <img class="cardlist__image" src="${card.image}" alt="${card.title}"/>
+                <h2 class="cardlist__title">${card.title}</h2>
+                <span class="cardlist__author">${card.author}</span>
+            </div>
+        </sly>
     </div>
-</sly>
+</div>

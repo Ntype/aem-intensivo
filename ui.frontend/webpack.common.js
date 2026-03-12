@@ -19,11 +19,12 @@ const resolve = {
 module.exports = {
     resolve: resolve,
     entry: {
-        site: SOURCE_ROOT + '/site/main.ts'
+        site: SOURCE_ROOT + '/site/main.ts',
+        nueva: SOURCE_ROOT + '/nueva/main.ts',
     },
     output: {
         filename: (chunkData) => {
-            return chunkData.chunk.name === 'dependencies' ? 'clientlib-dependencies/[name].js' : 'clientlib-site/[name].js';
+            return chunkData.chunk.name === 'dependencies' ? 'clientlib-dependencies/[name].js' : 'clientlib-[name]/[name].js';
         },
         path: path.resolve(__dirname, 'dist')
     },
@@ -87,7 +88,8 @@ module.exports = {
         }),
         new CopyWebpackPlugin({
             patterns: [
-                { from: path.resolve(__dirname, SOURCE_ROOT + '/resources'), to: './clientlib-site/' }
+                { from: path.resolve(__dirname, SOURCE_ROOT + '/resources'), to: './clientlib-site/' },
+                { from: path.resolve(__dirname, SOURCE_ROOT + '/resources'), to: './clientlib-nueva/' }
             ]
         })
     ],
