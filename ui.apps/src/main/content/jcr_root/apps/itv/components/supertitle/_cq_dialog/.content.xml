@@ -3,7 +3,7 @@
     jcr:primaryType="nt:unstructured"
     jcr:title="Super Title"
     sling:resourceType="cq/gui/components/authoring/dialog"
-    extraClientlibs="[core.wcm.components.title.v2.editor]"
+    extraClientlibs="[cq.authoring.dialog, itv.authoring]"
     helpPath="https://www.adobe.com/go/aem_cmp_title_v3"
     trackingFeature="core-components:title:v3">
     <content
@@ -30,46 +30,13 @@
                                         jcr:primaryType="nt:unstructured"
                                         sling:resourceType="granite/ui/components/coral/foundation/container">
                                         <items jcr:primaryType="nt:unstructured">
-                                            <type
+                                            <types
                                                 jcr:primaryType="nt:unstructured"
                                                 sling:hideResource="{Boolean}true"/>
-                                            <typeSize
-                                                jcr:primaryType="nt:unstructured"
-                                                sling:hideResource="{Boolean}true"
-                                                fieldLabel="Color"/>
-                                            <types
-                                                granite:class="core-title-sizes"
-                                                jcr:primaryType="nt:unstructured"
-                                                sling:hideResource="{Boolean}true"
-                                                sling:resourceType="granite/ui/components/coral/foundation/form/select"
-                                                fieldLabel="Type / Size"
-                                                name="./type">
-                                                <datasource
-                                                    jcr:primaryType="nt:unstructured"
-                                                    sling:resourceType="core/wcm/components/title/v1/datasource/allowedtypes"/>
-                                            </types>
                                             <defaulttypes
-                                                granite:class="core-title-sizes-default"
                                                 jcr:primaryType="nt:unstructured"
-                                                sling:hideResource="{Boolean}true"
-                                                sling:resourceType="granite/ui/components/coral/foundation/form/select"
-                                                fieldLabel="Type / Size"
-                                                name="./type">
-                                                <items jcr:primaryType="nt:unstructured">
-                                                    <default
-                                                        jcr:primaryType="nt:unstructured"
-                                                        text="Default (Medium)"
-                                                        value="cmp-supertitle--size__default"/>
-                                                    <large
-                                                        jcr:primaryType="nt:unstructured"
-                                                        text="Large"
-                                                        value="cmp-supertitle--size__large"/>
-                                                    <small
-                                                        jcr:primaryType="nt:unstructured"
-                                                        text="Small"
-                                                        value="cmp-supertitle--size__small"/>
-                                                </items>
-                                            </defaulttypes>
+                                                sling:hideResource="{Boolean}true"/>
+                                        
                                             <title
                                                 jcr:primaryType="nt:unstructured"
                                                 sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
@@ -81,22 +48,7 @@
                                                 sling:resourceType="granite/ui/components/coral/foundation/form/colorfield"
                                                 fieldLabel="Color"
                                                 name="./color"/>
-                                            <style
-                                                jcr:primaryType="nt:unstructured"
-                                                sling:resourceType="granite/ui/components/coral/foundation/form/select"
-                                                fieldLabel="Estilo tipografico"
-                                                name="./style">
-                                                <items jcr:primaryType="nt:unstructured">
-                                                    <arial
-                                                        jcr:primaryType="nt:unstructured"
-                                                        text="Sans Serif"
-                                                        value="cmp-supertitle--arial"/>
-                                                    <times
-                                                        jcr:primaryType="nt:unstructured"
-                                                        text="Serif"
-                                                        value="cmp-supertitle--times"/>
-                                                </items>
-                                            </style>
+                                            
                                             <size
                                                 jcr:primaryType="nt:unstructured"
                                                 sling:resourceType="granite/ui/components/coral/foundation/form/select"
@@ -105,7 +57,7 @@
                                                 <items jcr:primaryType="nt:unstructured">
                                                     <default
                                                         jcr:primaryType="nt:unstructured"
-                                                        text="Default"
+                                                        text="Default (Medium)"
                                                         value="cmp-supertitle--size__default"/>
                                                     <large
                                                         jcr:primaryType="nt:unstructured"
@@ -125,12 +77,45 @@
                                                 uncheckedValue="false"
                                                 value="true"/>
                                             <enableNeon
+                                                granite:class="cq-dialog-checkbox-showhide"
                                                 jcr:primaryType="nt:unstructured"
                                                 sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
                                                 name="./enableNeon"
                                                 text="Activar título en neon"
                                                 uncheckedValue="false"
-                                                value="true"/>
+                                                value="true">
+                                                <granite:data
+                                                    jcr:primaryType="nt:unstructured"
+                                                    cq-dialog-checkbox-showhide-target=".style-neon-target"/>
+                                            </enableNeon>
+
+                                            <styleWrapper
+                                                granite:class="style-neon-target"
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/container">
+                                                <granite:data
+                                                    jcr:primaryType="nt:unstructured"
+                                                    showhidetargetvalue="false"/>
+                                                <items jcr:primaryType="nt:unstructured">
+                                                    <style
+                                                        jcr:primaryType="nt:unstructured"
+                                                        sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                                                        fieldLabel="Estilo tipografico"
+                                                        name="./style">
+                                                        <items jcr:primaryType="nt:unstructured">
+                                                            <arial
+                                                                jcr:primaryType="nt:unstructured"
+                                                                text="Sans Serif"
+                                                                value="cmp-supertitle--arial"/>
+                                                            <times
+                                                                jcr:primaryType="nt:unstructured"
+                                                                text="Serif"
+                                                                value="cmp-supertitle--times"/>
+                                                        </items>
+                                                    </style>
+                                                </items>
+                                            </styleWrapper>
+                                                    
                                             <link
                                                 granite:hide="${cqDesign.linkDisabled}"
                                                 jcr:primaryType="nt:unstructured"

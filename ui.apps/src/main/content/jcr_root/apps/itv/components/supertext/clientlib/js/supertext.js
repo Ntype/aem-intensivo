@@ -34,7 +34,7 @@
 
 //2. QUOTE: Animación para aparición del texto
     function initTypewriter() {
-        var quotes = document.querySelectorAll(".cmp-supertext--quote");
+        var quotes = document.querySelectorAll(".cmp-supertext--quote.cmp-supertext--typewriter");
         if (!quotes || quotes.length === 0) return;
 
         //se necesita un observador para que la animación comience al hacer scroll
@@ -51,21 +51,39 @@
         });
 
         function startTyping(quoteNode){ //función para efecto tecleo
-            var pElement = quoteNode.querySelector(".cmp-supertext__content p"); //Buscar el párrafo en el contenido
-            if (!pElement) return;
+            var paragraphs = quoteNode.querySelectorAll(".cmp-supertext__content p"); //Buscar el párrafo en el contenido
+            if (!paragraphs || paragraphs.length === 0) return;
 
-            var fullText = pElement.textContent; //Guarda el texto original
-            pElement.textContent = ""; //Vacía el texto en pantalla
-            pElement.classList.add("is-typing"); //Añadir clase que crea cursor que parpadea
-
-            var i = 0;
+            var fullText = []; //Guarda el texto original
+            paragraphs.forEach(function(p) {
+                fullText.push(p.textContent);
+                p.textContent = ""; //Vacía el texto en pantalla para cada párrafo
+            });
+            
+            var pIndex = 0; //Índice del párrafo actual
+            var charIndex = 0; //Índice de la letra actual
             function typeWriter(){
-                if (i < fullText.length){
-                    pElement.textContent += fullText.charAt(i);
-                    i++;
+                if (pIndex >= paragraphs.length){
+                    return; 
+                }
+                var currentP = paragraphs[pIndex];
+                var currentText = fullText[pIndex];
+                if (charIndex === 0){
+                    currentP.classList.add("is-typing"); //Añadir clase para mostrar cursor
+                }
+                if (charIndex < currentText.length){
+                    currentP.textContent += currentText.charAt(charIndex);
+                    charIndex++;
                     setTimeout(typeWriter, 70); //Velocidad aparición letras
                 }else{
-                    pElement.classList.remove("is-typing"); //Eliminar el cursor al terminar
+                    currentP.classList.remove("is-typing"); //Eliminar el cursor al terminar párrafo
+                    pIndex++; //Pasar al siguiente párrafo
+                    charIndex = 0;
+                    if (pIndex < paragraphs.length){
+                        setTimeout(typeWriter, 300); //Pausa entre párrafos
+                    }else{
+                        quoteNode.classList.add("typing-complete"); //Añadir clase para mostrar comilla final
+                    }
                 }
             }
 
