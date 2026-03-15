@@ -1,0 +1,148 @@
+/* ==========================================================================
+   HEADER LP - FINAL: Logo (32px), Lista (24px), Línea (8px) y Breakpoint 620px
+   ========================================================================== */
+
+/* 1. RESET AEM */
+.root.container, .responsivegrid, .aem-Grid {
+    margin: 0 !important;
+    padding: 0 !important;
+    width: 100% !important;
+    max-width: none !important;
+}
+
+/* 2. ESTRUCTURA BASE */
+header.header-lp {
+    background-color: #000000 !important;
+    height: 88px !important;
+    display: flex !important;
+    align-items: center !important;
+    width: 100% !important;
+    position: relative;
+    z-index: 10;
+    box-shadow: 0 0 0 100vmax #000000 !important;
+    clip-path: inset(0 -100vmax) !important;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif !important;
+}
+
+.header-lp__container {
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    width: 100% !important;
+    max-width: 1920px !important;
+    margin: 0 auto !important;
+    height: 100% !important;
+    box-sizing: border-box !important;
+
+    /* Márgenes progresivos (160px a 16px) */
+    padding: 0 160px !important;
+    @media (max-width: 1919px) {
+        padding: 0 calc(16px + (160 - 16) * ((100vw - 1024px) / (1920 - 1024))) !important;
+    }
+    @media (max-width: 1024px) {
+        padding: 0 16px !important;
+    }
+}
+
+/* 3. LOGO Y NAVEGACIÓN */
+.header-lp__left-group {
+    display: flex !important;
+    align-items: center !important;
+    gap: 40px !important; // Espacio entre Logo y Lista
+}
+
+.header-lp__logo {
+    display: flex !important;
+    align-items: center !important;
+    gap: 8px !important; // ESPACIO DE 8PX SOLICITADO
+    height: 32px !important;
+    font-size: 32px !important; // Tamaño de la palabra BuyCar
+    font-weight: bold !important;
+    color: #ffffff !important;
+}
+
+.header-lp__logo img {
+    height: 32px !important;
+    width: auto !important;
+}
+
+.header-lp__list {
+    display: flex !important;
+    list-style: none !important;
+    gap: 24px !important;
+    margin: 0 !important;
+    padding: 0 !important;
+
+    /* CAMBIO DE BREAKPOINT A 620px */
+    @media (max-width: 620px) {
+        display: none !important;
+    }
+}
+
+.header-lp__item {
+    color: #ffffff !important;
+    font-size: 16px !important;
+    text-transform: capitalize !important;
+    font-weight: 500 !important;
+    text-decoration: none !important;
+    cursor: pointer !important;
+    padding-bottom: 8px !important; // DISTANCIA DE 8PX A LA LÍNEA
+    border-bottom: 2px solid transparent !important;
+    transition: border-color 0.3s;
+}
+
+.header-lp__item--active {
+    border-bottom: 2px solid #ffffff !important;
+}
+
+/* 4. BOTÓN WHATSAPP */
+.header-lp__right-group {
+    background-color: #008080 !important;
+    width: 154px !important;
+    height: 40px !important;
+    border-radius: 100px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 8px !important;
+
+    /* CAMBIO DE BREAKPOINT A 620px */
+    @media (max-width: 620px) {
+        display: none !important;
+    }
+}
+
+.header-lp__right-group img {
+    width: 24px !important;
+    height: 24px !important;
+    border-radius: 50% !important;
+    background-color: #ffffff !important;
+}
+
+.header-lp__right-group span {
+    color: #ffffff !important;
+    font-weight: 600 !important;
+    font-size: 14px !important;
+}
+
+/* 5. MENÚ HAMBURGUESA */
+.header-lp__burger {
+    display: none !important;
+    flex-direction: column !important;
+    justify-content: space-between !important;
+    width: 26px !important;
+    height: 18px !important;
+    cursor: pointer !important;
+
+    /* CAMBIO DE BREAKPOINT A 620px */
+    @media (max-width: 620px) {
+        display: flex !important;
+    }
+}
+
+.header-lp__burger span {
+    display: block !important;
+    width: 100% !important;
+    height: 3px !important;
+    background-color: #ffffff !important;
+}
