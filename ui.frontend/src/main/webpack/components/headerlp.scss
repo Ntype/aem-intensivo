@@ -1,0 +1,77 @@
+.header-lp {
+    background-color: #1a1a1a;
+    height: 88px;
+    display: flex;
+    align-items: center;
+}
+
+.header-lp__container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; // Mantén esto
+    width: 100%;
+    max-width: 1920px;
+    margin: 0 auto;
+    padding: 0 160px;
+}
+
+.header-lp__left {
+    display: flex;
+    align-items: center;
+    gap: 40px; // Espacio entre logo y nav
+}
+
+.header-lp__logo {
+    margin-right: 40px;
+}
+
+.header-lp__logo img {
+    height: 50px; // Ajusta según el logo
+}
+
+.header-lp__nav ul {
+    display: flex;
+    gap: 32px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.header-lp__nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 400;
+    position: relative; // Para el pseudo-elemento
+    padding-bottom: 4px; // Espacio para la línea
+}
+
+.header-lp__nav a:hover::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px; // Grosor de la línea
+    background-color: white;
+}
+
+.header-lp__button{
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 4px 40px;
+    background-color: #12b974; // Fondo turquesa
+    color: white; // Texto blanco
+    text-decoration: none;
+    border-radius: 40px; // Muy redondeado
+    font-weight: 500;
+    font-size: 16px;
+    height: 40px;
+}
+
+.header-lp__button svg {
+    width: 20px;
+    height: 20px;
+    fill: white;
+}

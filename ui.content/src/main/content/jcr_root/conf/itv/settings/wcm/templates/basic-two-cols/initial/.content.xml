@@ -2,7 +2,7 @@
 <jcr:root xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:sling="http://sling.apache.org/jcr/sling/1.0"
     jcr:primaryType="cq:Page">
     <jcr:content
-        cq:lastModified="{Date}2026-03-03T10:35:07.235+01:00"
+        cq:lastModified="{Date}2026-03-03T14:25:54.129+01:00"
         cq:lastModifiedBy="admin"
         cq:template="/conf/itv/settings/wcm/templates/basic-two-cols"
         jcr:primaryType="cq:PageContent"
@@ -45,11 +45,10 @@
                 <container
                     jcr:created="{Date}2026-02-27T12:39:47.600+01:00"
                     jcr:createdBy="admin"
-                    jcr:lastModified="{Date}2026-02-27T12:40:43.916+01:00"
+                    jcr:lastModified="{Date}2026-03-03T14:25:45.421+01:00"
                     jcr:lastModifiedBy="admin"
                     jcr:primaryType="nt:unstructured"
-                    sling:resourceType="core/wcm/components/container/v1/container"
-                    layout="responsiveGrid">
+                    sling:resourceType="core/wcm/components/container/v1/container">
                     <cq:responsive jcr:primaryType="nt:unstructured">
                         <default
                             jcr:primaryType="nt:unstructured"
@@ -74,11 +73,10 @@
                 <container_1132284699
                     jcr:created="{Date}2026-02-27T12:39:53.072+01:00"
                     jcr:createdBy="admin"
-                    jcr:lastModified="{Date}2026-02-27T12:47:45.888+01:00"
+                    jcr:lastModified="{Date}2026-03-03T14:25:54.121+01:00"
                     jcr:lastModifiedBy="admin"
                     jcr:primaryType="nt:unstructured"
-                    sling:resourceType="core/wcm/components/container/v1/container"
-                    layout="responsiveGrid">
+                    sling:resourceType="core/wcm/components/container/v1/container">
                     <cq:responsive jcr:primaryType="nt:unstructured">
                         <default
                             jcr:primaryType="nt:unstructured"

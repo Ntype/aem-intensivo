@@ -3,9 +3,7 @@
     jcr:primaryType="cq:Page">
     <jcr:content
         cq:deviceGroups="[mobile/groups/responsive]"
-        cq:lastModified="{Date}2026-03-10T11:35:13.002+01:00"
-        cq:lastModifiedBy="admin"
-        cq:template="/conf/itv/settings/wcm/templates/page-content"
+        cq:template="/conf/itv/settings/wcm/templates/landing-page"
         jcr:primaryType="cq:PageContent"
         sling:resourceType="itv/components/page">
         <root
@@ -19,18 +17,8 @@
             <container
                 jcr:primaryType="nt:unstructured"
                 sling:resourceType="itv/components/container"
-                layout="responsiveGrid">
-                <container
-                    jcr:lastModified="{Date}2026-03-10T11:34:57.258+01:00"
-                    jcr:lastModifiedBy="admin"
-                    jcr:primaryType="nt:unstructured"
-                    sling:resourceType="itv/components/container"
-                    editable="{Boolean}true"/>
-            </container>
-            <experiencefragment-footer
-                jcr:primaryType="nt:unstructured"
-                sling:resourceType="itv/components/experiencefragment"
-                fragmentVariationPath="/content/experience-fragments/itv/us/en/site/footer/master"/>
+                editable="{Boolean}true"
+                layout="responsiveGrid"/>
         </root>
         <cq:responsive jcr:primaryType="nt:unstructured">
             <breakpoints jcr:primaryType="nt:unstructured">
