@@ -2,11 +2,10 @@
 <jcr:root xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0"
     jcr:primaryType="cq:Template">
     <jcr:content
-        cq:lastModified="{Date}2026-03-15T21:40:06.985+01:00"
+        cq:lastModified="{Date}2026-03-10T12:17:23.442+01:00"
         cq:lastModifiedBy="admin"
-        cq:templateType="/conf/itv/settings/wcm/template-types/xf"
-        jcr:description="My Site Experience Fragment Template"
+        cq:templateType="/conf/itv/settings/wcm/template-types/page"
         jcr:primaryType="cq:PageContent"
-        jcr:title="Landing Page"
+        jcr:title="basic-two-cols"
         status="enabled"/>
 </jcr:root>
