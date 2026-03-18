@@ -1,5 +1,6 @@
 <sly data-sly-use.clientlib="/libs/granite/sightly/templates/clientlib.html"
      data-sly-call="${clientlib.css @ categories='itv.components.footer-lp'}"/>
+
 <footer class="footer-lp">
     <div class="footer-lp__container">
         
@@ -21,12 +22,9 @@
 
             <div class="footer-lp__links">
                 <h2 class="footer-lp__title">Links</h2>
-                <ul class="footer-lp__list">
-                    <li>Mercedes</li>
-                    <li>BMW</li>
-                    <li>Audi</li>
-                    <li>Lexus</li>
-                </ul>
+                <nav class="footer-lp__nav">
+                    <sly data-sly-resource="${'navigation-footer' @ resourceType='itv/components/navigation'}"></sly>
+                </nav>
             </div>
         </div>
 

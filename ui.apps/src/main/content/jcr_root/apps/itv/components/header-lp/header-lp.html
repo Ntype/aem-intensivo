@@ -4,17 +4,12 @@
     <div class="header-lp__container">
         <div class="header-lp__left-group">
             <div class="header-lp__logo">
-                <img src="/content/dam/itv/logo-buycar.png" alt="BuyCar Logo">
+                <img src="${properties.logoPath || '/content/dam/itv/logo-buycar.png'}" alt="BuyCar Logo">
                 <span class="header-lp__logo-text">BuyCar</span>
             </div>
             
             <nav class="header-lp__nav">
-                <ul class="header-lp__list">
-                    <li class="header-lp__item header-lp__item--active">Mercedes</li>
-                    <li class="header-lp__item">BMW</li>
-                    <li class="header-lp__item">Audi</li>
-                    <li class="header-lp__item">Lexus</li>
-                </ul>
+                <sly data-sly-resource="${'navigation' @ resourceType='itv/components/navigation'}"></sly>
             </nav>
         </div>
 
@@ -25,7 +20,6 @@
             </a>
         </div>
         <div class="header-lp__burger">
-            <span></span>
             <span></span>
             <span></span>
             <span></span>

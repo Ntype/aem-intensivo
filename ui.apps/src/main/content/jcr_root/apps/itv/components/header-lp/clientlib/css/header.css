@@ -58,8 +58,10 @@ header.header-lp {
 }
 
 .header-lp__logo img {
-    height: 32px !important;
-    width: auto !important;
+    height: 32px !important; /* Altura fija según tu diseño */
+    width: auto !important;   /* Mantiene la proporción */
+    display: block !important;
+    object-fit: contain !important; /* Asegura que la imagen no se estire */
 }
 
 .header-lp__list {
@@ -67,12 +69,31 @@ header.header-lp {
     list-style: none !important;
     gap: 24px !important;
     margin: 0 !important;
-    padding: 0 !important;
+    padding: 32px 0 24px 0 !important;
 
-    /* CAMBIO DE BREAKPOINT A 620px */
     @media (max-width: 620px) {
         display: none !important;
     }
+}
+
+.header-lp__link {
+    color: #ffffff !important;
+    text-decoration: none !important;
+    font-size: 16px !important;
+    font-weight: 500 !important;
+    display: inline-block !important;
+    padding-bottom: 8px !important;
+    border-bottom: 2px solid transparent !important;
+    transition: all 0.3s ease;
+    line-height: 1 !important;
+}
+
+/* Estilo para el estado activo*/
+.header-lp__item:first-child .header-lp__link {
+    border-bottom: 2px solid #ffffff !important;
+    display: inline-block !important;
+    padding-bottom: 8px !important;
+    color: #ffffff !important;
 }
 
 .header-lp__item {

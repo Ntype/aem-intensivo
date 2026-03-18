@@ -1,0 +1,157 @@
+/* 1. IMAGEN AL 100% DE ANCHO */
+.hero-lp {
+    width: 100% !important;
+    height: 768px !important;
+    display: flex !important;
+    justify-content: center !important;
+    position: relative !important;
+    background-size: cover !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+    overflow: hidden !important;
+    z-index: 0 !important;
+}
+
+.hero-lp::before {
+    content: "" !important;
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    
+    /* GRADIENTE SUAVIZADO */
+    background: linear-gradient(
+        to right, 
+        rgba(0, 0, 0, 0.6) 0%,      /* Un poco menos de opacidad al inicio */
+        rgba(0, 0, 0, 0.5) 20%,     /* Transición intermedia */
+        rgba(0, 0, 0, 0.2) 50%,     /* Muy suave al llegar a la mitad */
+        rgba(0, 0, 0, 0) 80%        /* Desaparece casi del todo antes de llegar al coche */
+    ) !important;
+    
+    z-index: 1 !important;
+}
+
+/* 2. CONTENEDOR INTERNO PARA EL TEXTO */
+.hero-lp__container {
+    width: 100% !important;
+    max-width: 1920px !important;
+    height: 100% !important;
+    display: flex !important;
+    justify-content: flex-start !important; 
+    align-items: flex-start !important; 
+    padding: 0 204px !important;
+    box-sizing: border-box !important;
+    position: relative !important; /* Necesario para que el coche se ancle aquí */
+    z-index: 2 !important;
+
+    @media (max-width: 1919px) {
+        padding: 0 calc(109px + (204 - 109) * ((100vw - 1024px) / (1920 - 1024))) !important;
+    }
+
+    @media (max-width: 1024px) {
+        padding: 0 16px !important;
+    }
+}
+
+/* 3. BLOQUE DE TEXTO*/
+.hero-lp__content {
+    width: 512px !important;
+    min-width: 512px !important;
+    margin-top: 211px !important; /* Mantenemos tu margen superior de diseño */
+    z-index: 2 !important;
+    flex-shrink: 0 !important;
+}
+
+/* Texto Principal*/
+.hero-lp__title {
+    font-size: 48px;
+    color: #ffffff;
+    margin: 0;
+    font-weight: bold;
+    line-height: 1.2;
+}
+
+/* Subtítulo */
+.hero-lp__subtitle {
+    font-size: 24px;
+    color: #ffffff;
+    margin: 24px 0; 
+}
+
+/* Bloque de botones */
+.hero-lp__actions {
+    display: flex;
+    gap: 8px;
+}
+
+/* Estilos comunes de botones */
+.btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 18px;
+    height: 60px;
+    border-radius: 4px;
+    transition: 0.3s ease;
+}
+
+/* Botón 1: Compra */
+.btn--primary {
+    width: 118px;
+    background-color: #2e8cf0;
+    color: #ffffff;
+    border: none;
+}
+
+/* Botón 2: Pide una prueba */
+.btn--secondary {
+    width: 190px;
+    background-color: transparent;
+    color: #ffffff;
+}
+
+/* Hover para que se note que son botones */
+.btn:hover {
+    opacity: 0.8;
+}
+
+/* 4. CONTENEDOR DEL COCHE (ZONA MORADA) */
+.hero-lp__car-wrapper {
+    position: absolute !important; /* Lo sacamos del flujo para que no empuje hacia abajo */
+    left: calc(204px + 512px + 131px) !important; /* Padding + Texto + Tu margen de 131px */
+    top: 114px !important; /* Tu margen superior de 114px */
+    
+    /* Calculamos el espacio restante para que respete el margen inferior de 48.51px */
+    height: calc(768px - 114px - 48.51px) !important; 
+    width: 1056px !important;
+    
+    display: flex !important;
+    align-items: center !important;
+    z-index: 1 !important;
+}
+
+.hero-lp__car-img {
+    width: 1056px !important;
+    height: 605px !important;
+    object-fit: contain !important;
+    transform: none !important;
+}
+
+/* 5. AJUSTE PARA MÓVIL (Cuando ya no caben en horizontal) */
+@media (max-width: 1850px) {
+    .hero-lp__car-wrapper {
+        position: relative !important; /* Volvemos a flex para que se adapte */
+        left: auto !important;
+        top: auto !important;
+        margin-left: 131px !important;
+        margin-top: 114px !important;
+        width: auto !important;
+    }
+    .hero-lp__car-img {
+        width: 100% !important;
+        height: auto !important;
+    }
+}

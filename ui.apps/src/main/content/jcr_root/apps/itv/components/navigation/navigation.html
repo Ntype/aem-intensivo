@@ -1,0 +1,24 @@
+<nav data-sly-use.nav="com.adobe.cq.wcm.core.components.models.Navigation"
+     id="${nav.id}"
+     class="header-lp__nav"
+     aria-label="${nav.accessibilityLabel}">
+    
+    <ul class="header-lp__list" 
+        data-sly-list.item="${nav.items}">
+        
+        <li class="header-lp__item ${item.active ? 'header-lp__item--active' : ''}">
+            <a href="${item.url}.html" 
+               class="header-lp__link" 
+               aria-current="${item.active ? 'page' : ''}">
+               ${item.title}
+            </a>
+        </li>
+        
+    </ul>
+</nav>
+
+<sly data-sly-test="${!nav.items}">
+    <div style="color: white; background: rgba(0,0,0,0.5); padding: 5px;">
+        Configura la raíz de navegación en el diálogo.
+    </div>
+</sly>
