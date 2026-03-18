@@ -93,6 +93,25 @@
     transition: 0.3s;
 }
 
+@media (max-width: 1024px) {
+    .header-lp__container {
+        padding: 0 40px; // Reduce padding lateral
+    }
+    
+    .header-lp__nav ul {
+        gap: 24px; // Reduce espacio entre items
+    }
+    
+    .header-lp__nav ul li a {
+        font-size: 14px; // Texto más pequeño
+    }
+    
+    .header-lp__button a {
+        padding: 8px 16px; // Botón más compacto
+        font-size: 14px;
+    }
+}
+
 @media (max-width: 768px) {
     .header-lp__container {
         padding: 24px 16px;

@@ -123,6 +123,13 @@
     fill: #1a1a1a;
 }
 
+// Footer en tablet debe verse como desktop
+@media (max-width: 1024px) {
+    .footer-lp {
+        padding: 40px 16px;
+    }
+}
+
 @media (max-width: 768px) {
     .footer-lp {
         padding: 30px 20px;
