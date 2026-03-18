@@ -11,8 +11,16 @@
                 <items jcr:primaryType="nt:unstructured">
                     <column jcr:primaryType="nt:unstructured" sling:resourceType="granite/ui/components/coral/foundation/container">
                         <items jcr:primaryType="nt:unstructured">
-                            <title jcr:primaryType="nt:unstructured" sling:resourceType="granite/ui/components/coral/foundation/form/textfield" fieldLabel="Título" name="./tituloHero"/>
-                            <description jcr:primaryType="nt:unstructured" sling:resourceType="granite/ui/components/coral/foundation/form/textarea" fieldLabel="Subtítulo" name="./subtituloHero"/>
+                            <title 
+                                    jcr:primaryType="nt:unstructured" 
+                                    sling:resourceType="granite/ui/components/coral/foundation/form/textfield" 
+                                    fieldLabel="Título" 
+                                    name="./tituloHero"/>
+                            <description 
+                                    jcr:primaryType="nt:unstructured" 
+                                    sling:resourceType="granite/ui/components/coral/foundation/form/textarea" 
+                                    fieldLabel="Subtítulo" 
+                                    name="./subtituloHero"/>
                         </items>
                     </column>
                 </items>

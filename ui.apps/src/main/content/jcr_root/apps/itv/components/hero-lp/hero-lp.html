@@ -10,13 +10,12 @@
             <p class="hero-lp__subtitle">${properties.subtituloHero || 'Descripción por defecto'}</p>
             
             <div class="hero-lp__actions">
-                <a href="#" class="btn btn--primary">Compra</a>
-                <a href="#" class="btn btn--secondary">Pide una prueba</a>
+                <div data-sly-resource="${'btn-compra' @ resourceType='itv/components/button'}"></div>
+                <div data-sly-resource="${'btn-prueba' @ resourceType='itv/components/button'}"></div>
             </div>
-            
-            <div class="hero-lp__car-wrapper" data-sly-test="${properties.carReference}">
-                <img src="${properties.carReference}" alt="Coche" class="hero-lp__car-img">
-            </div>
+        </div>
+        <div class="hero-lp__car-wrapper" data-sly-test="${properties.carReference}">
+            <img src="${properties.carReference}" alt="Coche" class="hero-lp__car-img">
         </div>
     </div>
 </section>
