@@ -1,0 +1,11 @@
+<section class="brands">
+    <div class="brands__container">
+        <div class="brands__grid">
+            <sly data-sly-list.brand="${properties.brands}">
+                <div class="brands__item">
+                    <img src="${brand @ context='uri'}" alt="Brand logo"/>
+                </div>
+            </sly>
+        </div>
+    </div>
+</section>

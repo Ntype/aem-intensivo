@@ -5,6 +5,7 @@
     height: 768px;
     display: flex;
     align-items: center;
+    overflow-x: hidden;
 }
 
 .hero-lp__overlay {
@@ -35,7 +36,8 @@
 }
 
 .hero-lp__content {
-    max-width: 50%;
+    max-width: 512px; // ← Ancho fijo del título (del Figma)
+    flex-shrink: 0; // No se encoge
     color: white;
 }
 
@@ -44,12 +46,14 @@
     font-weight: 700;
     margin: 0 0 24px 0; 
     line-height: 1.2;
+    max-width: 512px;
 }
 
 .hero-lp__textDescription {
     font-size: 16px;
     margin: 0 0 24px 0; 
     line-height: 1.6;
+    white-space: pre-line;
 }
 
 .hero-lp__buttons {
@@ -63,6 +67,7 @@
     border-radius: 5px;
     font-weight: 500;
     font-size: 16px;
+    white-space: nowrap;
 }
 
 .hero-lp__button--primary {
@@ -80,7 +85,8 @@
 }
 
 .hero-lp__car img {
-    max-width: 1056px;
+    width: 1000px;
+    max-width: 100%;
     height: auto;
 }
 
@@ -103,9 +109,14 @@
     .hero-lp__title h2 {
         font-size: 40px; 
     }
-    
+
+    .hero-lp__car {
+        flex-shrink: 1; // ← Permite que se encoja
+    }
+
     .hero-lp__car img {
-        width: 600px; 
+        width: 100%; 
+        max-width: 500px;
     }
 }
 
@@ -129,8 +140,8 @@
     }
     
     .hero-lp__car img {
-        width: 500px; // MÁS PEQUEÑO
-        max-width: 100%;
+        width: 100%; // MÁS PEQUEÑO
+        max-width: 450px;
     }
     
     .hero-lp__content {

@@ -1,22 +1,15 @@
-(function (){
+(function() {
     'use strict';
-
-    function menuHamburguesa() {
-        const hamburguesa = document.querySelector('.header-lp__hamburger');
-        const nav = document.querySelector('.header-lp__nav');
+    
+    document.addEventListener('click', function(e) {
+        const hamburger = e.target.closest('.header-lp__hamburger');
         
-        if (!menuHamburguesa || !nav) return;
-        
-        hamburguesa.addEventListener('click', ()=>{
-            nav.classList.toggle('active');
-        });
-    }
-
-    // Inicializar cuando el DOM esté listo
-    if (document.readyState !== 'loading') {
-        menuHamburguesa();
-    } else {
-        document.addEventListener('DOMContentLoaded', menuHamburguesa);
-    }
-
+        if (hamburger) {
+            const nav = document.querySelector('.header-lp__nav');
+            if (nav) {
+                nav.classList.toggle('active');
+                console.log('Menu toggled'); // Para debug
+            }
+        }
+    });
 })();
