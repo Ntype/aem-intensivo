@@ -1,7 +1,8 @@
 
 @import 'variables';
 @import 'base';
-@import "./header.scss";
-@import "./footer.scss";
+@import "../components/header.scss";
+@import "../components/footer.scss";
+@import "../components/hero-lp.scss";
 @import '../components/**/*.scss';
 @import './styles/*.scss';
