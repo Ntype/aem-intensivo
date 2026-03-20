@@ -1,3 +1,4 @@
+@import "~swiper/swiper-bundle.css";
 
 @import 'variables';
 @import 'base';
@@ -5,5 +6,6 @@
 @import "../components/footer.scss";
 @import "../components/hero-lp.scss";
 @import "../components/brands.scss";
+@import "../components/cardlist-lp.scss";
 @import '../components/**/*.scss';
 @import './styles/*.scss';
