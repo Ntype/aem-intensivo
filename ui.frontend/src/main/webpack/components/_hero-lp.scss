@@ -11,19 +11,20 @@
     overflow: hidden !important;
     z-index: 0 !important;
 
-    &::before {
-        content: "" !important;
+    &__overlay {
         position: absolute !important;
-        top: 0; left: 0;
-        width: 995px !important; 
-        height: 790px !important;
+        top: 0; 
+        left: 0;
+        width: 100% !important; /* Cubrimos todo el ancho */
+        height: 100% !important;
         background: linear-gradient(
             to right, 
-            rgba(0, 0, 0, 0.4) 0%, 
-            rgba(0, 0, 0, 0.2) 60%, 
+            rgba(0, 0, 0, 0.7) 0%,   /* Más oscuro a la izquierda */
+            rgba(0, 0, 0, 0.4) 40%, 
             rgba(0, 0, 0, 0) 100%
         ) !important;
-        z-index: 1 !important;
+        z-index: 1 !important;      /* Capa 1 */
+        pointer-events: none !important;
     }
 
     /* 2. CONTENEDOR INTERNO */
@@ -37,7 +38,7 @@
         padding: 0 204px !important;
         box-sizing: border-box !important;
         position: relative !important;
-        z-index: 2 !important;
+        z-index: 10 !important;
         font-family: Arial, Helvetica, sans-serif;
 
         @media (max-width: 1919px) {
@@ -50,8 +51,9 @@
         width: 512px !important;
         min-width: 512px !important;
         margin-top: 211px !important; 
-        z-index: 3 !important;
         flex-shrink: 0 !important;
+        position: relative !important; /* Asegura que responda al z-index */
+        z-index: 20 !important;
     }
 
     &__title {
@@ -99,6 +101,7 @@
             background-color: #2e8cf0;
             color: #ffffff;
             border: none;
+            cursor: pointer;
         }
 
         /* Botón 2: Pide una prueba */
@@ -108,6 +111,7 @@
             background-color: transparent;
             color: #ffffff;
             border: 1px solid #ffffff;
+            cursor: pointer;
         }
     }
 
@@ -121,7 +125,7 @@
         max-width: 1056px !important;
         display: flex !important;
         align-items: center !important;
-        z-index: 1 !important;
+        z-index: 2 !important;
         transition: right 0.3s ease;
         overflow: hidden;
     }
@@ -230,11 +234,3 @@
         }
     }
 }
-
-/*
-<?xml version="1.0" encoding="UTF-8"?>
-<jcr:root xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0"
-    jcr:primaryType="cq:ClientLibraryFolder"
-    allowProxy="{Boolean}true"
-    categories="[itv.components.hero]"/>
-*/

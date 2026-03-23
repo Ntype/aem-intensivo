@@ -4,6 +4,7 @@
     padding: 0 !important;
     width: 100% !important;
     max-width: none !important;
+    overflow: visible !important;
 }
 
 /* 2. ESTRUCTURA BASE */
@@ -18,6 +19,7 @@ header.header-lp {
     box-shadow: 0 0 0 100vmax #000000 !important;
     clip-path: inset(0 -100vmax) !important;
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif !important;
+    overflow: visible !important;
 }
 
 .header-lp__container {
@@ -30,7 +32,6 @@ header.header-lp {
     height: 100% !important;
     box-sizing: border-box !important;
 
-    /* Márgenes progresivos (160px a 16px) */
     padding: 0 160px !important;
     @media (max-width: 1919px) {
         padding: 0 calc(16px + (160 - 16) * ((100vw - 1024px) / (1920 - 1024))) !important;
@@ -58,10 +59,10 @@ header.header-lp {
 }
 
 .header-lp__logo img {
-    height: 32px !important; /* Altura fija según tu diseño */
-    width: auto !important;   /* Mantiene la proporción */
+    height: 32px !important;
+    width: auto !important;
     display: block !important;
-    object-fit: contain !important; /* Asegura que la imagen no se estire */
+    object-fit: contain !important;
 }
 
 .header-lp__list {
@@ -121,12 +122,23 @@ header.header-lp {
     display: flex !important;
     align-items: center !important;
     justify-content: center !important;
-    gap: 8px !important;
+    overflow: hidden !important;
 
-    /* CAMBIO DE BREAKPOINT A 620px */
     @media (max-width: 620px) {
         display: none !important;
     }
+}
+
+.header-lp__button {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 8px !important;
+    width: 100% !important;
+    height: 100% !important;
+    text-decoration: none !important;
+    outline: none !important;
+    border: none !important;
 }
 
 .header-lp__right-group img {
@@ -142,7 +154,7 @@ header.header-lp {
     font-size: 14px !important;
 }
 
-/* 5. MENÚ HAMBURGUESA */
+/* 5. MENÚ HAMBURGUESA Y DESPLEGABLE */
 .header-lp__burger {
     display: none !important;
     flex-direction: column !important;
@@ -151,15 +163,105 @@ header.header-lp {
     height: 18px !important;
     cursor: pointer !important;
 
-    /* CAMBIO DE BREAKPOINT A 620px */
     @media (max-width: 620px) {
         display: flex !important;
     }
+
+    span {
+        display: block !important;
+        width: 100% !important;
+        height: 3px !important;
+        background-color: #ffffff !important;
+        transition: 0.3s ease;
+    }
+
+    &.is-active {
+        span:nth-child(1) { transform: translateY(7.5px) rotate(45deg); }
+        span:nth-child(2) { opacity: 0; }
+        span:nth-child(3) { transform: translateY(-7.5px) rotate(-45deg); }
+    }
 }
 
-.header-lp__burger span {
-    display: block !important;
-    width: 100% !important;
-    height: 3px !important;
-    background-color: #ffffff !important;
+.header-lp__nav--desktop {
+    display: flex !important;
+}
+
+.header-lp__nav--mobile {
+    display: none !important;
+}
+
+@media (max-width: 620px) {
+    .header-lp__nav--mobile {
+        display: none !important;
+        position: fixed !important;
+        top: 88px !important;
+        left: 0 !important;
+        width: 100vw !important;
+        height: auto !important;
+        padding-bottom: 24px !important;
+        background-color: #000000 !important;
+        z-index: 2147483647 !important;
+        overflow-y: auto !important;
+    }
+
+    .header-lp__nav--mobile.is-active {
+        display: block !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+        pointer-events: all !important;
+    }
+
+    /* Neutralizar nav interno de AEM */
+    .header-lp__nav--mobile nav,
+    .header-lp__nav--mobile .header-lp__nav {
+        display: block !important;
+        position: static !important;
+        width: 100% !important;
+        height: auto !important;
+        background: transparent !important;
+    }
+
+    /* Lista */
+    .header-lp__nav--mobile ul,
+    .header-lp__nav--mobile .header-lp__list,
+    .header-lp__nav--mobile .cmp-navigation__group {
+        display: flex !important;
+        flex-direction: column !important;
+        list-style: none !important;
+        margin: 0 !important;
+        padding: 40px 0 !important;
+        gap: 0 !important;
+        height: auto !important;
+    }
+
+    /* Items */
+    .header-lp__nav--mobile li,
+    .header-lp__nav--mobile .header-lp__item,
+    .header-lp__nav--mobile .cmp-navigation__item {
+        display: block !important;
+        width: 100% !important;
+        border-bottom: 1px solid #333333 !important;
+        padding-bottom: 0 !important;
+    }
+
+    /* Links — cubre también el primer item activo del desktop */
+    .header-lp__nav--mobile a,
+    .header-lp__nav--mobile .header-lp__link,
+    .header-lp__nav--mobile .cmp-navigation__item-link {
+        display: block !important;
+        color: #ffffff !important;
+        font-size: 22px !important;
+        font-weight: 500 !important;
+        padding: 20px !important;
+        text-align: center !important;
+        text-decoration: none !important;
+        line-height: 1.2 !important;
+    }
+    .header-lp__nav--mobile .header-lp__item:first-child .header-lp__link,
+    .header-lp__nav--mobile .cmp-navigation__item:first-child a {
+        padding-bottom: 20px !important;
+        display: block !important;
+        width: 100% !important;
+        text-align: center !important;
+    }
 }
