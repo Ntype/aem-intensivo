@@ -18,7 +18,19 @@ public class CardItem {
     private String title;
 
     @ValueMapValue
-    private String author;
+    private String text;
+
+    @ValueMapValue
+    private String buttonText;
+
+    @ValueMapValue
+    private String buttonLink;
+
+    @ValueMapValue
+    private String button2Text;
+
+    @ValueMapValue
+    private String button2Link;
 
     public String getImage() {
         return image;
@@ -28,7 +40,23 @@ public class CardItem {
         return title;
     }
 
-    public String getAuthor() {
-        return author;
+    public String getText() {
+        return text;
+    }
+
+    public String getButtonText() {
+        return buttonText;
+    }
+
+    public String getButtonLink() {
+        return buttonLink;
+    }
+
+    public String getButton2Text() {
+        return button2Text;
+    }
+
+    public String getButton2Link() {
+        return button2Link;
     }
 }

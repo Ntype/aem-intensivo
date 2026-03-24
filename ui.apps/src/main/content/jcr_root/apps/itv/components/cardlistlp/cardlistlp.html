@@ -1,0 +1,21 @@
+<sly data-sly-use.model="com.itv.core.models.CardsModel"/>
+
+<div class="cardlist cardlist--${properties.layout}">
+    <sly data-sly-list.card="${model.cards}">
+        
+        <div class="cardlist__card">
+            <img class="cardlist__image" src="${card.image @ context='uri'}" alt="${card.title}"/>
+            
+            <div class="cardlist__content">
+                <h2 class="cardlist__title">${card.title}</h2>
+                <span class="cardlist__text">${card.text}</span>
+                
+                <div class="cardlist__buttons">
+                    <a class="cardlist__btn cardlist__btn--primary" href="${card.buttonLink @ context='uri'}">${card.buttonText}</a>
+                    <a class="cardlist__btn cardlist__btn--secondary" href="${card.button2Link @ context='uri'}">${card.button2Text}</a>
+                </div>
+            </div>
+        </div>
+        
+    </sly>
+</div>
