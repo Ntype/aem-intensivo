@@ -2,25 +2,31 @@
 .cardlist {
     background-color: #fff;
     width: 100%;
-    padding-top: 80px;
+    padding: 80px 160px;
     box-sizing: border-box;
 }
 
-/* ========== LAYOUT VERTICAL ========== */
+/* ========== LAYOUT VERTICAL - SWIPER ========== */
 .cardlist--vertical {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, 381px);
-    gap: 24px;
-    justify-content: center;
     width: 100%;
-    box-sizing: border-box;
+    overflow: hidden;
+}
+
+.cardlist--vertical .swiper-wrapper {
+    display: flex;
+    flex-direction: row;
+}
+
+.cardlist--vertical .swiper {
+    width: 100%;
+    overflow: hidden;
 }
 
 .cardlist--vertical .cardlist__card {
     display: flex;
     flex-direction: column;
-    width: 381px;
-    height: 495px;
+    width: 100%;
+    height: 100%;
     background: #F5F5F5;
     border: none;
     border-radius: 8px;
@@ -148,9 +154,8 @@
 
 /* ========== RESPONSIVE - TABLET ========== */
 @media (max-width: 1024px) {
-    .cardlist--vertical {
-        grid-template-columns: repeat(auto-fill, 381px);
-        gap: 20px;
+    .cardlist {
+        padding: 80px 16px;
     }
 
     .cardlist--horizontal {
@@ -161,14 +166,8 @@
 
 /* ========== RESPONSIVE - MOBILE ========== */
 @media (max-width: 768px) {
-    .cardlist--vertical {
-        grid-template-columns: 1fr;
-        gap: 16px;
-    }
-
-    .cardlist--vertical .cardlist__card {
-        width: 100%;
-        height: auto;
+    .cardlist {
+        padding: 80px 16px;
     }
 
     .cardlist--horizontal {
