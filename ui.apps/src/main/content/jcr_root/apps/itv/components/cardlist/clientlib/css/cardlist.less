@@ -1,0 +1,187 @@
+.cardlist-wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 0;
+    box-sizing: border-box;
+    min-width: 393px;
+   margin-bottom: 68px !important; 
+
+    .cardlist__container {
+        display: flex !important;
+        flex-direction: row !important;
+        flex-wrap: wrap !important; 
+        justify-content: flex-start; 
+        align-items: stretch;
+        width: 100%;
+        max-width: 1544px; // 5 cards (264px) + 4 gaps (56px) = 1544px Así en 1920px caben todas en una fila, pero si bajas de 1544px, empiezan a saltar.
+        
+        &.vertical-gap { 
+            gap: 56px;
+            row-gap: 56px; 
+            justify-content: flex-start;
+        }
+
+        &.horizontal-gap { 
+            gap: 25px; 
+            row-gap: 25px;
+            justify-content: center;
+        }
+
+        // --- AJUSTES PARA TABLET (En 1024px (264*3 + 56*2 = 904px) entran 3 arriba y las 2 abajo) ---
+        @media (max-width: 1024px) {
+            
+            &.vertical-gap {
+                justify-content: flex-start;
+            }
+
+            &.horizontal-gap {
+                justify-content: center;
+            }
+        }
+
+        @media (max-width: 655px) {
+        justify-content: center !important; // Fuerza el centrado de la columna única
+        
+        .cardlist__card.vertical {
+            margin-left: auto;
+            margin-right: auto;
+        }
+    }
+
+        // --- AJUSTES PARA MOVIL (bajaN y hacen scroll) ---
+        @media (max-width: 392px) {
+            flex-wrap: nowrap !important;
+            overflow-x: auto;
+            padding-bottom: 9px;
+        }
+    }
+
+    // --- CARD VERTICAL (Tamaño Fijo e Invariable) ---
+    .cardlist__card.vertical {
+        flex: 0 0 264px; 
+        width: 264px;
+        background: #fff;
+        padding: 16px;
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
+        border-radius: 15px;
+
+        .cardlist__image-container {
+            border-radius: 15px;
+            width: 100%;
+            height: 170px;
+            overflow: hidden;
+
+            .cardlist__image { 
+                width: 100%; 
+                height: 100%; 
+                object-fit: cover; 
+            }
+        }
+        
+        .cardlist__content {
+            display: flex; 
+            flex-direction: column; 
+            flex-grow: 1;
+
+            .cardlist__title { 
+                font-size: 20px; 
+                font-weight: bold; 
+                color: #000; 
+                margin: 15px 0 8px 0; 
+            }
+
+            .cardlist__author { 
+                font-size: 14px; 
+                color: #000; 
+                margin-bottom: 20px; 
+            }
+
+            .cardlist__button-wrapper { 
+                margin-top: auto; 
+                display: flex;
+                justify-content: flex-start; 
+                width: 100%;
+                
+
+                // Componente del Core
+                .cmp-button { 
+                    background-color: #46b0ee; 
+                    color: #fff; 
+                    padding: 4px 24px; 
+                    text-decoration: none; 
+                    display: inline-block; 
+                    border-radius: 48px; 
+                    text-align: center; 
+                    font-weight: 14px; 
+                    width: auto;
+                    min-width: 100px;
+                    border: none;
+                    cursor: pointer;
+
+                    &:hover {
+                        background-color: darken(#46b0ee, 20%);
+                    }
+
+                    .cmp-button__text {
+                        color: #fff;
+                        font-size: 14px;
+                    }
+                } 
+            }
+        }
+    }
+
+    // --- CARD HORIZONTAL (Tamaño Fijo) ---
+    .cardlist__card.horizontal {
+    flex: 0 0 365px;
+    width: 365px;
+    background: #fff;
+    padding: 16px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    //margin-top: 58px;
+    border-radius: 15px;
+
+        .cardlist__image-container {
+            width: 100%; // Ancho fijo para la imagen en modo horizontal
+            height: 120px; // Ocupa todo el alto de la card
+            border-radius: 10px;
+            overflow: hidden;
+            margin-bottom: 12px; // Eliminado el margen inferior del modo vertical
+
+            .cardlist__image { 
+                width: 100%; 
+                height: 100%; 
+                object-fit: cover; 
+            }
+        }
+
+        .cardlist__content {
+            display: flex;
+            flex-direction: column;
+            //justify-content: center;
+
+            .cardlist__title { 
+                font-size: 24px; // Ajustado un poco el tamaño para el formato horizontal
+                font-weight: bold; 
+                color: #000; 
+                margin: 0 0 4px 0; 
+                line-height: 1.2; 
+            }
+
+            .cardlist__author { 
+                font-size: 16px; 
+                color: #666; 
+                margin: 0; 
+            }
+
+            .cardlist__button-wrapper { 
+                display: none !important; 
+            }
+        }
+    }
+}

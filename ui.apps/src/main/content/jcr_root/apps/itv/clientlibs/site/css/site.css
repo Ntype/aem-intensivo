@@ -1,8 +1,20 @@
 /* 1. RESET Y ESTRUCTURAS FIJAS */
-body, .root.container {
+body{
+    min-width: 393px !important; /* Fuerza el suelo de la pantalla */
+    margin: 0 !important;
+    padding: 0 !important;
+    background-color: white !important;
+    overflow-x: auto !important; /* Permite el scroll horizontal cuando bajas de 393px */
+    position: relative;
+    width: 100%;
+}
+
+
+.root.container {
     margin-top: 0 !important;
     padding-top: 0 !important;
     background-color: white !important;
+    min-width: 100%;
 }
 
 .cmp-experiencefragment--header {
@@ -20,6 +32,7 @@ body, .root.container {
 .aem-GridColumn--default--6:nth-of-type(1) {
     background-color: #f1f170 !important;
     min-height: 300px;
+    margin-bottom: 58px !important;
 }
 
 /* EL CONTENEDOR ROSA (Creando el margen interno) */
@@ -28,6 +41,7 @@ body, .root.container {
     min-height: 300px;
     padding: 20px !important;      
     box-sizing: border-box !important;    
+    margin-bottom: 58px !important;
 }
 
 /* --- CONFIGURACIÓN DEL CONTENEDOR PADRE (12 COL) --- */
@@ -37,6 +51,7 @@ body, .root.container {
     box-sizing: border-box !important; /* Obligatorio para que el padding no rompa el ancho en móvil */
     background-color: #90ee90 !important; 
     display: block !important;
+    margin-bottom: 58px !important; /* Para que el footer no se pegue al contenedor verde */
 }
 
 /* ✅ Para que el grid NO se “coma” el padding con gutters */
@@ -47,14 +62,19 @@ body, .root.container {
 
 @media (min-width: 1025px) {
     .responsivegrid.aem-GridColumn--default--12 {
-        display: block !important;
+        display: flow-root !important;
         margin-top: 40px !important;
-        margin-left: 160px !important;
-        margin-right: 160px !important;
-        width: calc(100% - 320px) !important; 
         float: none !important;
         clear: both;
-        display: flow-root !important; /* esto hace que el padre contenga los floats */
+
+        /*
+          - En 1024px → 16px
+          - Entre 1024px y 1920px → crece linealmente
+          - En 1920px y más → se fija en 160px
+        */
+        margin-left: clamp(16px, 16.071vw - 148.57px, 160px) !important;
+        margin-right: clamp(16px, 16.071vw - 148.57px, 160px) !important;
+        width: calc(100% - clamp(32px, 32.143vw - 297.14px, 320px)) !important;
     }
 }
 
