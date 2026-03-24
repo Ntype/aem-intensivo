@@ -1,0 +1,164 @@
+.footer-lp {
+    background-color: #1a1a1a;
+    color: white;
+    padding: 40px 160px;
+    min-height: 416px;
+}
+
+.footer-lp__container {
+    max-width: 1920px;
+    margin: 0 auto;
+}
+
+.footer-lp__top {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 40px;
+}
+
+.footer-lp__info {
+    max-width: 55%;
+}
+
+.footer-lp__title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 16px;
+    color: #666666;
+}
+
+.footer-lp__titleLinks {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 16px;
+    color: #666666;
+}
+
+.footer-lp__text {
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 24px;
+    color: white;
+}
+
+.footer-lp__address,
+.footer-lp__email {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    margin-bottom: 12px;
+    font-size: 16px;
+    color: white;
+}
+
+.footer-lp__address svg,
+.footer-lp__email svg {
+    width: 16px;
+    height: 16px;
+    flex-shrink: 0;
+    margin-top: 2px;
+}
+
+.footer-lp__email a {
+    color: white;
+    text-decoration: none;
+}
+
+.footer-lp__links ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-lp__links li {
+    margin-bottom: 12px;
+}
+
+.footer-lp__links a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+.footer-lp__links a:hover {
+    color: #d4f1f7;
+}
+
+.footer-lp__bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 24px;
+    border-top: 1px solid #333;
+}
+
+.footer-lp__copyright {
+    font-size: 14px;
+    color: white;
+}
+
+.footer-lp__socials {
+    display: flex;
+    gap: 12px;
+}
+
+.footer-lp__socials a {
+    width: 40px;
+    height: 40px;
+    background-color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s;
+}
+
+.footer-lp__socials a:hover {
+    background-color: #cbe0e4;
+}
+
+.footer-lp__socials svg {
+    width: 20px;
+    height: 20px;
+    fill: #1a1a1a;
+}
+
+// Footer en tablet debe verse como desktop
+@media (max-width: 1024px) {
+    .footer-lp {
+        padding: 40px 16px;
+    }
+}
+
+@media (max-width: 768px) {
+    .footer-lp {
+        padding: 30px 20px;
+    }
+    
+    .footer-lp__top {
+        flex-direction: column;
+        gap: 30px;
+    }
+    
+    .footer-lp__info {
+        max-width: 100%;
+    }
+    
+    .footer-lp__links {
+        display: none;
+    }
+    
+    .footer-lp__titleLinks {
+        display: none;
+    }
+    
+    .footer-lp__bottom {
+        flex-direction: column;
+        gap: 20px;
+        text-align: center;
+    }
+    
+    .footer-lp__socials {
+        justify-content: center;
+    }
+}
