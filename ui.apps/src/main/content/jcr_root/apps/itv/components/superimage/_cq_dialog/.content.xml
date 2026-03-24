@@ -1,8 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
-<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0"
-          xmlns:nt="http://www.jcp.org/jcr/nt/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0"
-          xmlns:granite="http://www.adobe.com/jcr/granite/1.0"
+<jcr:root xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0" xmlns:granite="http://www.adobe.com/jcr/granite/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:sling="http://sling.apache.org/jcr/sling/1.0"
     jcr:primaryType="nt:unstructured"
     jcr:title="Image"
     sling:resourceType="cq/gui/components/authoring/dialog"
@@ -10,9 +7,9 @@
     helpPath="https://www.adobe.com/go/aem_cmp_image_v3"
     trackingFeature="core-components:image:v3">
     <content
+        granite:class="cmp-image__editor"
         jcr:primaryType="nt:unstructured"
-        sling:resourceType="granite/ui/components/coral/foundation/container"
-        granite:class="cmp-image__editor">
+        sling:resourceType="granite/ui/components/coral/foundation/container">
         <items jcr:primaryType="nt:unstructured">
             <tabs
                 jcr:primaryType="nt:unstructured"
@@ -57,9 +54,9 @@
                                                 mimeTypes="[image/gif,image/jpeg,image/png,image/tiff,image/svg+xml]"
                                                 name="./file"/>
                                             <alternativeGroup
+                                                granite:class="cmp-image__editor-alt"
                                                 jcr:primaryType="nt:unstructured"
-                                                sling:resourceType="granite/ui/components/coral/foundation/well"
-                                                granite:class="cmp-image__editor-alt">
+                                                sling:resourceType="granite/ui/components/coral/foundation/well">
                                                 <items jcr:primaryType="nt:unstructured">
                                                     <alt
                                                         granite:class="cmp-image__editor-alt-text"
@@ -98,17 +95,17 @@
                                             <enableZoom
                                                 jcr:primaryType="nt:unstructured"
                                                 sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
-                                                text="Activar zoom al pasar el ratón"
                                                 name="./enableZoom"
-                                                value="true"
-                                                uncheckedValue="false"/>
+                                                text="Activar zoom al pasar el ratón"
+                                                uncheckedValue="false"
+                                                value="true"/>
                                             <greyscale
                                                 jcr:primaryType="nt:unstructured"
                                                 sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
-                                                text="Cambiar la imagen a escala de grises"
                                                 name="./greyscale"
-                                                value="true"
-                                                uncheckedValue="false"/>
+                                                text="Cambiar la imagen a escala de grises"
+                                                uncheckedValue="false"
+                                                value="true"/>
                                             <decorative
                                                 jcr:primaryType="nt:unstructured"
                                                 sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
@@ -120,24 +117,24 @@
                                                 uncheckedValue="false"
                                                 value="{Boolean}true"/>
                                             <dynamicmediaGroup
+                                                granite:class="cmp-image__editor-dynamicmedia"
                                                 granite:hide="${!cqDesign.enableDmFeatures}"
                                                 jcr:primaryType="nt:unstructured"
-                                                sling:resourceType="granite/ui/components/coral/foundation/well"
-                                                granite:class="cmp-image__editor-dynamicmedia">
+                                                sling:resourceType="granite/ui/components/coral/foundation/well">
                                                 <items jcr:primaryType="nt:unstructured">
                                                     <dmpresettypecontainer
                                                         jcr:primaryType="nt:unstructured"
                                                         sling:resourceType="granite/ui/components/coral/foundation/container">
                                                         <items jcr:primaryType="nt:unstructured">
                                                             <presettype
-                                                                wrapperClass="cmp-image__editor-dynamicmedia-presettype"
                                                                 jcr:primaryType="nt:unstructured"
                                                                 sling:resourceType="granite/ui/components/coral/foundation/form/radiogroup"
                                                                 deleteHint="{Boolean}true"
-                                                                fieldLabel="Preset Type"
                                                                 fieldDescription="Select either an Image Preset or Smart Crop rendition."
+                                                                fieldLabel="Preset Type"
                                                                 name="./dmPresetType"
-                                                                text="Preset Type">
+                                                                text="Preset Type"
+                                                                wrapperClass="cmp-image__editor-dynamicmedia-presettype">
                                                                 <items jcr:primaryType="nt:unstructured">
                                                                     <option1
                                                                         jcr:primaryType="nt:unstructured"
@@ -179,14 +176,14 @@
                                                 </items>
                                             </dynamicmediaGroup>
                                             <disableLazyLoading
+                                                granite:hide="${cqDesign.disableLazyLoading}"
                                                 jcr:primaryType="nt:unstructured"
                                                 sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
-                                                granite:hide="${cqDesign.disableLazyLoading}"
+                                                deleteHint="{Boolean}true"
                                                 fieldDescription="When checked, image will be loaded eagerly, regardless of if the image is currently visible by the user."
                                                 forceIgnoreFreshness="true"
                                                 name="./disableLazyLoading"
                                                 text="Disable lazy loading"
-                                                deleteHint="{Boolean}true"
                                                 value="{Boolean}true"/>
                                         </items>
                                     </column>
@@ -209,7 +206,6 @@
                                         jcr:primaryType="nt:unstructured"
                                         sling:resourceType="granite/ui/components/coral/foundation/container">
                                         <items jcr:primaryType="nt:unstructured">
-
                                             <captionGroup
                                                 jcr:primaryType="nt:unstructured"
                                                 sling:resourceType="granite/ui/components/coral/foundation/well">
@@ -243,9 +239,9 @@
                                                 </items>
                                             </captionGroup>
                                             <link
+                                                granite:class="cmp-image__editor-link"
                                                 jcr:primaryType="nt:unstructured"
-                                                sling:resourceType="granite/ui/components/coral/foundation/container"
-                                                granite:class="cmp-image__editor-link">
+                                                sling:resourceType="granite/ui/components/coral/foundation/container">
                                                 <items jcr:primaryType="nt:unstructured">
                                                     <link
                                                         jcr:primaryType="nt:unstructured"
@@ -259,7 +255,7 @@
                                                 fieldDescription="HTML ID attribute to apply to the component."
                                                 fieldLabel="ID"
                                                 name="./id"
-												validation="html-unique-id-validator"/>
+                                                validation="html-unique-id-validator"/>
                                         </items>
                                     </column>
                                 </items>
@@ -267,9 +263,9 @@
                         </items>
                     </metadata>
                     <styletab
-                            jcr:primaryType="nt:unstructured"
-                            sling:resourceType="granite/ui/components/coral/foundation/include"
-                            path="/mnt/overlay/cq/gui/components/authoring/dialog/style/tab_edit/styletab"/>
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/include"
+                        path="/mnt/overlay/cq/gui/components/authoring/dialog/style/tab_edit/styletab"/>
                 </items>
             </tabs>
         </items>
