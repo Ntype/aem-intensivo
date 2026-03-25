@@ -1,0 +1,236 @@
+/* 1. ESTRUCTURA PRINCIPAL */
+.hero-lp {
+    width: 100% !important;
+    height: 768px !important;
+    display: flex !important;
+    justify-content: center !important;
+    position: relative !important;
+    background-size: cover !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+    overflow: hidden !important;
+    z-index: 0 !important;
+
+    &__overlay {
+        position: absolute !important;
+        top: 0; 
+        left: 0;
+        width: 100% !important; /* Cubrimos todo el ancho */
+        height: 100% !important;
+        background: linear-gradient(
+            to right, 
+            rgba(0, 0, 0, 0.7) 0%,   /* Más oscuro a la izquierda */
+            rgba(0, 0, 0, 0.4) 40%, 
+            rgba(0, 0, 0, 0) 100%
+        ) !important;
+        z-index: 1 !important;      /* Capa 1 */
+        pointer-events: none !important;
+    }
+
+    /* 2. CONTENEDOR INTERNO */
+    &__container {
+        width: 100% !important;
+        max-width: 1920px !important;
+        height: 100% !important;
+        display: flex !important;
+        justify-content: flex-start !important; 
+        align-items: flex-start !important; 
+        padding: 0 204px !important;
+        box-sizing: border-box !important;
+        position: relative !important;
+        z-index: 10 !important;
+        font-family: Arial, Helvetica, sans-serif;
+
+        @media (max-width: 1919px) {
+            padding: 0 calc(109px + (204 - 109) * ((100vw - 1024px) / (1920 - 1024))) !important;
+        }
+    }
+
+    /* 3. BLOQUE DE TEXTO */
+    &__content {
+        width: 512px !important;
+        min-width: 512px !important;
+        margin-top: 211px !important; 
+        flex-shrink: 0 !important;
+        position: relative !important; /* Asegura que responda al z-index */
+        z-index: 20 !important;
+    }
+
+    &__title {
+        font-size: 48px;
+        color: #ffffff;
+        margin: 0;
+        font-weight: bold;
+        line-height: 1.2;
+    }
+
+    &__subtitle {
+        font-size: 24px;
+        color: #ffffff;
+        margin: 24px 0; 
+    }
+
+    /* 4. BOTONES */
+    &__actions {
+        display: flex;
+        gap: 8px;
+
+        .btn,
+        a,
+        button {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 18px;
+            height: 60px;
+            border-radius: 4px;
+            transition: 0.3s ease;
+            cursor: pointer;
+
+            &:hover {
+                opacity: 0.8;
+            }
+        }
+
+        /* Botón 1: Compra */
+        > div:first-child a,
+        > div:first-child button {
+            width: 118px;
+            background-color: #2e8cf0;
+            color: #ffffff;
+            border: none;
+            cursor: pointer;
+        }
+
+        /* Botón 2: Pide una prueba */
+        > div:nth-child(2) a,
+        > div:nth-child(2) button {
+            width: 190px;
+            background-color: transparent;
+            color: #ffffff;
+            border: 1px solid #ffffff;
+            cursor: pointer;
+        }
+    }
+
+    /* 5. EL COCHE */
+    &__car-wrapper {
+        position: absolute !important;
+        right: 5% !important; 
+        top: 114px !important;
+        height: calc(768px - 114px - 48.51px) !important; 
+        width: auto !important;
+        max-width: 1056px !important;
+        display: flex !important;
+        align-items: center !important;
+        z-index: 2 !important;
+        transition: right 0.3s ease;
+        overflow: hidden;
+    }
+
+    &__car-img {
+        width: 1056px !important;
+        height: 605px !important;
+        object-fit: contain !important;
+
+        @media (max-width: 1600px) {
+            width: calc(1056px - (1600px - 100vw)) !important;
+            min-width: 600px !important;
+        }
+    }
+
+    /* 6. RESPONSIVO INTERMEDIO (1024px) */
+    @media (max-width: 1024px) {
+        height: auto !important;
+        min-height: 100vh !important;
+
+        &::before {
+            width: 100% !important;
+            height: 100% !important;
+        }
+
+        .hero-lp__container {
+            flex-direction: column !important;
+            align-items: center !important;
+            padding: 0 16px !important;
+        }
+
+        .hero-lp__content {
+            width: 100% !important;
+            min-width: 0 !important;
+            margin-top: 80px !important;
+            text-align: left !important;
+        }
+
+        .hero-lp__actions {
+            justify-content: center !important;
+        }
+
+        .hero-lp__car-wrapper {
+            position: relative !important;
+            right: auto !important;
+            top: 20px !important;
+            width: 100% !important;
+            justify-content: center !important;
+            margin-bottom: 50px !important;
+        }
+
+        .hero-lp__car-img {
+            width: 100% !important;
+            height: auto !important;
+            max-width: 600px !important;
+        }
+    }
+
+    /* 7. RESPONSIVO MÓVIL ESPECÍFICO */
+    @media (max-width: 535px) {
+        .hero-lp__container {
+            align-items: flex-start !important; 
+            padding: 0 24px !important;
+        }
+
+        .hero-lp__content {
+            text-align: left !important;
+            margin-top: 40px !important;
+        }
+
+        .hero-lp__title {
+            font-size: 32px !important;
+            line-height: 1.1 !important;
+        }
+
+        .hero-lp__subtitle {
+            font-size: 18px !important;
+            margin: 16px 0 !important;
+        }
+
+        .hero-lp__actions {
+            justify-content: flex-start !important;
+            flex-direction: column !important;
+            width: 100% !important;
+            gap: 12px !important;
+
+            > div, a {
+                width: 100% !important;
+                max-width: 280px !important;
+            }
+        }
+
+        .hero-lp__car-wrapper {
+            margin-top: 40px !important;
+            width: 100% !important;
+            display: flex !important;
+            justify-content: flex-start !important; 
+            overflow: visible !important;
+        }
+
+        .hero-lp__car-img {
+            width: 140% !important; 
+            max-width: none !important;
+            height: auto !important;
+            transform: translateX(15%) !important; 
+        }
+    }
+}

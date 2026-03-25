@@ -1,0 +1,155 @@
+.footer-lp {
+    background-color: #1a1a1a !important;
+    color: #ffffff !important;
+    width: 100% !important;
+    min-height: 416px !important;
+    display: flex !important;
+    padding: 40px 0 !important;
+    box-sizing: border-box !important;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif !important;
+
+    /* Fondo infinito para AEM */
+    box-shadow: 0 0 0 100vmax #1a1a1a !important;
+    clip-path: inset(0 -100vmax) !important;
+}
+
+.footer-lp__container {
+    width: 100% !important;
+    max-width: 1920px !important;
+    margin: 0 auto !important;
+    padding: 0 160px !important;
+    display: flex !important;
+    flex-direction: column !important;
+
+    @media (max-width: 1919px) {
+        padding: 0 calc(16px + (160 - 16) * ((100vw - 1024px) / (1920 - 1024))) !important;
+    }
+
+    @media (max-width: 1024px) {
+        padding: 0 16px !important;
+    }
+}
+
+/* BLOQUE SUPERIOR */
+.footer-lp__top {
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: flex-start !important;
+}
+
+.footer-lp__info {
+    max-width: 450px !important;
+}
+
+.footer-lp__title {
+    font-size: 24px !important;
+    font-weight: bold !important;
+    margin-bottom: 24px !important;
+    color: #666666 !important;
+}
+
+.footer-lp__text {
+    font-size: 14px !important;
+    line-height: 1.6 !important;
+    color: #ffffff !important;
+    margin-bottom: 24px !important;
+}
+
+.footer-lp__contact-item {
+    display: flex !important;
+    align-items: center !important;
+    gap: 12px !important;
+    margin-bottom: 12px !important;
+    font-size: 14px !important;
+}
+
+.footer-lp__contact-item img {
+    width: 20px !important;
+    height: 20px !important;
+}
+
+/* NAVEGACIÓN DINÁMICA EN EL FOOTER */
+.footer-lp__links {
+    text-align: left !important;
+    margin-left: 15% !important;
+
+    @media (max-width: 393px) {
+        display: none !important; 
+    }
+}
+
+/* Forzamos la lista del componente de navegación a ser vertical */
+.footer-lp__links .header-lp__list {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 16px !important;
+    list-style: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+/* Estilo de los enlaces en el footer */
+.footer-lp__links .header-lp__link {
+    font-size: 14px !important;
+    color: #ffffff !important;
+    text-decoration: none !important;
+    font-weight: 400 !important;
+    border-bottom: none !important; /* Quitamos la línea del header */
+    padding-bottom: 0 !important;
+    opacity: 0.8;
+    transition: opacity 0.3s;
+}
+
+.footer-lp__links .header-lp__link:hover {
+    opacity: 1;
+}
+
+/* Limpiamos el truco de Mercedes (first-child) solo en el footer */
+.footer-lp__links .header-lp__item:first-child .header-lp__link {
+    border-bottom: none !important;
+}
+
+/* LÍNEA DIVISORA */
+.footer-lp__divider {
+    border: 0 !important;
+    border-top: 1px solid #333333 !important; 
+    width: 90% !important;
+    margin: 24px auto !important;
+    display: block !important;
+
+    @media (max-width: 1024px) {
+        width: 100% !important;
+    }
+}
+
+/* BLOQUE INFERIOR */
+.footer-lp__bottom {
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+
+    @media (max-width: 393px) {
+        flex-direction: column-reverse !important;
+        gap: 24px !important;
+        text-align: center !important;
+    }
+}
+
+.footer-lp__copyright {
+    font-size: 14px !important;
+    color: #ffffff !important;
+}
+
+.footer-lp__social {
+    display: flex !important;
+    gap: 16px !important;
+    cursor: pointer;
+}
+
+.footer-lp__social img {
+    width: 40px !important;
+    height: 40px !important;
+    background-color: #ffffff !important;
+    border-radius: 50% !important;
+    object-fit: contain !important;
+}

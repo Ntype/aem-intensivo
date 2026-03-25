@@ -1,0 +1,32 @@
+<sly data-sly-use.clientlib="/libs/granite/sightly/templates/clientlib.html"
+     data-sly-call="${clientlib.all @ categories='itv.site'}"/>
+<sly data-sly-use.model="com.itv.core.models.CardsModel" />
+
+<div class="cq-placeholder" data-sly-test="${!model.cards}" data-emptytext="Card List Carrusel"></div>
+
+<div class="cardlist-lp-wrapper swiper" data-sly-test="${model.cards}">
+  
+  <div class="swiper-wrapper">
+    <sly data-sly-list.card="${model.cards}">
+      
+      <article class="cardlist__card ${properties.layout} swiper-slide">
+        <div class="cardlist__image-container">
+            <img class="cardlist__image" src="${card.image}" alt="${card.title}"/>
+        </div>
+        <div class="cardlist__content">
+          <h2 class="cardlist__title">${card.title}</h2>
+          <p class="cardlist__description">${card.description}</p>
+          <div class="cardlist__button-wrapper">
+            <div data-sly-resource="${'btn-compra-{0}' @ format=[cardList.index], resourceType='itv/components/button'}"></div>
+            <div data-sly-resource="${'btn-prueba-{0}' @ format=[cardList.index], resourceType='itv/components/button'}"></div>
+          </div>
+        </div>
+      </article>
+
+    </sly>
+  </div>
+
+  <div class="swiper-pagination"></div>
+  <div class="swiper-button-prev"></div>
+  <div class="swiper-button-next"></div>
+</div>

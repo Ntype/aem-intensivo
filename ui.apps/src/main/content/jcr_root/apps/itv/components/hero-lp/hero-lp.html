@@ -1,0 +1,23 @@
+<sly data-sly-use.clientlib="/libs/granite/sightly/templates/clientlib.html"
+     data-sly-call="${clientlib.all @ categories='itv.site'}"/>
+
+<section class="hero-lp" 
+         style="background-image: url('${properties.fileReference @ context='uri'}');">
+    
+    <div class="hero-lp__overlay"></div>
+         
+    <div class="hero-lp__container">
+        <div class="hero-lp__content">
+            <h1 class="hero-lp__title">${properties.tituloHero || 'Título por defecto'}</h1>
+            <p class="hero-lp__subtitle">${properties.subtituloHero || 'Descripción por defecto'}</p>
+            
+            <div class="hero-lp__actions">
+                <div data-sly-resource="${'btn-compra' @ resourceType='itv/components/button'}"></div>
+                <div data-sly-resource="${'btn-prueba' @ resourceType='itv/components/button'}"></div>
+            </div>
+        </div>
+        <div class="hero-lp__car-wrapper" data-sly-test="${properties.carReference}">
+            <img src="${properties.carReference}" alt="Coche" class="hero-lp__car-img">
+        </div>
+    </div>
+</section>

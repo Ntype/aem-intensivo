@@ -1,0 +1,44 @@
+<sly data-sly-use.clientlib="/libs/granite/sightly/templates/clientlib.html"
+     data-sly-call="${clientlib.css @ categories='itv.site'}"/>
+
+<footer class="footer-lp">
+    <div class="footer-lp__container">
+        
+        <div class="footer-lp__top">
+            <div class="footer-lp__info">
+                <h2 class="footer-lp__title">BuyCar</h2>
+                <p class="footer-lp__text">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes.</p>
+                <div class="footer-lp__contact">
+                    <div class="footer-lp__contact-item">
+                        <img src="/content/dam/itv/icon-location.png" alt="Loc">
+                        <span>Jl. Letjen S. Parman No. Kav 21, Jakarta</span>
+                    </div>
+                    <div class="footer-lp__contact-item">
+                        <img src="/content/dam/itv/icon-email.png" alt="Email">
+                        <span>cs@buycar.co.id</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-lp__links">
+                <h2 class="footer-lp__title">Links</h2>
+                <nav class="footer-lp__nav">
+                    <sly data-sly-resource="${'navigation-footer' @ resourceType='itv/components/navigation'}"></sly>
+                </nav>
+            </div>
+        </div>
+
+        <hr class="footer-lp__divider">
+
+        <div class="footer-lp__bottom">
+            <p class="footer-lp__copyright">© 2023 PT Beli Mobil Duit Sendiri</p>
+            <div class="footer-lp__social">
+                <img src="/content/dam/itv/whatsapp.png" alt="WA" href="#">
+                <img src="/content/dam/itv/tiktok.png" alt="TK" href="#">
+                <img src="/content/dam/itv/ig.png" alt="IG" href="#">
+                <img src="/content/dam/itv/fb.png" alt="FB" href="#">
+            </div>
+        </div>
+
+    </div>
+</footer>

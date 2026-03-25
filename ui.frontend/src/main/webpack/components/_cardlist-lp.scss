@@ -1,0 +1,120 @@
+.cardlist-lp-wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 80px 160px; 
+    box-sizing: border-box;
+    margin-bottom: 68px !important;
+    background-color: #FFFFFF; // Fondo del componente blanco
+
+    // --- CARD VERTICAL (381x495) ---
+    .cardlist__card.vertical {
+        flex: 0 0 381px; 
+        width: 381px;
+        height: 495px;
+        background: #F9F9F9; // Card un poco más oscura que el fondo
+        padding: 16px;       // Este margen afecta a TODO (incluida imagen)
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
+        border-radius: 12px; // Bordes redondeados de la card
+        overflow: hidden;
+        font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif; // Tipografía limpia
+
+        .cardlist__image-container {
+            width: 100%;
+            height: 256px;
+            overflow: hidden;
+            border-radius: 8px; // Imagen con bordes redondeados como la foto
+            
+            .cardlist__image { 
+                width: 100%; 
+                height: 100%; 
+                object-fit: cover; 
+            }
+        }
+        
+        .cardlist__content {
+            padding: 0; // Ya tenemos el padding en el padre (.cardlist__card)
+            display: flex; 
+            flex-direction: column; 
+            flex-grow: 1;
+
+            .cardlist__title { 
+                font-size: 32px; 
+                font-weight: 400; // Más fina como la foto
+                color: #000000;
+                margin: 16px 0 8px 0; 
+                line-height: 1.1;
+                letter-spacing: -0.5px;
+            }
+
+            .cardlist__description { 
+                font-size: 14px; 
+                font-weight: 300; // Fina
+                color: #6D6D6D; 
+                margin: 0;
+                line-height: 1.4;
+                display: block !important; // Aseguramos que se vea
+                visibility: visible !important;
+            }
+        }
+
+        // --- BOTONES ---
+        .cardlist__button-wrapper {
+            margin-top: 22px;
+            margin-bottom: 6px; // Ajustado para que quepa en los 495px de alto
+            display: flex;
+            flex-direction: row;
+            gap: 24px;
+            justify-content: flex-start;
+            width: 100%;
+
+            .cmp-button {
+                font-weight: 400;
+                border-radius: 4px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                border: none;
+                cursor: pointer;
+                text-decoration: none;
+            }
+
+            & > div:nth-child(1) .cmp-button {
+                background-color: #0072ED;
+                color: #FFFFFF;
+                width: 105px;
+                height: 45px;
+            }
+
+            & > div:nth-child(2) .cmp-button {
+                background-color: #888888;
+                color: #FFFFFF;
+                width: 155px;
+                height: 45px;
+            }
+        }
+    }
+
+    // --- CONFIGURACIÓN SWIPER ---
+    &.swiper {
+        overflow: hidden;
+        position: relative;
+
+        .swiper-wrapper {
+            display: flex;
+            flex-direction: row !important;
+            flex-wrap: nowrap !important;
+        }
+
+        .cardlist__card.swiper-slide {
+            flex-shrink: 0;
+            height: 495px; // Mantenemos la altura fija del diseño
+        }
+
+        .swiper-button-next, .swiper-button-prev {
+            color: #0072ED;
+        }
+    }
+}

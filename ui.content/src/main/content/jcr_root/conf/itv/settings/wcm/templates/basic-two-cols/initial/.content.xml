@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:sling="http://sling.apache.org/jcr/sling/1.0"
+    jcr:primaryType="cq:Page">
+    <jcr:content
+        cq:lastModified="{Date}2026-03-03T11:15:30.591+01:00"
+        cq:lastModifiedBy="admin"
+        cq:template="/conf/itv/settings/wcm/templates/basic-two-cols"
+        jcr:primaryType="cq:PageContent"
+        sling:resourceType="itv/components/page">
+        <root
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="itv/components/container"
+            layout="responsiveGrid">
+            <container
+                jcr:lastModified="{Date}2026-03-09T16:43:57.706+01:00"
+                jcr:lastModifiedBy="admin"
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="itv/components/container"
+                layout="responsiveGrid">
+                <container
+                    cq:styleIds="[1772532877296]"
+                    jcr:created="{Date}2026-03-02T22:47:24.328+01:00"
+                    jcr:createdBy="admin"
+                    jcr:lastModified="{Date}2026-03-09T16:43:50.785+01:00"
+                    jcr:lastModifiedBy="admin"
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="itv/components/container">
+                    <cq:responsive jcr:primaryType="nt:unstructured">
+                        <default
+                            jcr:primaryType="nt:unstructured"
+                            offset="0"
+                            width="6"/>
+                    </cq:responsive>
+                </container>
+                <container_653951195
+                    cq:styleIds="[1772532507796]"
+                    jcr:created="{Date}2026-03-02T22:47:35.331+01:00"
+                    jcr:createdBy="admin"
+                    jcr:lastModified="{Date}2026-03-09T16:43:45.892+01:00"
+                    jcr:lastModifiedBy="admin"
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="itv/components/container">
+                    <cq:responsive jcr:primaryType="nt:unstructured">
+                        <default
+                            jcr:primaryType="nt:unstructured"
+                            offset="0"
+                            width="6"/>
+                    </cq:responsive>
+                </container_653951195>
+            </container>
+        </root>
+    </jcr:content>
+</jcr:root>

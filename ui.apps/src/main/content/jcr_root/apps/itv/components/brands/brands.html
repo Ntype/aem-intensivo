@@ -1,0 +1,18 @@
+<sly data-sly-use.clientlib="/libs/granite/sightly/templates/clientlib.html"
+     data-sly-call="${clientlib.all @ categories='itv.site'}"></sly>
+
+<section class="brands">
+    <div class="brands__container">
+        <div class="brands__grid">
+            <sly data-sly-list.brand="${properties.brands}">
+                <div class="brands__item">
+                    <img src="${brand @ context='uri'}" alt="Logo de la Marca" class="brands__img"/>
+                </div>
+            </sly>
+        </div>
+    </div>
+</section>    
+
+<sly data-sly-test="${wcmmode.edit && !properties.brands}">
+    <div class="cq-placeholder" data-emptytext="Mosaico de Marcas: Configura logos en el diálogo"></div>
+</sly>
