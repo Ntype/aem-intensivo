@@ -1,0 +1,21 @@
+<header class="itv-header" id="${properties.id}">
+    <div class="itv-header__container">
+        <div class="itv-header__logo">
+            <a href="/content/itv/us/en/landing-page.html" class="itv-header__logo-link" aria-label="BuyCar Logo. Volver a inicio"></a>
+        </div>
+        
+        <button class="itv-header__burger" aria-label="Abrir menú">
+            <span></span><span></span><span></span>
+        </button>
+
+        <div class="itv-header__nav">
+            <sly data-sly-resource="${'main-menu' @ resourceType='core/wcm/components/navigation/v2/navigation'}"></sly>
+        </div>
+        <div class="itv-header__action">
+            <sly data-sly-resource="${'button-wp' @ resourceType='itv/components/button-wp'}"></sly>
+        </div>
+    </div>
+</header>
+
+            
+            

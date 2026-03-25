@@ -1,0 +1,57 @@
+<footer class="itv-footer" id="${properties.id}">
+    <div class="itv-footer__container">
+        <div class="itv-footer__row itv-footer__row--1">
+            <div class="itv-footer__col itv-footer__col--left1">
+                <div class="itv-footer__name">
+                    <sly data-sly-resource="${'name' @ resourceType='core/wcm/components/title/v3/title'}"></sly>
+                </div>
+                <div class="itv-footer__about">
+                    <sly data-sly-resource="${'description' @ resourceType='core/wcm/components/text/v2/text'}"></sly>
+                </div>
+                <div class="itv-footer__location">
+                    <sly data-sly-resource="${'location' @ resourceType='core/wcm/components/text/v2/text'}"></sly>
+                </div>
+                <div class="itv-footer__contact">
+                    <sly data-sly-resource="${'contact' @ resourceType='core/wcm/components/text/v2/text'}"></sly>
+                </div>
+            </div>
+            
+            <div class="itv-footer__col itv-footer__col--right1">
+                <div class="itv-footer__nav-title">
+                    <sly data-sly-resource="${'footer-nav-title' @ resourceType='core/wcm/components/title/v3/title'}"></sly>
+                </div>
+                <div class="itv-footer__nav">
+                    <sly data-sly-resource="${'footer-nav' @ resourceType='core/wcm/components/navigation/v2/navigation'}"></sly>
+                </div>
+            </div>
+        </div>
+
+        <hr class="itv-footer__div">
+
+        <div class="itv-footer__row itv-footer__row--2">
+            <div class="itv-footer__col itv-footer__col--left2">
+                <sly data-sly-resource="${'copyright' @ resourceType='core/wcm/components/text/v2/text'}"></sly>
+            </div>
+
+            <div class="itv-footer__col itv-footer__col--right2">
+                <sly data-sly-set.linkWa="https://wa.me/"></sly>
+                <sly data-sly-set.linkTk="https://www.tiktok.com/"></sly>
+                <sly data-sly-set.linkIg="https://www.instagram.com/"></sly>
+                <sly data-sly-set.linkFb="https://www.facebook.com/"></sly>
+                <div class="itv-footer__sns">
+                    <a href="${linkWa}" target="_blank" rel="noopener noreferrer" x-cq-linkchecker="skip" class="itv-footer__sns-icon itv-footer__sns-icon--wp" aria-label="Whatsapp"></a>
+                    <a href="${linkTk}" target="_blank" rel="noopener noreferrer" x-cq-linkchecker="skip" class="itv-footer__sns-icon itv-footer__sns-icon--tk" aria-label="TikTok"></a>
+                    <a href="${linkIg}" target="_blank" rel="noopener noreferrer" x-cq-linkchecker="skip" class="itv-footer__sns-icon itv-footer__sns-icon--ig" aria-label="Instagram"></a>
+                    <a href="${linkFb}" target="_blank" rel="noopener noreferrer" x-cq-linkchecker="skip" class="itv-footer__sns-icon itv-footer__sns-icon--fb" aria-label="Facebook"></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+
+
+
+
+                

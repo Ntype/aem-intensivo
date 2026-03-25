@@ -1,0 +1,31 @@
+<sly data-sly-use.placeholderTemplate="core/wcm/components/commons/v1/templates.html"></sly> 
+<sly data-sly-test.hasContent="${properties.title || properties.bgImage}"></sly>
+<div class="itv-hero" id="${properties.id}" data-sly-test="${hasContent}">
+   <div class="itv-hero__bg" data-sly-test="${properties.bgImage}">
+      <img src="${properties.bgImage}" alt="background" class="cmp-image__image"/>
+   </div>
+   <div class="itv-hero__foreground" data-sly-test="${properties.carImage}">
+      <img src="${properties.carImage}" alt="Car Model" class="cmp-image__image"/>
+   </div>
+
+   <div class="itv-hero__overlay"></div>
+
+   <div class="itv-hero__content">
+      <div class="itv-hero__content--title" data-sly-test="${properties.title}">
+         <h1 class="cmp-title__text">${properties.title}</h1>
+      </div>
+      <div class="itv-hero__content--description" data-sly-test="${properties.description}">
+         <p class="cmp-text">${properties.description}</p>
+      </div>
+      <div class="itv-hero__action">
+         <div class="itv-hero__action--buy">
+            <sly data-sly-resource="${'btn-buy' @ resourceType='core/wcm/components/button/v2/button'}"></sly>
+         </div>
+         <div class="itv-hero__action--try">
+            <sly data-sly-resource="${'btn-try' @ resourceType='core/wcm/components/button/v2/button'}"></sly>
+         </div>
+      </div>
+   </div>
+</div>
+<sly data-sly-call="${placeholderTemplate.placeholder @ isEmpty = !hasContent}"></sly>
+

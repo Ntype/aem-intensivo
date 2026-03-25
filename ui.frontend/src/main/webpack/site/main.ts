@@ -2,7 +2,7 @@
 // Stylesheets
 import "./main.scss";
 import "./site.scss";
-import "./basic-two-cols.scss";
+//import "./basic-two-cols.scss";
 
 // Javascript or Typescript
 import "./**/*.js";

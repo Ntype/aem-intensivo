@@ -194,4 +194,6 @@
         </root>
     </jcr:content>
     <page-two-cols/>
+    <page-two-cols--cardlist/>
+    <landing-page/>
 </jcr:root>
