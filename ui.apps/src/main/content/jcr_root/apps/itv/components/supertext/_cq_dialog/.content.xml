@@ -164,7 +164,7 @@
                                                 name="./style">
                                                 <granite:data
                                                     jcr:primaryType="nt:unstructured"
-                                                    cq-dialog-dropdown-showhide-target=".autor-quote-target"/>
+                                                    cq-dialog-dropdown-showhide-target=".quote-target"/>
                                                 <items jcr:primaryType="nt:unstructured">
                                                     <body
                                                         jcr:primaryType="nt:unstructured"
@@ -180,8 +180,8 @@
                                                         value="cmp-supertext--disclaimer"/>
                                                 </items>
                                             </style>
-                                            <authorWrapper
-                                                granite:class="hide autor-quote-target"
+                                            <quoteWrapper
+                                                granite:class="hide quote-target"
                                                 jcr:primaryType="nt:unstructured"
                                                 sling:resourceType="granite/ui/components/coral/foundation/container">
                                                 <granite:data
@@ -193,8 +193,16 @@
                                                         sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
                                                         fieldLabel="Autor de la cita"
                                                         name="./author"/>
+                                                    <enableTypewriter
+                                                        jcr:primaryType="nt:unstructured"
+                                                        sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                                                        fieldLabel="Habilitar efecto máquina de escribir"
+                                                        name="./enableTypewriter"
+                                                        text="Activar efecto máquina de escribir"
+                                                        uncheckedValue="false"
+                                                        value="true"/>
                                                 </items>
-                                            </authorWrapper>
+                                            </quoteWrapper>
                                             <id
                                                 jcr:primaryType="nt:unstructured"
                                                 sling:resourceType="granite/ui/components/coral/foundation/form/textfield"

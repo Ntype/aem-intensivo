@@ -6,4 +6,6 @@
     <page-content/>
     <xf-web-variation/>
     <rep:policy/>
+    <landing-page/>
+    <lp-header/>
 </jcr:root>

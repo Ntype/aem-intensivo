@@ -10,4 +10,3 @@
             data-cmp-clickable="${title.data ? true : false}">${properties.jcr:title}</a></h1>
 </div>
 <sly data-sly-call="${template.placeholder @ isEmpty=!properties.jcr:title, classAppend='cmp-title'}"></sly>
-<sly data-sly-use.clientlib="/libs/granite/sightly/templates/clientlib.html" data-sly-call="${clientlib.all @ categories='itv.components.supertitle'}"></sly>

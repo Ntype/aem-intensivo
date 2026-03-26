@@ -4,7 +4,7 @@
      data-sly-test.text="${textModel.text}"
      data-cmp-data-layer="${textModel.data.json}"
      id="${component.id}"
-     class="cmp-supertext ${properties.style}">
+     class="cmp-supertext ${properties.style} ${properties.enableTypewriter ? 'cmp-supertext--typewriter' : ''}">
    <h3 class="cmp-supertext__title" data-sly-test="${properties.textTitle}">${properties.textTitle}</h3>
    <div class="cmp-supertext__content"
        data-sly-test="${properties.text}">${properties.text @ context='html'}</div>

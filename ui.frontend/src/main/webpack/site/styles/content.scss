@@ -1,0 +1,77 @@
+
+:root {
+    --bg-main: #f0f2f5;
+}
+.aem-GridColumn, .cmp-container, .responsivegrid, .root, body, html {
+    margin: 0 !important;
+    padding: 0 !important
+}
+.aem-GridColumn {
+    float: none !important
+}
+.aem-Grid {
+    margin: 0 !important;
+    padding: 0 !important
+}
+.cmp-content,
+.cmp-content>.aem-Grid {
+    display: block !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    width: 100% !important;
+}
+
+.cmp-footer, .itv-footer {
+    margin: 0 !important;
+    overflow: hidden !important;
+    width: 100%
+}
+.cmp-header, .itv-header {
+    margin: 0 !important;
+    opacity: visible !important;
+    width: 100%;
+}
+
+#cmp-container-main {
+    background-color: var(--bg-main);
+    -webkit-box-sizing: border-box !important;
+    box-sizing: border-box !important;
+    display: block !important;
+    margin: 0 auto !important;
+    width: 100%;
+    padding: 40px 16px !important;
+}
+
+#cmp-container-main>.aem-Grid {
+    display: flex !important;
+    flex-direction: column !important;
+    min-height: inherit !important;
+    width: 100% !important;
+    gap: 40px !important;
+}
+
+#cmp-container-main>.aem-Grid>.aem-GridColumn {
+    flex: 0 0 100% !important;
+    max-width: 100% !important;
+    width: 100% !important
+}
+@media(min-width:769px) {
+    #cmp-container-main {
+        padding: 80px 160px !important;
+    }
+    #cmp-container-main > .aem-Grid {
+        gap: 69px !important;
+    }
+}
+
+@media(min-width:1201px) {
+    #cmp-container-main {
+        padding: 80px 160px !important;
+        max-width: 1920px !important;
+    }
+    #cmp-container-main > .aem-Grid {
+        gap: 80px !important;
+    }
+
+
+}

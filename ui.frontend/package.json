@@ -55,9 +55,11 @@
     "webpack-dev-server": "^4.6.0",
     "webpack-merge": "^5.8.0"
   },
-  "dependencies": {},
   "browserslist": [
     "last 2 version",
     "> 1%"
-  ]
+  ],
+  "dependencies": {
+    "swiper": "^12.1.3"
+  }
 }

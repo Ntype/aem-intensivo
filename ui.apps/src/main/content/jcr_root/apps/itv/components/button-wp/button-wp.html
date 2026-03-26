@@ -1,0 +1,11 @@
+<sly data-sly-use.templates="core/wcm/components/commons/v1/templates.html"></sly>
+<sly data-sly-use.button="com.adobe.cq.wcm.core.components.models.Button"></sly>
+
+<a  id="btnWp-sticky" class="itv-button-wp"
+    href="${properties.link || '#'}"
+    aria-label="${properties.accessibilityLabel || 'Contactar por Whatsapp'}"
+    title="${button.text ? '' : button.accessibilityLabel}">
+    <span class="itv-button-wp__text">${properties.text || '999 999 999'}</span>
+</a>
+
+<sly data-sly-call="${templates.placeholder @ isEmpty = !properties.link && !properties.text}"></sly>

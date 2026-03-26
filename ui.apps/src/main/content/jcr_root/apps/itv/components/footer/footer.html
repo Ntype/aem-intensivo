@@ -1,0 +1,41 @@
+<footer class="itv-footer" id="${properties.id}">
+    <div class="itv-footer__container">
+        <div class="itv-footer__row itv-footer__row--1">
+            <div class="itv-footer__col itv-footer__col--left1">
+                <div class="itv-footer__name">
+                    <sly data-sly-resource="${'name' @ resourceType='core/wcm/components/title/v3/title'}"></sly>
+                </div>
+                <div class="itv-footer__about">
+                    <sly data-sly-resource="${'description' @ resourceType='core/wcm/components/text/v2/text'}"></sly>
+                </div>
+                <div class="itv-footer__location">
+                    <sly data-sly-resource="${'location' @ resourceType='core/wcm/components/text/v2/text'}"></sly>
+                </div>
+                <div class="itv-footer__contact">
+                    <sly data-sly-resource="${'contact' @ resourceType='core/wcm/components/text/v2/text'}"></sly>
+                </div>
+            </div>
+            
+            <div class="itv-footer__col itv-footer__col--right1">
+                <div class="itv-footer__nav-title">
+                    <sly data-sly-resource="${'footer-nav-title' @ resourceType='core/wcm/components/title/v3/title'}"></sly>
+                </div>
+                <div class="itv-footer__nav">
+                    <sly data-sly-resource="${'footer-nav' @ resourceType='core/wcm/components/navigation/v2/navigation'}"></sly>
+                </div>
+            </div>
+        </div>
+
+        <hr class="itv-footer__div">
+
+        <div class="itv-footer__row itv-footer__row--2">
+            <div class="itv-footer__col itv-footer__col--left2">
+                <sly data-sly-resource="${'copyright' @ resourceType='core/wcm/components/text/v2/text'}"></sly>
+            </div>
+
+            <div class="itv-footer__col itv-footer__col--right2">
+                <sly data-sly-resource="${'sns' @resourceType='itv/components/sns'}"></sly>
+            </div>
+        </div>
+    </div>
+</footer>

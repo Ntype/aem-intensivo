@@ -1,0 +1,33 @@
+<sly data-sly-use.templates="core/wcm/components/commons/v1/templates.html"/>
+<sly data-sly-use.model="com.itv.core.models.CardsModelLP"></sly>
+
+   <div class="itv-cardlist swiper js-cardlist-swiper">
+      <div class="itv-cardlist__grid swiper-wrapper">
+         <sly data-sly-list.card="${model.cards}">
+            <div class="itv-cardlist__card swiper-slide">
+               <div class="itv-cardlist__card--wrapper">
+                  <div class="itv-cardlist__image-wrapper">
+                     <img class="itv-cardlist__image" src="${card.image}" alt="${card.title}"/>
+                  </div>  
+                  <div class="itv-cardlist__content">
+                     <h2 class="itv-cardlist__title">${card.title}</h2>
+                     <p class="itv-cardlist__description">${card.description}</p>
+                     <div class="itv-cardlist__action">
+                        <div class="itv-cardlist__action--buy">
+                           <sly data-sly-resource="${'btn-buy-' @ appendPath=itemList.index, resourceType='core/wcm/components/button/v2/button'}"></sly>
+                        </div>
+                        <div class="itv-cardlist__action--try">
+                           <sly data-sly-resource="${'btn-try-' @ appendPath=itemList.index, resourceType='core/wcm/components/button/v2/button'}"></sly>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </sly>
+      </div>
+      <div class="swiper-button-prev"></div>
+      <div class="swiper-button-next"></div>
+   </div>
+
+<sly data-sly-call="${templates.placeholder @ isEmpty = !model.cards}"></sly>
+

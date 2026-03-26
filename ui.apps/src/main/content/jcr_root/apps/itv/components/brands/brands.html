@@ -1,0 +1,14 @@
+<sly data-sly-use.templates="core/wcm/components/commons/v1/templates.html"/>
+<sly data-sly-use.model="com.itv.core.models.BrandsModel"></sly>
+
+<div class="itv-brandlist">
+   <div class="itv-brandlist__grid">
+      <sly data-sly-list.brand="${model.brands}">
+         <div class="itv-brandlist__brand">
+            <img class="itv-brandlist__brand--img" src="${brand.image}" alt="${'brand-' @ appendPath=itemList.name}"/>
+         </div>   
+      </sly>
+   </div>
+</div>
+
+<sly data-sly-call="${templates.placeholder @ isEmpty = !model.brands}"></sly>

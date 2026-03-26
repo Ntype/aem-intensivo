@@ -1,0 +1,166 @@
+:root {
+    --header-bg: #1A1A1A;
+    --footer-text: #FFFFFF;
+    --footer-div: #333333;
+    --footer-titles: #666666;
+}
+.aem-GridColumn, .cmp-container, .responsivegrid, .root, body, html {
+    margin: 0 !important;
+    padding: 0 !important
+}
+.aem-GridColumn {
+    float: none !important
+}
+.aem-Grid {
+    gap: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important
+}
+.itv-footer {
+    width: 100%;
+    background-color: var(--header-bg);
+    color: var(--footer-text);
+    font-family: 'Inter', sans-serif;
+    .cmp-title, .cmp-title__text, .cmp-text p,
+    ul, li {
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+    &__container {
+        padding: 40px 16px;
+        box-sizing: border-box;
+        @media(min-width: 1201px) {
+            padding: 40px 160px;
+        }
+    }
+    &__row {
+        &--1 {
+            display: flex;
+            flex-direction: column;
+            padding-bottom: 24px;
+            @media(min-width: 769px) {
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: flex-start;
+                padding: 0;
+            }
+        }
+        &--2 {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 24px;
+            @media(min-width: 469px) {
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: center;
+            }
+        }
+    }
+    &__col {
+        &--left1 {
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+            @media(min-width: 469px) {
+                width: 588px;
+                flex-shrink: 0;
+            }
+            @media(min-width: 1201px) {
+                width: 600px;
+            }
+        }
+        &--right1 {
+            display: none;
+            @media(min-width: 469px) {
+                display: flex;
+                flex-direction: column;
+                gap: 24px;
+                width: 160px;
+                flex-shrink: 0;
+            }
+        }
+        &--left2 .cmp-text {
+            font-size: 16px;
+            font-weight: 400;
+            line-height: 24px;
+            text-align: center;
+            color: var(--footer-text);
+            @media(min-width: 469px) {
+                text-align: left;
+            }
+        }
+    }
+    &__name .cmp-title__text {
+        font-size: 24px;
+        font-weight: 700;
+        line-height: 32px;
+        color: var(--footer-titles);
+    }
+    &__about .cmp-text {
+        font-size: 16px;
+        line-height: 24px;
+        font-weight: 400;
+        color: var(--footer-text);
+    }
+    &__location, &__contact {
+        display: flex;
+        align-items: flex-start;
+        .cmp-text {
+            font-size: 16px;
+            font-weight: 400;
+            line-height: 24px;
+            color: var(--footer-text);
+        }
+        &::before{
+            content: "";
+            display: block;
+            width: 24px;
+            height: 24px;
+            flex-shrink: 0;
+            margin-right: 12px;
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+    }
+    &__location::before{
+        background-image: url('/content/dam/itv/logos---icons/icon-location.svg');
+    }
+    &__contact::before {
+        background-image: url('/content/dam/itv/logos---icons/icon-contact.svg');
+    }
+    &__div {
+        border: none;
+        border-top: 1px solid var(--footer-div);
+        margin: 32px 0;
+    }
+    &__nav-title .cmp-title__text {
+        font-family: 'Inter', sans-serif;
+        font-size: 24px;
+        font-weight: 700;
+        color: var(--footer-titles);
+        line-height: 32px;
+    }
+    &__nav {
+        .cmp-navigation__group {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        list-style: none;
+        }
+        .cmp-navigation__item-link {
+            font-family: 'Inter', sans-serif;
+            font-size: 16px;
+            font-weight: 600;
+            line-height: 24px;
+            color: var(--footer-text);
+            text-decoration: none;
+            display: block;
+            transition: opacity 0.2s ease;
+        }
+        .cmp-navigation__item-link:hover {
+            opacity: 0.7;
+        }
+    } 
+}
