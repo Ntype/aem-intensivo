@@ -26,21 +26,21 @@
                                         sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
                                         fieldLabel="Background Image"
                                         name="./bgImage"
-                                        rootPath="/content/dam/itv"/>
+                                        rootPath="/content/dam/itv/hero"/>
                                     <carImage
                                         jcr:primaryType="nt:unstructured"
                                         sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
                                         fieldLabel="Car Image"
                                         name="./carImage"
-                                        rootPath="/content/dam/itv"/>
+                                        rootPath="/content/dam/itv/hero"/>
                                     <title
                                         jcr:primaryType="nt:unstructured"
-                                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                        sling:resourceType="granite/ui/components/coral/foundation/form/textarea"
                                         fieldLabel="Title / Main Text"
                                         name="./title"/>
                                     <description
                                         jcr:primaryType="nt:unstructured"
-                                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                        sling:resourceType="granite/ui/components/coral/foundation/form/textarea"
                                         fieldLabel="Description / Subtext"
                                         name="./description"/>
                                     <id

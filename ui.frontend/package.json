@@ -58,5 +58,8 @@
   "browserslist": [
     "last 2 version",
     "> 1%"
-  ]
+  ],
+  "dependencies": {
+    "swiper": "^12.1.3"
+  }
 }

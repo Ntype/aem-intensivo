@@ -1,4 +1,4 @@
-<sly data-sly-use.placeholderTemplate="core/wcm/components/commons/v1/templates.html"></sly> 
+<sly data-sly-use.templates="core/wcm/components/commons/v1/templates.html"></sly> 
 <sly data-sly-test.hasContent="${properties.title || properties.bgImage}"></sly>
 <div class="itv-hero" id="${properties.id}" data-sly-test="${hasContent}">
    <div class="itv-hero__bg" data-sly-test="${properties.bgImage}">
@@ -27,5 +27,5 @@
       </div>
    </div>
 </div>
-<sly data-sly-call="${placeholderTemplate.placeholder @ isEmpty = !hasContent}"></sly>
+<sly data-sly-call="${templates.placeholder @ isEmpty = !hasContent}"></sly>
 

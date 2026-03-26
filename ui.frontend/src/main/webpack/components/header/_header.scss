@@ -4,6 +4,18 @@
     --header-x-desktop: 160px;
     --header-height: 88px;
 }
+.aem-GridColumn, .cmp-container, .responsivegrid, .root, body, html {
+    margin: 0 !important;
+    padding: 0 !important
+}
+.aem-GridColumn {
+    float: none !important
+}
+.aem-Grid {
+    gap: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important
+}
 
 .itv-header {
     width: 100%;
@@ -26,7 +38,7 @@
         display: block;
         width: 144px;
         height: 40px; 
-        background-image: url('/content/dam/itv/landing-page-logo.svg');
+        background-image: url('/content/dam/itv/logos---icons/landing-page-logo.svg');
         background-size: contain;
         background-repeat: no-repeat;
         background-position: left center;

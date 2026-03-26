@@ -34,24 +34,8 @@
             </div>
 
             <div class="itv-footer__col itv-footer__col--right2">
-                <sly data-sly-set.linkWa="https://wa.me/"></sly>
-                <sly data-sly-set.linkTk="https://www.tiktok.com/"></sly>
-                <sly data-sly-set.linkIg="https://www.instagram.com/"></sly>
-                <sly data-sly-set.linkFb="https://www.facebook.com/"></sly>
-                <div class="itv-footer__sns">
-                    <a href="${linkWa}" target="_blank" rel="noopener noreferrer" x-cq-linkchecker="skip" class="itv-footer__sns-icon itv-footer__sns-icon--wp" aria-label="Whatsapp"></a>
-                    <a href="${linkTk}" target="_blank" rel="noopener noreferrer" x-cq-linkchecker="skip" class="itv-footer__sns-icon itv-footer__sns-icon--tk" aria-label="TikTok"></a>
-                    <a href="${linkIg}" target="_blank" rel="noopener noreferrer" x-cq-linkchecker="skip" class="itv-footer__sns-icon itv-footer__sns-icon--ig" aria-label="Instagram"></a>
-                    <a href="${linkFb}" target="_blank" rel="noopener noreferrer" x-cq-linkchecker="skip" class="itv-footer__sns-icon itv-footer__sns-icon--fb" aria-label="Facebook"></a>
-                </div>
+                <sly data-sly-resource="${'sns' @resourceType='itv/components/sns'}"></sly>
             </div>
         </div>
     </div>
 </footer>
-
-
-
-
-
-
-                
