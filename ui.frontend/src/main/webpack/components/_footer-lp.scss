@@ -82,7 +82,7 @@
     @media (min-width: 768px) {
       display: flex;
       flex-direction: column;
-      width: 160px;
+      min-width: 160px !important;
       padding: 40px 0 24px 0;
       align-items: flex-start;
       gap: 10px;

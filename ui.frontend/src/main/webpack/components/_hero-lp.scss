@@ -18,10 +18,17 @@
     display: flex;
     justify-content: center;
   }
+  :global(.cq-wcm-edit) & {
+    &__backgroundimage, &__carimage {
+      pointer-events: auto !important;
+      z-index: 5 !important;
+      border: 1px dashed rgba(255,255,255,0.5);
+    }
+  }
   &__content,
   &__buttons {
     position: relative;
-    z-index: 4;
+    z-index: 10;
     width: 100%;
     @media (min-width: 768px) {
       width: 519px;
@@ -45,44 +52,44 @@
       max-width: 332px;
     }
   }
-    &__buttons {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      margin-bottom: 152.41px;
-      &-buy .cmp-button {
-        background-color: $color-button-primary;
-        color: $color-text-header-footer;
-        border-radius: 4px;
-        padding: 16px 24px;
-        border: none;
-        height: 60px;
-        width: 118px;
-        font-size: $font-button-size;
-        transition: background 0.3s;
-        &:hover {
-          background-color: darken($color-button-primary, 10%);
-          transform: scale(1.15);
-          box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.2);
-        }
-      }
-      &-testdrive .cmp-button {
-        background-color: transparent;
-        color: $color-text-header-footer;
-        border-radius: 4px;
-        padding: 16px 24px;
-        border: none;
-        height: 60px;
-        width: 190px;
-        font-size: $font-button-size;
-        transition: background 0.3s;
-        &:hover {
-          background-color: darken(rgba(255, 255, 255, 0.1), 10%);
-          transform: scale(1.15);
-          box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.2);
-        }
+  &__buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 152.41px;
+    &-buy .cmp-button {
+      background-color: $color-button-primary;
+      color: $color-text-header-footer;
+      border-radius: 4px;
+      padding: 16px 24px;
+      border: none;
+      height: 60px;
+      width: 118px;
+      font-size: $font-button-size;
+      transition: background 0.3s;
+      &:hover {
+        background-color: darken($color-button-primary, 10%);
+        transform: scale(1.15);
+        box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.2);
       }
     }
+    &-testdrive .cmp-button {
+      background-color: transparent;
+      color: $color-text-header-footer;
+      border-radius: 4px;
+      padding: 16px 24px;
+      border: none;
+      height: 60px;
+      width: 190px;
+      font-size: $font-button-size;
+      transition: background 0.3s;
+      &:hover {
+        background-color: darken(rgba(255, 255, 255, 0.1), 10%);
+        transform: scale(1.15);
+        box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.2);
+      }
+    }
+  }
   &__images {
     position: absolute;
     top: 0;
@@ -115,6 +122,7 @@
     height: 1101px;
     transform: scaleX(-1);
     z-index: 1;
+    overflow-x: hidden;
     @media (min-width: 768px) {
       top: -203px;
       width: 1920px;
@@ -132,7 +140,7 @@
     position: relative;
     z-index: 3;
     pointer-events: none;
-    top: 291px ;
+    top: 291px;
     left: -62px;
     max-width: none !important;
     @media (min-width: 768px) {
@@ -141,10 +149,13 @@
       height: auto;
     }
     @media (min-width: 1025px) {
+      position: absolute;
+      top: 0px;
       left: 590px;
       height: auto;
     }
-    .cmp-image, .cmp-image__image {
+    .cmp-image,
+    .cmp-image__image {
       width: 728px;
       max-width: none !important;
       height: auto !important;

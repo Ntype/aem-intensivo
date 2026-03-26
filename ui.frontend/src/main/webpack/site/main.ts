@@ -7,3 +7,4 @@ import "./basic-two-cols.scss";
 import "./**/*.js";
 import "./**/*.ts";
 import '../components/**/*.js';
+import '../components/_cardlist-lp.js';
