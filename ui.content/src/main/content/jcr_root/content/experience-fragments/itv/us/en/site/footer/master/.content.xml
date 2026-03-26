@@ -2,6 +2,8 @@
 <jcr:root xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:sling="http://sling.apache.org/jcr/sling/1.0"
     jcr:primaryType="cq:Page">
     <jcr:content
+        cq:lastModified="{Date}2026-03-26T20:30:22.069+01:00"
+        cq:lastModifiedBy="admin"
         cq:tags="[]"
         cq:template="/conf/itv/settings/wcm/templates/xf-web-variation"
         cq:xfMasterVariation="{Boolean}true"
@@ -16,11 +18,97 @@
             <separator
                 jcr:primaryType="nt:unstructured"
                 sling:resourceType="itv/components/separator"/>
-            <text
+            <footer
+                jcr:created="{Date}2026-03-23T19:10:33.840+01:00"
+                jcr:createdBy="admin"
+                jcr:lastModified="{Date}2026-03-26T18:31:41.622+01:00"
+                jcr:lastModifiedBy="admin"
                 jcr:primaryType="nt:unstructured"
-                sling:resourceType="itv/components/text"
-                text="&lt;p>Copyright 2026, AEM Intensivo.&amp;nbsp;All rights reserved.&lt;/p>&#xd;&#xa;&lt;p>345 Park Avenue,&amp;nbsp;San Jose, CA 95110-2704, USA&lt;/p>&#xd;&#xa;"
-                textIsRich="true"/>
+                sling:resourceType="itv/components/footer"
+                linkFb="https://www.facebook.com/"
+                linkIg="https://www.instagram.com/"
+                linkTk="https://www.tiktok.com/"
+                linkWa="https://wa.me/">
+                <copyright
+                    jcr:lastModified="{Date}2026-03-23T19:12:14.486+01:00"
+                    jcr:lastModifiedBy="admin"
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="core/wcm/components/text/v2/text"
+                    text="&lt;p>© 2023 PT Beli Mobil Duit Sendiri&lt;/p>&#xd;&#xa;"
+                    textIsRich="true"/>
+                <footer-nav
+                    jcr:lastModified="{Date}2026-03-23T19:16:49.841+01:00"
+                    jcr:lastModifiedBy="admin"
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="core/wcm/components/navigation/v2/navigation"
+                    collectAllPages="true"
+                    disableShadowing="false"
+                    navigationRoot="/content/itv/us/en/landing-page"
+                    structureStart="1"/>
+                <footer-nav-title
+                    jcr:lastModified="{Date}2026-03-23T19:30:38.782+01:00"
+                    jcr:lastModifiedBy="admin"
+                    jcr:primaryType="nt:unstructured"
+                    jcr:title="Links"
+                    sling:resourceType="core/wcm/components/title/v3/title"/>
+                <name
+                    jcr:lastModified="{Date}2026-03-23T19:30:53.487+01:00"
+                    jcr:lastModifiedBy="admin"
+                    jcr:primaryType="nt:unstructured"
+                    jcr:title="BuyCar"
+                    sling:resourceType="core/wcm/components/title/v3/title"
+                    linkTarget="_self"
+                    type="h1"/>
+                <description
+                    jcr:lastModified="{Date}2026-03-23T19:32:18.936+01:00"
+                    jcr:lastModifiedBy="admin"
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="core/wcm/components/text/v2/text"
+                    text="&lt;p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem.&lt;/p>&#xd;&#xa;"
+                    textIsRich="true"/>
+                <location
+                    jcr:lastModified="{Date}2026-03-23T19:32:35.680+01:00"
+                    jcr:lastModifiedBy="admin"
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="core/wcm/components/text/v2/text"
+                    text="&lt;p>Jl. Letjen S. Parman No.Kav 21, RT.12/RW.1, Tj. Duren Sel., Kec. Grogol petamburan, Kota Jakarta Barat, Daerah Khusus Ibukota Jakarta 11470&lt;/p>&#xd;&#xa;"
+                    textIsRich="true"/>
+                <contact
+                    jcr:lastModified="{Date}2026-03-23T19:33:08.439+01:00"
+                    jcr:lastModifiedBy="admin"
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="core/wcm/components/text/v2/text"
+                    text="&lt;p>cs@buycar.co.id&lt;/p>&#xd;&#xa;"
+                    textIsRich="true"/>
+                <sns
+                    jcr:lastModified="{Date}2026-03-26T20:30:21.977+01:00"
+                    jcr:lastModifiedBy="admin"
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="itv/components/sns">
+                    <snsList jcr:primaryType="nt:unstructured">
+                        <item0
+                            jcr:primaryType="nt:unstructured"
+                            icon="/content/dam/itv/social-media/social-wp.svg"
+                            link="https://wa.me/"
+                            name="Whatsapp"/>
+                        <item1
+                            jcr:primaryType="nt:unstructured"
+                            icon="/content/dam/itv/social-media/social-tk.svg"
+                            link="https://www.tiktok.com/"
+                            name="TikTok"/>
+                        <item2
+                            jcr:primaryType="nt:unstructured"
+                            icon="/content/dam/itv/social-media/social-ig.svg"
+                            link="https://www.instagram.com/"
+                            name="Instagram"/>
+                        <item3
+                            jcr:primaryType="nt:unstructured"
+                            icon="/content/dam/itv/social-media/social-fb.svg"
+                            link="https://www.facebook.com/"
+                            name="Facebook"/>
+                    </snsList>
+                </sns>
+            </footer>
         </root>
     </jcr:content>
 </jcr:root>

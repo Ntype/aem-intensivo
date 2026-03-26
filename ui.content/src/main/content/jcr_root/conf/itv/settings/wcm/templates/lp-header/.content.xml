@@ -3,7 +3,7 @@
     jcr:primaryType="cq:Template"
     allowedPaths="[ /content/experience-fragments/itv(/.*)?]">
     <jcr:content
-        cq:lastModified="{Date}2026-03-18T10:22:04.693+01:00"
+        cq:lastModified="{Date}2026-03-18T13:02:59.049+01:00"
         cq:lastModifiedBy="admin"
         cq:templateType="/conf/itv/settings/wcm/template-types/xf"
         jcr:primaryType="cq:PageContent"

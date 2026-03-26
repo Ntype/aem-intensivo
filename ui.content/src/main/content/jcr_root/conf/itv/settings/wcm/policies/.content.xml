@@ -189,9 +189,9 @@
             </title>
             <experiencefragment jcr:primaryType="nt:unstructured">
                 <policy_header
-                    cq:styleDefaultElement="header"
+                    cq:styleDefaultClasses="cmp-lp-header"
                     jcr:description="Sets a &lt;header> element on the page header experience fragment."
-                    jcr:lastModified="{Date}2026-03-17T10:22:08.282+01:00"
+                    jcr:lastModified="{Date}2026-03-18T13:01:24.396+01:00"
                     jcr:lastModifiedBy="admin"
                     jcr:primaryType="nt:unstructured"
                     jcr:title="Page Header"
@@ -228,25 +228,33 @@
                     sling:resourceType="wcm/core/components/policy/policy">
                     <jcr:content jcr:primaryType="nt:unstructured"/>
                 </policy_633302477952600>
+                <policy_1773835429913
+                    cq:styleDefaultClasses="itv-header"
+                    jcr:lastModified="{Date}2026-03-20T16:14:18.202+01:00"
+                    jcr:lastModifiedBy="admin"
+                    jcr:primaryType="nt:unstructured"
+                    jcr:title="Landing Page Header  Policy"
+                    sling:resourceType="wcm/core/components/policy/policy">
+                    <jcr:content jcr:primaryType="nt:unstructured"/>
+                </policy_1773835429913>
             </experiencefragment>
             <container jcr:primaryType="nt:unstructured">
                 <policy_header_container
-                    cq:styleDefaultClasses="cmp-lp-header--global"
+                    cq:styleDefaultElement="header"
                     jcr:description="componentes permitidos en el contenedor principal del landing-page header."
-                    jcr:lastModified="{Date}2026-03-18T10:22:04.689+01:00"
+                    jcr:lastModified="{Date}2026-03-23T19:11:40.662+01:00"
                     jcr:lastModifiedBy="admin"
                     jcr:primaryType="nt:unstructured"
-                    jcr:title="Landing Page Header Container Policy"
+                    jcr:title="Landing Page XF Container Policy"
                     sling:resourceType="wcm/core/components/policy/policy"
-                    components="[/apps/itv/components/button,/apps/itv/components/image,/apps/itv/components/navigation]"
+                    components="[/apps/itv/components/footer,/apps/itv/components/header]"
                     layout="responsiveGrid"
                     layoutDisabled="false">
                     <jcr:content jcr:primaryType="nt:unstructured"/>
                 </policy_header_container>
                 <policy_1574694950110
-                    cq:styleDefaultElement="header"
                     jcr:description="Allows the template components and defines the component mapping (this configures what components should be automatically created when authors drop assets from the content finder to the page editor)."
-                    jcr:lastModified="{Date}2026-03-18T10:21:13.410+01:00"
+                    jcr:lastModified="{Date}2026-03-19T11:06:50.646+01:00"
                     jcr:lastModifiedBy="admin"
                     jcr:primaryType="nt:unstructured"
                     jcr:title="Page Root"
@@ -281,22 +289,23 @@
                 <policy_649128221558427
                     cq:styleDefaultElement="main"
                     jcr:description="Sets a &lt;main> element on the page content area."
-                    jcr:lastModified="{Date}2026-03-17T10:21:00.219+01:00"
+                    jcr:lastModified="{Date}2026-03-19T12:30:23.656+01:00"
                     jcr:lastModifiedBy="admin"
                     jcr:primaryType="nt:unstructured"
                     jcr:title="Page Main"
                     sling:resourceType="wcm/core/components/policy/policy"
+                    components="group:AEM Intensivo - Content"
                     layoutDisabled="false">
                     <jcr:content jcr:primaryType="nt:unstructured"/>
                 </policy_649128221558427>
                 <policy_1575040440977
                     jcr:description="Allows the template components and defines the component mapping (this configures what components should be automatically created when authors drop assets from the content finder to the page editor)."
-                    jcr:lastModified="{Date}2026-03-17T13:29:53.714+01:00"
+                    jcr:lastModified="{Date}2026-03-20T11:43:47.450+01:00"
                     jcr:lastModifiedBy="admin"
                     jcr:primaryType="nt:unstructured"
                     jcr:title="XF Root"
                     sling:resourceType="wcm/core/components/policy/policy"
-                    components="[group:AEM Intensivo - Content,/apps/itv/components/navigation]"
+                    components="[group:AEM Intensivo - Content]"
                     layoutDisabled="false">
                     <jcr:content jcr:primaryType="nt:unstructured"/>
                     <cq:authoring jcr:primaryType="nt:unstructured">
@@ -343,6 +352,26 @@
                     layoutDisabled="false">
                     <jcr:content jcr:primaryType="nt:unstructured"/>
                 </policy_15085087366400>
+                <policy_1773919912242
+                    jcr:lastModified="{Date}2026-03-19T12:34:17.201+01:00"
+                    jcr:lastModifiedBy="admin"
+                    jcr:primaryType="nt:unstructured"
+                    jcr:title="Page Content Testing"
+                    sling:resourceType="wcm/core/components/policy/policy"
+                    components="group:AEM Intensivo - Content"
+                    layoutDisabled="false">
+                    <jcr:content jcr:primaryType="nt:unstructured"/>
+                </policy_1773919912242>
+                <policy_1774556834800
+                    jcr:lastModified="{Date}2026-03-26T21:27:55.567+01:00"
+                    jcr:lastModifiedBy="admin"
+                    jcr:primaryType="nt:unstructured"
+                    jcr:title="LP Content"
+                    sling:resourceType="wcm/core/components/policy/policy"
+                    components="[/apps/itv/components/brands,/apps/itv/components/cardlistLP,/apps/itv/components/container]"
+                    layoutDisabled="false">
+                    <jcr:content jcr:primaryType="nt:unstructured"/>
+                </policy_1774556834800>
             </container>
             <teaser jcr:primaryType="nt:unstructured">
                 <policy_1575031387650
@@ -371,7 +400,7 @@
             <page jcr:primaryType="nt:unstructured">
                 <policy
                     jcr:description="Includes the required client libraries."
-                    jcr:lastModified="{Date}2026-03-11T13:04:47.484+01:00"
+                    jcr:lastModified="{Date}2026-03-19T12:31:28.250+01:00"
                     jcr:lastModifiedBy="admin"
                     jcr:primaryType="nt:unstructured"
                     jcr:title="basic-two-cols policy"
@@ -382,16 +411,27 @@
                     <jcr:content jcr:primaryType="nt:unstructured"/>
                 </policy>
                 <policy_1773740566696
-                    jcr:lastModified="{Date}2026-03-18T10:04:47.736+01:00"
+                    jcr:lastModified="{Date}2026-03-26T10:25:01.453+01:00"
                     jcr:lastModifiedBy="admin"
                     jcr:primaryType="nt:unstructured"
                     jcr:title="landing-page policy"
                     sling:resourceType="wcm/core/components/policy/policy"
-                    clientlibs="[itv.site,]"
+                    clientlibs="itv.site"
                     clientlibsAsync="false">
                     <jcr:content jcr:primaryType="nt:unstructured"/>
                 </policy_1773740566696>
             </page>
+            <xfpage jcr:primaryType="nt:unstructured">
+                <policy_1773929417385
+                    jcr:lastModified="{Date}2026-03-24T10:56:14.223+01:00"
+                    jcr:lastModifiedBy="admin"
+                    jcr:primaryType="nt:unstructured"
+                    jcr:title="xf landing-page"
+                    sling:resourceType="wcm/core/components/policy/policy"
+                    clientlibs="itv.site">
+                    <jcr:content jcr:primaryType="nt:unstructured"/>
+                </policy_1773929417385>
+            </xfpage>
         </components>
     </itv>
     <wcm jcr:primaryType="nt:unstructured">

@@ -2,7 +2,7 @@
 <jcr:root xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:sling="http://sling.apache.org/jcr/sling/1.0"
     jcr:primaryType="cq:Page">
     <jcr:content
-        cq:lastModified="{Date}2026-03-18T09:28:15.462+01:00"
+        cq:lastModified="{Date}2026-03-26T14:05:11.013+01:00"
         cq:lastModifiedBy="admin"
         cq:template="/conf/itv/settings/wcm/templates/landing-page"
         jcr:primaryType="cq:PageContent"
@@ -13,30 +13,142 @@
             sling:resourceType="itv/components/container"
             layout="responsiveGrid">
             <container
-                jcr:lastModified="{Date}2026-03-17T10:46:24.844+01:00"
+                jcr:lastModified="{Date}2026-03-26T10:22:29.375+01:00"
                 jcr:lastModifiedBy="admin"
                 jcr:primaryType="nt:unstructured"
                 sling:resourceType="itv/components/container"
-                id="lp-main-container"
                 layout="responsiveGrid">
-                <container
-                    jcr:created="{Date}2026-03-17T10:23:10.644+01:00"
+                <hero
+                    jcr:created="{Date}2026-03-19T14:52:02.242+01:00"
                     jcr:createdBy="admin"
-                    jcr:lastModified="{Date}2026-03-17T10:26:48.961+01:00"
+                    jcr:lastModified="{Date}2026-03-26T12:29:27.461+01:00"
                     jcr:lastModifiedBy="admin"
                     jcr:primaryType="nt:unstructured"
-                    sling:resourceType="itv/components/container"
-                    id="lp-hero-container"
-                    layout="responsiveGrid"/>
+                    sling:resourceType="itv/components/hero"
+                    bgImage="/content/dam/itv/hero/bg.png"
+                    carImage="/content/dam/itv/hero/car.png"
+                    description="Aenean commodo ligula eget dolor.  Aenean massa. "
+                    layout="hero"
+                    title="Lorem ipsum dolor sit amet, consectetuer adipiscing elit.">
+                    <cards jcr:primaryType="nt:unstructured">
+                        <item0
+                            jcr:primaryType="nt:unstructured"
+                            background="/content/dam/itv/hero/bg.png"
+                            image="/content/dam/itv/hero/car.png"
+                            text="Aenean commodo ligula eget dolor.  Aenean massa. "
+                            title="Lorem ipsum dolor sit amet, consectetuer adipiscing elit."/>
+                    </cards>
+                    <btn-buy
+                        jcr:lastModified="{Date}2026-03-26T12:29:46.453+01:00"
+                        jcr:lastModifiedBy="admin"
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="Compra"
+                        sling:resourceType="core/wcm/components/button/v2/button"
+                        linkTarget="_self"/>
+                    <btn-try
+                        jcr:lastModified="{Date}2026-03-26T12:29:56.773+01:00"
+                        jcr:lastModifiedBy="admin"
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="Pide una prueba"
+                        sling:resourceType="core/wcm/components/button/v2/button"
+                        linkTarget="_self"/>
+                </hero>
                 <container_1022808279
                     jcr:created="{Date}2026-03-17T10:28:51.533+01:00"
                     jcr:createdBy="admin"
-                    jcr:lastModified="{Date}2026-03-17T10:46:18.619+01:00"
+                    jcr:lastModified="{Date}2026-03-26T10:22:40.179+01:00"
                     jcr:lastModifiedBy="admin"
                     jcr:primaryType="nt:unstructured"
                     sling:resourceType="itv/components/container"
-                    id="lp-content-container"
-                    layout="responsiveGrid"/>
+                    id="cmp-container-main"
+                    layout="responsiveGrid">
+                    <cardlistlp
+                        jcr:created="{Date}2026-03-26T10:22:45.350+01:00"
+                        jcr:createdBy="admin"
+                        jcr:lastModified="{Date}2026-03-26T12:30:32.758+01:00"
+                        jcr:lastModifiedBy="admin"
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="itv/components/cardlistLP">
+                        <cards jcr:primaryType="nt:unstructured">
+                            <item0
+                                jcr:primaryType="nt:unstructured"
+                                description="Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus."
+                                image="/content/dam/itv/cars/car-cardlist.png"
+                                title="Toyota Corola Cross GR"/>
+                            <item1
+                                jcr:primaryType="nt:unstructured"
+                                description="Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus."
+                                image="/content/dam/itv/cars/car-cardlist.png"
+                                title="Toyota Corola Cross GR"/>
+                            <item2
+                                jcr:primaryType="nt:unstructured"
+                                description="Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus."
+                                image="/content/dam/itv/cars/car-cardlist.png"
+                                title="Toyota Corola Cross GR"/>
+                            <item3
+                                jcr:primaryType="nt:unstructured"
+                                description="Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus."
+                                image="/content/dam/itv/cars/car-cardlist.png"
+                                title="Toyota Corola Cross GR"/>
+                            <item4
+                                jcr:primaryType="nt:unstructured"
+                                description="Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus."
+                                image="/content/dam/itv/cars/car-cardlist.png"
+                                title="Toyota Corola Cross GR"/>
+                        </cards>
+                        <btn-buy-
+                            jcr:lastModified="{Date}2026-03-26T12:42:18.559+01:00"
+                            jcr:lastModifiedBy="admin"
+                            jcr:primaryType="nt:unstructured"
+                            jcr:title="Comprar"
+                            sling:resourceType="core/wcm/components/button/v2/button"
+                            linkTarget="_self"/>
+                        <btn-try-
+                            jcr:lastModified="{Date}2026-03-26T12:42:28.126+01:00"
+                            jcr:lastModifiedBy="admin"
+                            jcr:primaryType="nt:unstructured"
+                            jcr:title="Pide una prueba"
+                            sling:resourceType="core/wcm/components/button/v2/button"
+                            linkTarget="_self"/>
+                    </cardlistlp>
+                    <brands
+                        jcr:created="{Date}2026-03-26T10:28:53.090+01:00"
+                        jcr:createdBy="admin"
+                        jcr:lastModified="{Date}2026-03-26T14:05:10.998+01:00"
+                        jcr:lastModifiedBy="admin"
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="itv/components/brands">
+                        <brands jcr:primaryType="nt:unstructured">
+                            <item0
+                                jcr:primaryType="nt:unstructured"
+                                image="/content/dam/itv/brands/Subaru.png"/>
+                            <item1
+                                jcr:primaryType="nt:unstructured"
+                                image="/content/dam/itv/brands/Nissan.png"/>
+                            <item2
+                                jcr:primaryType="nt:unstructured"
+                                image="/content/dam/itv/brands/Chery.png"/>
+                            <item3
+                                jcr:primaryType="nt:unstructured"
+                                image="/content/dam/itv/brands/Suzuki.png"/>
+                            <item4
+                                jcr:primaryType="nt:unstructured"
+                                image="/content/dam/itv/brands/Hyundai.png"/>
+                            <item5
+                                jcr:primaryType="nt:unstructured"
+                                image="/content/dam/itv/brands/Honda.png"/>
+                            <item6
+                                jcr:primaryType="nt:unstructured"
+                                image="/content/dam/itv/brands/Mazda.png"/>
+                            <item7
+                                jcr:primaryType="nt:unstructured"
+                                image="/content/dam/itv/brands/Daihatsu.png"/>
+                            <item8
+                                jcr:primaryType="nt:unstructured"
+                                image="/content/dam/itv/brands/Mitsubishi.png"/>
+                        </brands>
+                    </brands>
+                </container_1022808279>
             </container>
         </root>
     </jcr:content>
