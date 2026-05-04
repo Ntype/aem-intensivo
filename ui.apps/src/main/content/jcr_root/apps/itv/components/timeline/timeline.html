@@ -1,0 +1,16 @@
+<sly data-sly-use.model="com.itv.core.models.TimelineModel"></sly>
+<sly data-sly-use.templates="core/wcm/components/commons/v1/templates.html"/>
+<div class="itv-timeline">
+    <div class="itv-timeline__line"></div>
+    <sly data-sly-list.event="${model.events}">
+        <div class="itv-timeline__item ${eventList.odd ? 'itv-timeline__item--left' : 'itv-timeline__item--right'}">
+            <div class="itv-timeline__event-marker"></div>
+            <div class="itv-timeline__event-content">
+                <p class="itv-timeline__event-date">${event.date}</p>
+                <h3 class="itv-timeline__event-title">${event.title}</h3>
+                <p class="itv-timeline__event-description">${event.description}</p>
+            </div>
+        </div>
+    </sly>
+</div>
+<sly data-sly-call="${templates.placeholder @ isEmpty = !model.events}"></sly>

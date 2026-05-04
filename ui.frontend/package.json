@@ -60,6 +60,7 @@
     "> 1%"
   ],
   "dependencies": {
+    "@google/model-viewer": "^4.2.0",
     "swiper": "^12.1.3"
   }
 }

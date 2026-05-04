@@ -1,6 +1,7 @@
 <footer class="itv-footer" id="${properties.id}">
     <div class="itv-footer__container">
         <div class="itv-footer__row itv-footer__row--1">
+
             <div class="itv-footer__col itv-footer__col--left1">
                 <div class="itv-footer__name">
                     <sly data-sly-resource="${'name' @ resourceType='core/wcm/components/title/v3/title'}"></sly>
@@ -15,13 +16,18 @@
                     <sly data-sly-resource="${'contact' @ resourceType='core/wcm/components/text/v2/text'}"></sly>
                 </div>
             </div>
-            
+
             <div class="itv-footer__col itv-footer__col--right1">
                 <div class="itv-footer__nav-title">
                     <sly data-sly-resource="${'footer-nav-title' @ resourceType='core/wcm/components/title/v3/title'}"></sly>
                 </div>
+                
                 <div class="itv-footer__nav">
                     <sly data-sly-resource="${'footer-nav' @ resourceType='core/wcm/components/navigation/v2/navigation'}"></sly>
+                </div>
+                <div class="itv-footer__secondary-links">
+                    <a href="/content/itv/us/en/landing-page/quienes-somos.html">Quiénes somos</a>
+                    <a href="/content/itv/us/en/landing-page/contact.html">Contact</a>
                 </div>
             </div>
         </div>
@@ -29,6 +35,7 @@
         <hr class="itv-footer__div">
 
         <div class="itv-footer__row itv-footer__row--2">
+
             <div class="itv-footer__col itv-footer__col--left2">
                 <sly data-sly-resource="${'copyright' @ resourceType='core/wcm/components/text/v2/text'}"></sly>
             </div>

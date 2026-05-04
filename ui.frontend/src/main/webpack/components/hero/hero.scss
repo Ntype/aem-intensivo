@@ -22,12 +22,11 @@
         min-height: 768px;
     }
 
-
     &__bg {
         position: absolute;
         inset: 0;
         z-index: 1;
-        .cmp-image, .cmp-image__image {
+        .cmp-image, .cmp-image__image, video {
             width: 100%;
             height: 100%;
             object-fit: cover;
@@ -37,10 +36,10 @@
 
     &__foreground {
         position: absolute;
-        top: 361px;
-        left: -10px;
-        width: 528px;
-        max-width: none;
+        top: 52%;
+        left: -2%;
+        width: 135%;
+        max-width: 528px;
         z-index: 2;
 
         @media (min-width: 448px) and (max-width: 768px) {
@@ -48,13 +47,14 @@
             right: -25%;
             top: 40%;
             width: 130%;
+            max-width: none;
         }
         @media(min-width: 769px) {
             top: 50%;
             transform: translateY(-50%);
             left: auto;
         }
-        @media(min-width: 769px) and (max-width: 1023px) {
+        @media(min-width: 869px) and (max-width: 1023px) {
             right: -20%; 
             width: 80%;
             transform: translateY(-40%);
@@ -67,7 +67,8 @@
             top: 50%;
             transform: translateY(-50%);
             left: auto;
-            width: 1056px !important;
+            width: 85% !important; 
+            max-width: 1056px !important;
         }
         @media(min-width: 1201px) and (max-width: 1440px) {
             right: -15%;
@@ -76,14 +77,55 @@
             right: -5%;
         }
 
-        .cmp-image, .cmp-image__image {
+        &:has(model-viewer) {
+            left: 50% !important;
+            right: auto !important;
+            transform: translate(-50%, -50%) !important;
+            top: 70% !important; 
+            width: 110% !important; 
+            max-width: 1400px !important; 
+
+            @media(min-width: 769px) {
+                left: 65% !important;
+                top: 58% !important; 
+                width: 90% !important;
+            }
+
+            @media(min-width: 1201px) {
+                left: 68% !important; 
+                width: 85% !important; 
+            }
+        }
+
+        .cmp-image, .cmp-image__image, video, model-viewer {
             width: 100%;
             height: auto;
             display: block;
+            object-fit: contain;
+        }
+
+        model-viewer {
+            width: 100%;
+            height: 400px; 
+            --poster-color: transparent;
+            outline: none;
+            --camera-orbit: 0deg 75deg 105%;
+            pointer-events: none;
+
+            @media(min-width: 769px) {
+                height: 550px;
+            }
+
+            @media(min-width: 1201px) {
+                height: 700px; 
+            }
+
+            &::part(default-prompt) {
+                display: none !important;
+            }
         }
     }
-
-    
+  
     &__overlay {
         position: absolute;
         inset: 0;
@@ -96,6 +138,43 @@
         }
         @media(min-width: 1201px) {
             width: 51.8%;
+        }
+    }
+
+    &__video-btn {
+        position: absolute;
+        bottom: 32px;
+        right: 32px;
+        z-index: 5;
+        background: rgba(0, 0, 0, 0.4);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        color: white;
+        width: 48px;
+        height: 48px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        font-size: 16px;
+        backdrop-filter: blur(4px);
+        transition: all 0.3s ease;
+        span{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        &:hover {
+            background: #0072ED;
+            border-color: #0072ED;
+            transform: scale(1.1);
+        }
+        @media(max-width: 768px) {
+            bottom: 16px;
+            right: 16px;
+            width: 40px;
+            height: 40px;
+            font-size: 14px;
         }
     }
     

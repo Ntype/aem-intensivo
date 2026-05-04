@@ -32,7 +32,7 @@
                                             sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
                                             fieldLabel="Image"
                                             name="./image"
-                                            rootPath="/content/dam/itv/cars"/>
+                                            rootPath="/content/dam/itv/buycar/images"/>
                                         <title
                                             jcr:primaryType="nt:unstructured"
                                             sling:resourceType="granite/ui/components/coral/foundation/form/textfield"

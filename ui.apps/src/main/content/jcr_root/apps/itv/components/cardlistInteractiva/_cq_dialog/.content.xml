@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:granite="http://www.adobe.com/jcr/granite/1.0"
+    jcr:primaryType="nt:unstructured"
+    jcr:title="Interactive CardList"
+    sling:resourceType="cq/gui/components/authoring/dialog"
+    extraClientlibs="[cq.authoring.dialog,core.wcm.components.dialog.editor.v1.showhide]">
+    <content jcr:primaryType="nt:unstructured" sling:resourceType="granite/ui/components/coral/foundation/container">
+        <items jcr:primaryType="nt:unstructured">
+            <tabs jcr:primaryType="nt:unstructured" sling:resourceType="granite/ui/components/coral/foundation/tabs" maximized="{Boolean}true">
+                <items jcr:primaryType="nt:unstructured">
+                    <properties 
+                        jcr:primaryType="nt:unstructured" 
+                        jcr:title="Configuración" 
+                        sling:resourceType="granite/ui/components/coral/foundation/container">
+                        <items jcr:primaryType="nt:unstructured">
+                            <column 
+                                jcr:primaryType="nt:unstructured" 
+                                sling:resourceType="granite/ui/components/coral/foundation/container">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <mediaType 
+                                        jcr:primaryType="nt:unstructured" 
+                                        sling:resourceType="granite/ui/components/coral/foundation/form/select" 
+                                        fieldLabel="Tipo de Contenido para la Lista" 
+                                        name="./mediaType"
+                                        granite:class="cq-dialog-dropdown-showhide">
+                                        <granite:data 
+                                            jcr:primaryType="nt:unstructured" 
+                                            cq-dialog-dropdown-showhide-target=".card-media-target"/>
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <image 
+                                                jcr:primaryType="nt:unstructured" 
+                                                text="Imágenes" 
+                                                value="image"/>
+                                            <model3d 
+                                                jcr:primaryType="nt:unstructured" 
+                                                text="Modelos 3D" 
+                                                value="3d"/>
+                                        </items>
+                                    </mediaType>
+
+                                    <cards 
+                                        jcr:primaryType="nt:unstructured" 
+                                        sling:resourceType="granite/ui/components/coral/foundation/form/multifield" 
+                                        composite="{Boolean}true" 
+                                        fieldLabel="Cards">
+                                        <field 
+                                            jcr:primaryType="nt:unstructured" 
+                                            sling:resourceType="granite/ui/components/coral/foundation/container" 
+                                            name="./cards">
+                                            <items jcr:primaryType="nt:unstructured">
+                                                <imageContainer 
+                                                    jcr:primaryType="nt:unstructured" 
+                                                    sling:resourceType="granite/ui/components/coral/foundation/container" 
+                                                    granite:class="hide card-media-target">
+                                                    <granite:data 
+                                                        jcr:primaryType="nt:unstructured" 
+                                                        showhidetargetvalue="image"/>
+                                                    <items jcr:primaryType="nt:unstructured">
+                                                        <imagePath 
+                                                            jcr:primaryType="nt:unstructured" 
+                                                            sling:resourceType="granite/ui/components/coral/foundation/form/pathfield" fieldLabel="Ruta de la Imagen" 
+                                                            name="./imagePath" 
+                                                            rootPath="/content/dam/itv/buycar/images"/>
+                                                    </items>
+                                                </imageContainer>
+
+                                                <modelContainer 
+                                                    jcr:primaryType="nt:unstructured" 
+                                                    sling:resourceType="granite/ui/components/coral/foundation/container" 
+                                                    granite:class="hide card-media-target">
+                                                    <granite:data 
+                                                        jcr:primaryType="nt:unstructured" 
+                                                        showhidetargetvalue="3d"/>
+                                                    <items jcr:primaryType="nt:unstructured">
+                                                        <modelPath 
+                                                            jcr:primaryType="nt:unstructured" 
+                                                            sling:resourceType="granite/ui/components/coral/foundation/form/pathfield" 
+                                                            fieldLabel="Ruta del Modelo 3D" name="./modelPath" 
+                                                            rootPath="/content/dam/itv/buycar/3d-models"/>
+                                                    </items>
+                                                </modelContainer>
+
+                                                <title 
+                                                    jcr:primaryType="nt:unstructured" 
+                                                    sling:resourceType="granite/ui/components/coral/foundation/form/textfield" 
+                                                    fieldLabel="Título del Vehículo" name="./title"/>
+                                                <linkURL 
+                                                    jcr:primaryType="nt:unstructured" 
+                                                    sling:resourceType="granite/ui/components/coral/foundation/form/pathfield" 
+                                                    fieldLabel="Enlace del botón" 
+                                                    name="./linkURL"/>
+                                            
+                                            </items>
+                                        </field>
+                                    </cards>
+
+                                </items>
+                            </column>
+                        </items>
+                    </properties>
+                </items>
+            </tabs>
+        </items>
+    </content>
+</jcr:root>

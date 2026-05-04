@@ -162,5 +162,35 @@
         .cmp-navigation__item-link:hover {
             opacity: 0.7;
         }
+    }
+    &__secondary-links {
+        width: 100%;
+        margin-top: 16px; // Separación sutil respecto al menú principal
+        
+        // INTERFAZ DE AUTOR: Aseguramos que el placeholder de AEM no desborde la caja
+        .new {
+            margin: 0 !important;
+            padding: 0 !important;
+        }
+
+        .cmp-text p, 
+        .cmp-button,
+        a {
+            font-family: 'Inter', sans-serif;
+            font-size: 16px;
+            font-weight: 600;
+            line-height: 24px;
+            color: var(--footer-text) !important;
+            text-decoration: none;
+            display: block;
+            margin-top: 16px !important; // Separa los elementos apilados
+            transition: opacity 0.2s ease;
+            background: transparent;
+            padding: 0;
+
+            &:hover {
+                opacity: 0.7;
+            }
+        }
     } 
 }

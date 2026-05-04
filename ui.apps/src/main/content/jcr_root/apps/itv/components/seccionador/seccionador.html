@@ -1,0 +1,48 @@
+<sly data-sly-use.templates="core/wcm/components/commons/v1/templates.html"></sly>
+<sly data-sly-test.hasConfig="${properties.layoutMode}"></sly>
+
+<div class="itv-motor-selector ${properties.layoutMode == 'tabs' ? 'mode-tabs' : 'mode-accordion'}" 
+     data-mode="${properties.layoutMode}"
+     data-edit-mode="${wcmmode.edit ? 'true' : 'false'}"
+     data-sly-test="${hasConfig}">
+
+    <div class="itv-motor-selector__tab-headers" data-sly-test="${properties.layoutMode == 'tabs'}">
+
+        <sly data-sly-list.section="${resource.getChildren}">
+            <sly data-sly-test="${section.name == 'sections'}">
+                <sly data-sly-list.item="${section.getChildren}">
+                    <button class="itv-motor-selector__tab-btn js-motor-btn ${itemList.first ? 'is-active' : ''}" 
+                            data-target="panel-${itemList.index}">
+                        ${item.valueMap.title}
+                    </button>
+                </sly>
+            </sly>
+        </sly>
+    </div>
+
+    <div class="itv-motor-selector__content-wrapper">
+        <sly data-sly-list.section="${resource.getChildren}">
+            <sly data-sly-test="${section.name == 'sections'}">
+                <sly data-sly-list.item="${section.getChildren}">
+                    <div class="itv-motor-selector__panel js-motor-panel ${(properties.layoutMode == 'tabs' && itemList.first) || properties.layoutMode == 'accordion' ? 'is-active' : ''}" 
+                         id="panel-${itemList.index}">
+
+                        <button class="itv-motor-selector__accordion-btn js-motor-btn" 
+                                data-target="panel-${itemList.index}"
+                                data-sly-test="${properties.layoutMode == 'accordion'}">
+                            <span class="title">${item.valueMap.title}</span>
+                            <span class="icon">▼</span>
+                        </button>
+
+                        <div class="itv-motor-selector__panel-body">
+                            <sly data-sly-resource="${'panel-{0}' @ format=[itemList.index], resourceType='wcm/foundation/components/responsivegrid'}"></sly>
+                        </div>
+
+                    </div>
+                </sly>
+            </sly>
+        </sly>
+    </div>
+</div>
+
+<sly data-sly-call="${templates.placeholder @ isEmpty = !hasConfig}"></sly>

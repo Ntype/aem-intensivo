@@ -32,7 +32,7 @@
                                             sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
                                             fieldLabel="Brand Logo Image"
                                             name="./image"
-                                            rootPath="/content/dam/itv/brands"/>
+                                            rootPath="/content/dam/itv/buycar/brands"/>
                                     </items>
                                 </field>
                             </brands>

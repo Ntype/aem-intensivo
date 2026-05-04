@@ -1,13 +1,44 @@
 <sly data-sly-use.templates="core/wcm/components/commons/v1/templates.html"></sly> 
-<sly data-sly-test.hasContent="${properties.title || properties.bgImage}"></sly>
-<div class="itv-hero" id="${properties.id}" data-sly-test="${hasContent}">
-   <div class="itv-hero__bg" data-sly-test="${properties.bgImage}">
-      <img src="${properties.bgImage}" alt="background" class="cmp-image__image"/>
-   </div>
-   <div class="itv-hero__foreground" data-sly-test="${properties.carImage}">
-      <img src="${properties.carImage}" alt="Car Model" class="cmp-image__image"/>
-   </div>
+<sly data-sly-test.hasContent="${properties.title || properties.bgImage || properties.bgVideo || properties.fgImage || properties.fgVideo || properties.model3d}"></sly>
+<sly data-sly-test="${properties.fgMedia == '3d'}">
+    <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.3.0/model-viewer.min.js"></script>
+</sly>
 
+<div class="itv-hero" id="${properties.id}" data-edit-mode="${wcmmode.edit ? 'true' : 'false'}" data-sly-test="${hasContent}">
+   
+   <div class="itv-hero__bg">
+      <img data-sly-test="${properties.bgMedia == 'image'}" 
+         src="${properties.bgImage}" alt="background" class="cmp-image__image"/>
+         
+      <video data-sly-test="${properties.bgMedia == 'video'}" 
+         class="cmp-image__image js-hero-video" muted loop playsinline>
+         <source src="${properties.bgVideo}" type="video/mp4">
+      </video>
+   </div>
+   
+   <div class="itv-hero__foreground">
+       <img data-sly-test="${properties.fgMedia == 'image'}" 
+         src="${properties.fgImage}" alt="foreground" class="cmp-image__image"/>
+         
+       <video data-sly-test="${properties.fgMedia == 'video'}" 
+         class="cmp-image__image js-hero-video" muted loop playsinline>
+         <source src="${properties.fgVideo}" type="video/mp4">
+      </video>
+
+      <model-viewer data-sly-test="${properties.fgMedia == '3d'}"
+         src="${properties.model3d}" alt="Modelo 3D interactivo" 
+         auto-rotate="${!wcmmode.edit}" rotation-per-second="15deg" interaction-prompt="none"
+         shadow-intensity="1" class="cmp-image__image"
+         camera-controls disable-zoom disable-pan disable-tap>
+      </model-viewer>
+   </div>
+   
+   <button data-sly-test="${properties.bgMedia == 'video' || properties.fgMedia == 'video'}"
+      class="itv-hero__video-btn js-hero-video-toggle" aria-label="Pausar vídeo">
+      <span class="js-hero__icon-pause">⏸</span>
+      <span class="js-hero__icon-play" style="display:none">▶</span>
+   </button>
+   
    <div class="itv-hero__overlay"></div>
 
    <div class="itv-hero__content">
@@ -28,4 +59,3 @@
    </div>
 </div>
 <sly data-sly-call="${templates.placeholder @ isEmpty = !hasContent}"></sly>
-

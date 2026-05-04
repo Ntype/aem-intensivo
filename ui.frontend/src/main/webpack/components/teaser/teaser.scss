@@ -1,0 +1,94 @@
+.itv-teaser {
+    display: flex !important;
+    flex-direction: column !important;
+    width: 100% !important;
+    margin: 40px 0 !important;
+    background-color: #ffffff;
+    overflow: hidden !important;
+
+    &__image {
+        width: 100% !important;
+        height: auto !important;
+        height: 350px !important;
+        position: relative !important;
+        flex-shrink: 0 !important;
+    }
+    &__img {
+        width: 100% !important;
+        height: 100% !important;
+        object-fit: cover !important;
+        position: absolute !important;
+        top: 0 !important;
+        left: 0 !important;
+        display: block !important;
+    }
+    &__content {
+        padding: 40px 20px !important;
+        display: flex !important;
+        flex-direction: column !important;
+        justify-content: center !important;
+        box-sizing: border-box !important;
+    }
+    &__pretitle {
+        font-size: 14px;
+        color: #0072ED;
+        margin-bottom: 8px;
+        font-weight: 800;
+        text-transform: uppercase;
+    }
+    &__title {
+        font-size: 32px;
+        margin: 0 0 16px 0;
+        color: #111
+    }
+    &__button {
+        display: inline-block;
+        padding: 12px 32px;
+        background-color: #0072ED;
+        color: #fff;
+        text-decoration: none;
+        border-radius: 4px;
+        font-weight: 700;
+        margin-top: 24px;
+        width: fit-content;
+        transition: opacity 0.3s ease;
+        &:hover {
+            opacity: 0.8;
+        }
+    }
+
+    @media (min-width: 769px) {
+        &--left, &--right {
+            display: grid !important;
+            grid-template-columns: 1fr 1fr !important;
+            min-height: 500px !important;
+
+            .itv-teaser__image {
+                height: 100% !important;
+            }
+
+            .itv-teaser__content {
+                padding: 60px 8% !important;
+            }
+        }
+        &--left {
+            .itv-teaser__image {
+                grid-column: 1 !important; grid-row: 1 !important;
+            }
+            .itv-teaser__content {
+                grid-column: 2 !important; grid-row: 1 !important;
+            }  
+        } 
+        &--right {
+            background-color: #f6f6f6;
+            .itv-teaser__content {
+                grid-column: 1 !important; grid-row: 1 !important;
+            }
+            .itv-teaser__image {
+                grid-column: 2 !important; grid-row: 1 !important;
+            }
+            
+        }
+    
+    }
+}

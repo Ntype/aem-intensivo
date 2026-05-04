@@ -1,0 +1,17 @@
+<sly data-sly-use.templates="core/wcm/components/commons/v1/templates.html"/>
+<sly data-sly-use.model="com.itv.core.models.CardsModelLP"></sly>
+<div class="itv-cardlist-simple__grid">
+   <sly data-sly-list.card="${model.cards}">
+      <div class="itv-cardlist-simple__card">
+         <div class="itv-cardlist-simple__image-wrapper">
+            <img class="itv-cardlist-simple__image" src="${card.image}" alt="${card.title}"/> 
+            <div class="itv-cardlist-simple__overlay">
+               <h3 class="itv-cardlist-simple__name">${card.title}</h3>
+               <p class="itv-cardlist-simple__role">${card.description}</p>
+            </div>
+         </div>
+      </div>
+   </sly>
+</div>
+
+<sly data-sly-call="${templates.placeholder @ isEmpty = !model.cards}"></sly>

@@ -2,8 +2,8 @@
 <jcr:root xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:sling="http://sling.apache.org/jcr/sling/1.0"
     jcr:primaryType="cq:Page">
     <jcr:content
-        cq:lastModified="{Date}2026-03-26T20:30:22.069+01:00"
-        cq:lastModifiedBy="admin"
+        cq:lastModified="{Date}2026-05-03T21:33:14.739+02:00"
+        cq:lastModifiedBy="reference-adjustment-service"
         cq:tags="[]"
         cq:template="/conf/itv/settings/wcm/templates/xf-web-variation"
         cq:xfMasterVariation="{Boolean}true"
@@ -88,27 +88,34 @@
                     <snsList jcr:primaryType="nt:unstructured">
                         <item0
                             jcr:primaryType="nt:unstructured"
-                            icon="/content/dam/itv/social-media/social-wp.svg"
+                            icon="/content/dam/itv/buycar/logos---icons/social-media/social-wp.svg"
                             link="https://wa.me/"
                             name="Whatsapp"/>
                         <item1
                             jcr:primaryType="nt:unstructured"
-                            icon="/content/dam/itv/social-media/social-tk.svg"
+                            icon="/content/dam/itv/buycar/logos---icons/social-media/social-tk.svg"
                             link="https://www.tiktok.com/"
                             name="TikTok"/>
                         <item2
                             jcr:primaryType="nt:unstructured"
-                            icon="/content/dam/itv/social-media/social-ig.svg"
+                            icon="/content/dam/itv/buycar/logos---icons/social-media/social-ig.svg"
                             link="https://www.instagram.com/"
                             name="Instagram"/>
                         <item3
                             jcr:primaryType="nt:unstructured"
-                            icon="/content/dam/itv/social-media/social-fb.svg"
+                            icon="/content/dam/itv/buycar/logos---icons/social-media/social-fb.svg"
                             link="https://www.facebook.com/"
                             name="Facebook"/>
                     </snsList>
                 </sns>
             </footer>
+            <cookie_declaration
+                jcr:created="{Date}2026-04-08T13:15:41.374+02:00"
+                jcr:createdBy="admin"
+                jcr:lastModified="{Date}2026-04-08T13:15:41.374+02:00"
+                jcr:lastModifiedBy="admin"
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="itv/components/cookie-declaration"/>
         </root>
     </jcr:content>
 </jcr:root>

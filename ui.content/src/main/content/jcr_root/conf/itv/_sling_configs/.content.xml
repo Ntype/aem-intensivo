@@ -10,4 +10,7 @@
         jcr:primaryType="nt:unstructured"
         clientId="28b07c6be4d544f188dc2f36e33b196b"
         reportSuiteId="\0"/>
+    <com.itv.core.config.AnalyticsConfig
+        jcr:primaryType="nt:unstructured"
+        googleAnalyticsId="G-RCY82LDB6E"/>
 </jcr:root>

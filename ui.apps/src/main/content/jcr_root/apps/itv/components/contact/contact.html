@@ -1,0 +1,27 @@
+<sly data-sly-use.templates="core/wcm/components/commons/v1/templates.html"/>
+<div class="itv-contact">
+    <h2 class="itv-contact__title">${properties.title || 'Contacta con nosotros'}</h2>
+    <form id="itvContactForm" class="itv-contact__form" noValidate>
+        <div class="itv-contact__fields">
+            <div class="itv-contact__field itv-contact__field--name">
+                <input type="text" id="contactName" name="name" placeholder="Nombre y Apellidos *" required>
+                <span class="itv-contact__error" id="errorName"></span>
+            </div>
+            <div class="itv-contact__field itv-contact__field--email">
+                <input type="email" id="contactEmail" name="email" placeholder="Email *" required>
+                <span class="itv-contact__error" id="errorEmail"></span>
+            </div>
+            <div class="itv-contact__field itv-contact__field--phone">
+                <input type="tel" id="contactPhone" name="phone" placeholder="Teléfono de contacto">
+                <span class="itv-contact__error" id="errorPhone"></span>
+                </div>
+            <div class="itv-contact__field itv-contact__field--message">
+                <textarea id="contactMessage" name="message" rows="6" placeholder="Escriba aquí su consulta *" required></textarea>
+                <span class="itv-contact__error" id="errorMessage"></span>
+            </div>
+        </div>
+        <div class="itv-contact__action">
+            <button type="submit" id="contactSubmitBtn" class="cmp-button" disabled>Enviar</button>
+        </div>
+    </form>
+</div>

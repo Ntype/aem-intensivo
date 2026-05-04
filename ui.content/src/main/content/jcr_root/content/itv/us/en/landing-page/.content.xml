@@ -2,7 +2,7 @@
 <jcr:root xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:sling="http://sling.apache.org/jcr/sling/1.0"
     jcr:primaryType="cq:Page">
     <jcr:content
-        cq:lastModified="{Date}2026-03-26T14:05:11.013+01:00"
+        cq:lastModified="{Date}2026-05-03T21:45:33.461+02:00"
         cq:lastModifiedBy="admin"
         cq:template="/conf/itv/settings/wcm/templates/landing-page"
         jcr:primaryType="cq:PageContent"
@@ -21,20 +21,24 @@
                 <hero
                     jcr:created="{Date}2026-03-19T14:52:02.242+01:00"
                     jcr:createdBy="admin"
-                    jcr:lastModified="{Date}2026-03-26T12:29:27.461+01:00"
+                    jcr:lastModified="{Date}2026-05-03T21:45:01.122+02:00"
                     jcr:lastModifiedBy="admin"
                     jcr:primaryType="nt:unstructured"
                     sling:resourceType="itv/components/hero"
-                    bgImage="/content/dam/itv/hero/bg.png"
-                    carImage="/content/dam/itv/hero/car.png"
+                    bgImage="/content/dam/itv/buycar/images/bg.png"
+                    bgMedia="image"
+                    carImage="/content/dam/itv/buycar/images/car.png"
                     description="Aenean commodo ligula eget dolor.  Aenean massa. "
+                    fgImage="/content/dam/itv/buycar/images/car.png"
+                    fgMedia="image"
                     layout="hero"
+                    mediaConfig="images"
                     title="Lorem ipsum dolor sit amet, consectetuer adipiscing elit.">
                     <cards jcr:primaryType="nt:unstructured">
                         <item0
                             jcr:primaryType="nt:unstructured"
-                            background="/content/dam/itv/hero/bg.png"
-                            image="/content/dam/itv/hero/car.png"
+                            background="/content/dam/itv/buycar/images/bg.png"
+                            image="/content/dam/itv/buycar/images/car.png"
                             text="Aenean commodo ligula eget dolor.  Aenean massa. "
                             title="Lorem ipsum dolor sit amet, consectetuer adipiscing elit."/>
                     </cards>
@@ -65,37 +69,10 @@
                     <cardlistlp
                         jcr:created="{Date}2026-03-26T10:22:45.350+01:00"
                         jcr:createdBy="admin"
-                        jcr:lastModified="{Date}2026-03-26T12:30:32.758+01:00"
+                        jcr:lastModified="{Date}2026-05-03T21:45:33.451+02:00"
                         jcr:lastModifiedBy="admin"
                         jcr:primaryType="nt:unstructured"
                         sling:resourceType="itv/components/cardlistLP">
-                        <cards jcr:primaryType="nt:unstructured">
-                            <item0
-                                jcr:primaryType="nt:unstructured"
-                                description="Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus."
-                                image="/content/dam/itv/cars/car-cardlist.png"
-                                title="Toyota Corola Cross GR"/>
-                            <item1
-                                jcr:primaryType="nt:unstructured"
-                                description="Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus."
-                                image="/content/dam/itv/cars/car-cardlist.png"
-                                title="Toyota Corola Cross GR"/>
-                            <item2
-                                jcr:primaryType="nt:unstructured"
-                                description="Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus."
-                                image="/content/dam/itv/cars/car-cardlist.png"
-                                title="Toyota Corola Cross GR"/>
-                            <item3
-                                jcr:primaryType="nt:unstructured"
-                                description="Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus."
-                                image="/content/dam/itv/cars/car-cardlist.png"
-                                title="Toyota Corola Cross GR"/>
-                            <item4
-                                jcr:primaryType="nt:unstructured"
-                                description="Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus."
-                                image="/content/dam/itv/cars/car-cardlist.png"
-                                title="Toyota Corola Cross GR"/>
-                        </cards>
                         <btn-buy-
                             jcr:lastModified="{Date}2026-03-26T12:42:18.559+01:00"
                             jcr:lastModifiedBy="admin"
@@ -110,6 +87,33 @@
                             jcr:title="Pide una prueba"
                             sling:resourceType="core/wcm/components/button/v2/button"
                             linkTarget="_self"/>
+                        <cards jcr:primaryType="nt:unstructured">
+                            <item0
+                                jcr:primaryType="nt:unstructured"
+                                description="Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus."
+                                image="/content/dam/itv/buycar/images/car-cardlist.png"
+                                title="Toyota Corola Cross GR"/>
+                            <item1
+                                jcr:primaryType="nt:unstructured"
+                                description="Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus."
+                                image="/content/dam/itv/buycar/images/car-cardlist.png"
+                                title="Toyota Corola Cross GR"/>
+                            <item2
+                                jcr:primaryType="nt:unstructured"
+                                description="Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus."
+                                image="/content/dam/itv/buycar/images/car-cardlist.png"
+                                title="Toyota Corola Cross GR"/>
+                            <item3
+                                jcr:primaryType="nt:unstructured"
+                                description="Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus."
+                                image="/content/dam/itv/buycar/images/car-cardlist.png"
+                                title="Toyota Corola Cross GR"/>
+                            <item4
+                                jcr:primaryType="nt:unstructured"
+                                description="Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus."
+                                image="/content/dam/itv/buycar/images/car-cardlist.png"
+                                title="Toyota Corola Cross GR"/>
+                        </cards>
                     </cardlistlp>
                     <brands
                         jcr:created="{Date}2026-03-26T10:28:53.090+01:00"
@@ -121,39 +125,42 @@
                         <brands jcr:primaryType="nt:unstructured">
                             <item0
                                 jcr:primaryType="nt:unstructured"
-                                image="/content/dam/itv/brands/Subaru.png"/>
+                                image="/content/dam/itv/buycar/brands/Subaru.png"/>
                             <item1
                                 jcr:primaryType="nt:unstructured"
-                                image="/content/dam/itv/brands/Nissan.png"/>
+                                image="/content/dam/itv/buycar/brands/Nissan.png"/>
                             <item2
                                 jcr:primaryType="nt:unstructured"
-                                image="/content/dam/itv/brands/Chery.png"/>
+                                image="/content/dam/itv/buycar/brands/Chery.png"/>
                             <item3
                                 jcr:primaryType="nt:unstructured"
-                                image="/content/dam/itv/brands/Suzuki.png"/>
+                                image="/content/dam/itv/buycar/brands/Suzuki.png"/>
                             <item4
                                 jcr:primaryType="nt:unstructured"
-                                image="/content/dam/itv/brands/Hyundai.png"/>
+                                image="/content/dam/itv/buycar/brands/Hyundai.png"/>
                             <item5
                                 jcr:primaryType="nt:unstructured"
-                                image="/content/dam/itv/brands/Honda.png"/>
+                                image="/content/dam/itv/buycar/brands/Honda.png"/>
                             <item6
                                 jcr:primaryType="nt:unstructured"
-                                image="/content/dam/itv/brands/Mazda.png"/>
+                                image="/content/dam/itv/buycar/brands/Mazda.png"/>
                             <item7
                                 jcr:primaryType="nt:unstructured"
-                                image="/content/dam/itv/brands/Daihatsu.png"/>
+                                image="/content/dam/itv/buycar/brands/Daihatsu.png"/>
                             <item8
                                 jcr:primaryType="nt:unstructured"
-                                image="/content/dam/itv/brands/Mitsubishi.png"/>
+                                image="/content/dam/itv/buycar/brands/Mitsubishi.png"/>
                         </brands>
                     </brands>
                 </container_1022808279>
             </container>
         </root>
     </jcr:content>
-    <mercedes/>
-    <bmw/>
+    <contact/>
+    <quienes-somos/>
     <audi/>
     <lexus/>
+    <mercedes/>
+    <mercedes0/>
+    <bmw/>
 </jcr:root>

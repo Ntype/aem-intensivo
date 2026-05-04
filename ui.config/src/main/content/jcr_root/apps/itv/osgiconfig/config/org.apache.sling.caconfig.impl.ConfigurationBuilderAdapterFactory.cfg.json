@@ -1,0 +1,5 @@
+{
+  "config.classes": [
+    "com.itv.core.config.AnalyticsConfig"
+  ]
+}

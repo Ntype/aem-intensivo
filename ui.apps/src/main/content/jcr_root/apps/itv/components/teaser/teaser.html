@@ -1,0 +1,24 @@
+
+<sly data-sly-use.teaser="com.adobe.cq.wcm.core.components.models.Teaser"
+     data-sly-use.templates="core/wcm/components/commons/v1/templates.html">
+
+    <div class="itv-teaser itv-teaser--${properties.imagePosition || 'top'}"
+        data-sly-test.hasContent="${properties.imgPath || properties.jcr:title}">
+        <div class="itv-teaser__image" data-sly-test="${properties.imgPath}">
+            <img src="${properties.imgPath}" alt="${properties.jcr:title}" class="itv-teaser__img"/>
+        </div>
+        <div class="itv-teaser__content">
+            <p class="itv-teaser__pretitle" data-sly-test="${properties.pretitle}">${properties.pretitle}</p>
+            <h2 class="itv-teaser__title" data-sly-test="${properties.jcr:title}">${properties.jcr:title}</h2>
+            <div class="itv-teaser__description" data-sly-test="${properties.jcr:description}">
+                ${properties.jcr:description @ context='html'}
+            </div>
+            <div class="itv-teaser__actions" data-sly-list.action="${teaser.actions}" data-sly-test="${teaser.actions.size > 0}">
+                <a class="itv-teaser__button"href="${action.link.path}">
+                    ${action.text}
+                </a>
+            </div>
+        </div>
+    </div>
+    <sly data-sly-call="${templates.placeholder @ isEmpty=!hasContent}"></sly>
+</sly>

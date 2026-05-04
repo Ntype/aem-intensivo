@@ -1,0 +1,46 @@
+<sly data-sly-use.templates="core/wcm/components/commons/v1/templates.html"/>
+<sly data-sly-test.hasContent="${properties.mediaType}"></sly>
+
+<!-- Carga de librería 3D -->
+<sly data-sly-test="${properties.mediaType == '3d'}">
+    <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.3.0/model-viewer.min.js"></script>
+</sly>
+
+<div class="itv-interactive-cards" data-sly-test="${hasContent}">
+    <div class="itv-interactive-cards__grid">
+        <sly data-sly-list.item="${resource.getChildren}">
+            <sly data-sly-test="${item.name == 'cards'}">
+                <sly data-sly-list.card="${item.getChildren}">
+                    
+                    <div class="itv-interactive-cards__card js-expandable-card">
+                        
+                        <div class="itv-interactive-cards__media">
+                            <img data-sly-test="${properties.mediaType == 'image'}" 
+                                 src="${card.valueMap.imagePath}" 
+                                 alt="${card.valueMap.title}" 
+                                 class="media-element"/>
+
+                            <model-viewer data-sly-test="${properties.mediaType == '3d'}" 
+                                          src="${card.valueMap.modelPath}" 
+                                          shadow-intensity="1" 
+                                          camera-controls="false" 
+                                          class="media-element js-model-viewer">
+                            </model-viewer>
+                        </div>
+                        
+                        <div class="itv-interactive-cards__layover">
+                            <div class="itv-interactive-cards__layover-content">
+                                <h3 class="title">${card.valueMap.title}</h3>
+                                <a href="${card.valueMap.linkURL}" class="btn-discover">Descubre más</a>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </sly>
+            </sly>
+        </sly>
+    </div>
+</div>
+
+<sly data-sly-call="${templates.placeholder @ isEmpty = !hasContent}"></sly>

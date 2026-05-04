@@ -1,0 +1,21 @@
+<sly data-sly-use.model="com.itv.core.models.StatCounterModel"></sly>
+<sly data-sly-use.templates="core/wcm/components/commons/v1/templates.html"/>
+
+<div class="itv-stats js-stats-container">
+    <div class="itv-stats__grid">
+        <sly data-sly-list.item="${model.stats}">
+            <div class="itv-stats__item">
+                <div class="itv-stats__number-wrapper">
+                    <span data-sly-test="${item.symbol == 'plus'}" class="itv-stats__symbol">+ </span>
+
+                    <span class="itv-stats__number js-stat-number" data-target="${item.number}">0</span>
+                    
+                    <span data-sly-test="${item.symbol == 'percent'}" class="itv-stats__symbol"> %</span>
+                    <span data-sly-test="${item.symbol == 'euro'}" class="itv-stats__symbol"> €</span>
+                </div>
+                <p class="itv-stats__label">${item.label}</p>
+            </div>
+        </sly>
+    </div>
+</div>
+<sly data-sly-call="${templates.placeholder @ isEmpty = !model.stats}"></sly>
